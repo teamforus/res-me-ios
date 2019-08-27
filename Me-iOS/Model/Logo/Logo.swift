@@ -12,7 +12,7 @@ import Foundation
 struct Logo: Decodable, Hashable {
     
     var uid: String?
-    var originalName: String?
+    var original_name: String?
     var type: String?
     var ext: String?
     var sizes: Size?

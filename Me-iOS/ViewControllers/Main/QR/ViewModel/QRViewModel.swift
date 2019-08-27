@@ -15,6 +15,7 @@ class QRViewModel{
     var commonService: CommonServiceProtocol!
     var vc: MQRViewController!
     var authorizeToken: ((Int)->())!
+    var vcAlert: UIViewController!
     
     var validateRecord: ((RecordValidation, Int)->())!
     var validateApproveRecord: ((Int)->())!
@@ -49,8 +50,8 @@ class QRViewModel{
                 DispatchQueue.main.async {
                     
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "This voucher is expired.", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.vc.scanWorker.start()
+                    self.vcAlert.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "This voucher is expired.", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.vc?.scanWorker.start()
                     }))
                 }
                 
@@ -58,8 +59,8 @@ class QRViewModel{
                 DispatchQueue.main.async {
                     
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Error!".localized(), message: "You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers.".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.vc.scanWorker.start()
+                    self.vcAlert.showSimpleAlertWithSingleAction(title: "Error!".localized(), message: response.message ?? "", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.vc?.scanWorker.start()
                     }))
                 }
             }else {
@@ -68,7 +69,8 @@ class QRViewModel{
                 
             }
         }) { (error) in
-            
+            KVSpinnerView.dismiss()
+            self.vc.scanWorker.start()
         }
         
     }

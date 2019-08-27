@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import KVSpinnerView
 
 class VoucherViewModel{
     
@@ -23,18 +23,29 @@ class VoucherViewModel{
     }
     
     var reloadTableViewClosure: (()->())?
+    var completeExchangeToken: ((String)->())?
     var reloadDataVoucher: ((Voucher)->())?
     var completeSendEmail: ((Int)->())?
+    var vc: UIViewController!
     
     func initFetchById(address: String){
         
         commonService.getById(request: "platform/vouchers/", id: address, complete: { (response: ResponseData<Voucher>, statusCode) in
+            
+            if statusCode != 503 {
             
             var array = response.data?.transactions ?? []
             array.append(contentsOf: response.data?.product_vouchers ?? [])
             
             self.processFetchedLunche(transactions: array.sorted(by: { $0.created_at?.compare($1.created_at ?? "") == .orderedDescending}))
             self.reloadDataVoucher!(response.data!)
+                
+            }else {
+                
+                KVSpinnerView.dismiss()
+                self.vc.showErrorServer()
+                
+            }
             
         }, failure: { (error) in
             print(error)
@@ -51,6 +62,20 @@ class VoucherViewModel{
             
         }
         
+    }
+    
+    func openVoucher() {
+        
+        commonService.post(request: "identity/proxy/short-token") { (response: ExchangeToken, statusCode) in
+            
+            if statusCode != 503 {
+                self.completeExchangeToken?(response.exchange_token ?? "")
+            }else {
+                KVSpinnerView.dismiss()
+                self.vc.showErrorServer()
+            }
+            
+        }
     }
     
     var numberOfCells: Int {

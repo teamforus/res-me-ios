@@ -22,6 +22,7 @@ class MPaymentViewController: UIViewController {
     @IBOutlet weak var heightFieldsConstraint: NSLayoutConstraint!
     @IBOutlet weak var arrowIcon: UIImageView!
     
+    var isFromReservation: Bool!
     var voucher: Voucher!
     var tabBar: UITabBarController!
     var selectedAllowerdOrganization: AllowedOrganization!
@@ -42,6 +43,9 @@ class MPaymentViewController: UIViewController {
         if voucher.product != nil {
             
             let vc = ConfirmPaymentPopUp()
+            if isFromReservation != nil {
+                vc.isFromReservation = isFromReservation
+            }
             vc.voucher = voucher
             vc.organizationId = selectedAllowerdOrganization?.id ?? 0
             vc.note = notesField.text
@@ -54,18 +58,21 @@ class MPaymentViewController: UIViewController {
         }else if amountField.text != "" {
             
             if amountField.text != "0.01" && amountField.text != "0,01"{
-            
-            let vc = ConfirmPaymentPopUp()
-            vc.voucher = voucher
-            vc.organizationId = selectedAllowerdOrganization?.id ?? 0
-            vc.note = notesField.text
-            vc.amount = amountField.text
-            vc.tabBar = tabBar
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overCurrentContext
-            self.present(vc, animated: true)
+                
+                let vc = ConfirmPaymentPopUp()
+                if isFromReservation != nil {
+                    vc.isFromReservation = isFromReservation
+                }
+                vc.voucher = voucher
+                vc.organizationId = selectedAllowerdOrganization?.id ?? 0
+                vc.note = notesField.text
+                vc.amount = amountField.text
+                vc.tabBar = tabBar
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overCurrentContext
+                self.present(vc, animated: true)
             }else {
-            
+                
                 showSimpleAlert(title: "Warning".localized(), message: "A payment of € 0.01 is too low to be paid out, choose a higher amount.".localized())
                 
             }
@@ -77,7 +84,7 @@ class MPaymentViewController: UIViewController {
         }
     }
     
-  
+    
     
     
 }

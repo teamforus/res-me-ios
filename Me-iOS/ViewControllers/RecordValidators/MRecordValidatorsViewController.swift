@@ -24,7 +24,7 @@ class MRecordValidatorsViewController: UIViewController {
         super.viewDidLoad()
         
         self.categoryRecordLabel.text = "Personal".localized()
-        self.typeRecordLabel.setTitle(record.key?.replacingOccurrences(of: "_", with: " ").capitalized, for: .normal)
+        self.typeRecordLabel.setTitle(record.name ?? "", for: .normal)
         self.recordValueLabel.setTitle(record.value, for: .normal)
         
         recordValidatorViewModel.reloadDataTableView = { [weak self] in

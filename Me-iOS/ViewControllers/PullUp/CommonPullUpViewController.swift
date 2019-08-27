@@ -32,7 +32,7 @@ class CommonPullUpViewController: ISHPullUpViewController {
     
     
     private func commonInit() {
-        let storyBoard = UIStoryboard(name: "LoginQRAndCodeViewController" , bundle: nil)
+        let storyBoard = UIStoryboard(name: "Profile" , bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "content")
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottom") as! CommonBottomViewController
         contentViewController = contentVC

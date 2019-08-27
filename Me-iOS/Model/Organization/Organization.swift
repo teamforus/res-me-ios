@@ -16,6 +16,7 @@ struct Organization: Decodable, Hashable {
     var name: String?
     var iban: String?
     var email: String?
+    var categories: String?
     var phone: String?
     var kvk: String?
     var btw: String?

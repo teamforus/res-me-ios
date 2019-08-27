@@ -22,7 +22,7 @@ class MChooseTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var viewTypeRecord: CustomCornerUIView!
     var recordType: RecordType! {
         didSet{
-            titleRecordType.text = recordType.key?.localized() ?? ""
+            titleRecordType.text = recordType.name ?? ""
         }
     }
     

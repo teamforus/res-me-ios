@@ -40,11 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.addShortcuts(application: application)
             if UserDefaults.standard.bool(forKey: UserDefaultsName.AddressIndentityCrash) {
                 
-                commonService.get(request: "identity", complete: { (response: Office, statusCode) in
-                    Crashlytics.sharedInstance().setUserIdentifier(response.address)
-                }) { (error) in
-                    
-                }
+//                commonService.get(request: "identity", complete: { (response: Office, statusCode) in
+//                    Crashlytics.sharedInstance().setUserIdentifier(response.address)
+//                }) { (error) in
+//                    
+//                }
             }
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

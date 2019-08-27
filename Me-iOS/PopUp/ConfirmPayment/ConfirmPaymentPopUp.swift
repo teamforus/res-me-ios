@@ -16,11 +16,13 @@ class ConfirmPaymentPopUp: UIViewController {
     
     
     var voucher: Voucher!
+    var voucherToken: Transaction!
     var amount: String!
     var tabBar: UITabBarController!
     var organizationId: Int!
     var note: String!
     var commonService: CommonServiceProtocol! = CommonService()
+    var isFromReservation: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,26 +66,42 @@ class ConfirmPaymentPopUp: UIViewController {
                 
                 DispatchQueue.main.async {
                     
-                
-                KVSpinnerView.dismiss()
-                if statusCode == 201 {
                     
-                    self.showSimpleAlertWithSingleAction(title: "Success".localized(), message: "Payment succeeded".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    KVSpinnerView.dismiss()
+                    if statusCode == 201 {
                         
-                        self.tabBar.selectedIndex = 0
-                        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-                    }))
-                }else {
-                    self.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "Voucher not have enough funds".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        
-                        
-                    }))
-                }
+                        self.showSimpleAlertWithSingleAction(title: "Success".localized(), message: "Payment succeeded".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            
+                            self.tabBar.selectedIndex = 0
+                            if self.isFromReservation != nil {
+                                self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true)
+                            }else {
+                                self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+                            }
+                        }))
+                    }else {
+                        self.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "Voucher not have enough funds".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            
+                            
+                        }))
+                    }
                 }
             }
         }else {
             
             showInternetUnable()
+            
+        }
+    }
+    
+    func dismissModalStack(viewController: UIViewController, animated: Bool) {
+        if viewController.presentingViewController != nil {
+            var vc = viewController.presentingViewController!
+            while (vc.presentingViewController != nil) {
+                vc = vc.presentingViewController!;
+            }
+            vc.dismiss(animated: true)
+            
             
         }
     }

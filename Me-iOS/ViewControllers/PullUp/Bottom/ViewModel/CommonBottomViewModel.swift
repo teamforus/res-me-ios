@@ -17,6 +17,7 @@ class CommonBottomViewModel{
     var completeVoucher: ((String)->())!
     var completeRecord: ((RecordValidation)->())!
     var completeAuthorize: ((String)->())!
+    var completeIdentity: ((String)->())!
     
     init(commonService: CommonServiceProtocol = CommonService(), statusService: StatusServiceProtocol = StatusService()) {
         self.commonService = commonService
@@ -33,7 +34,7 @@ class CommonBottomViewModel{
     
     func initFetchVoucherToken(){
         
-       
+        
     }
     
     func initFetchRecordToken(idRecords: Int){
@@ -53,6 +54,14 @@ class CommonBottomViewModel{
             
             self.completeAuthorize?(response.message ?? "")
             
+        }) { (error) in
+            
+        }
+    }
+    
+    func getIndentity(){
+        commonService.get(request: "identity", complete: { (response: Office, statusCode) in
+            self.completeIdentity?(response.address ?? "")
         }) { (error) in
             
         }

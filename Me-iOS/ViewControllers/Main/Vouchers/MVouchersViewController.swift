@@ -10,11 +10,19 @@ import UIKit
 import ISHPullUp
 import KVSpinnerView
 
+enum VoucherType: Int {
+    case valute = 0
+    case vouchers = 1
+}
+
 class MVouchersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
     var isFromLogin: Bool!
+    @IBOutlet weak var segmentController: HBSegmentedControl!
+    @IBOutlet weak var segmentView: UIView!
     
+    var voucherType: VoucherType!
     lazy var voucherViewModel: VouchersViewModel = {
         return VouchersViewModel()
     }()
@@ -29,6 +37,17 @@ class MVouchersViewController: UIViewController {
         } else {
             tableView.addSubview(refreshControl)
         }
+        
+        voucherType = .vouchers
+        
+        segmentController.items = ["Valute", "Vouchers".localized()]
+        segmentController.selectedIndex = 1
+        segmentController.font = UIFont(name: "GoogleSans-Medium", size: 14)
+        segmentController.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
+        segmentController.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
+        segmentController.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
+        segmentController.borderColor = .clear
+        segmentView.layer.cornerRadius = 8.0
         
         if isFromLogin != nil {
             self.showPopUPWithAnimation(vc: MCrashConfirmViewController(nibName: "MCrashConfirmViewController", bundle: nil))
@@ -78,6 +97,22 @@ class MVouchersViewController: UIViewController {
     
     @objc func refreshData(_ sender: Any) {
         initFetch()
+    }
+    
+    @objc func segmentSelected(sender:HBSegmentedControl) {
+        
+        
+        switch sender.selectedIndex {
+        case VoucherType.valute.rawValue:
+            voucherType = .valute
+            self.tableView.reloadData()
+            break
+        case VoucherType.vouchers.rawValue:
+            voucherType = .vouchers
+            self.tableView.reloadData()
+            break
+        default: break
+        }
     }
     
     
@@ -138,33 +173,66 @@ extension MVouchersViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return voucherViewModel.numberOfCells
+        switch voucherType {
+        case .valute?:
+            return 1
+        case .vouchers?:
+           return voucherViewModel.numberOfCells
+         default:
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VoucherTableViewCell
         
-        cell.voucher = voucherViewModel.getCellViewModel(at: indexPath)
-        
-        return cell
+        switch voucherType {
+        case .valute?:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valuteCell", for: indexPath) as! ValuteTableViewCell
+            cell.sendButton.addTarget(self, action: #selector(send(_:)), for: .touchUpInside)
+            return cell
+        case .vouchers?:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VoucherTableViewCell
+            
+            cell.voucher = voucherViewModel.getCellViewModel(at: indexPath)
+            
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    @objc func send(_ sender: UIButton) {
+        self.showPopUPWithAnimation(vc: SendEtherViewController(nibName: "SendEtherViewController", bundle: nil))
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
-        self.voucherViewModel.userPressed(at: indexPath)
         
-        
-        if voucherViewModel.isAllowSegue {
-            if voucherViewModel.selectedVoucher?.product != nil {
-                self.performSegue(withIdentifier: "goToProduct", sender: nil)
+        switch voucherType {
+        case .vouchers?:
+            
+            self.voucherViewModel.userPressed(at: indexPath)
+            
+            
+            if voucherViewModel.isAllowSegue {
+                if voucherViewModel.selectedVoucher?.product != nil {
+                    self.performSegue(withIdentifier: "goToProduct", sender: nil)
+                }else {
+                    self.performSegue(withIdentifier: "goToVoucher", sender: nil)
+                }
+                return indexPath
             }else {
-                self.performSegue(withIdentifier: "goToVoucher", sender: nil)
+                return nil
             }
-            return indexPath
-        }else {
+            
+            
+        default:
             return nil
+            
         }
     }
+    
 }
 
 extension MVouchersViewController: UIViewControllerPreviewingDelegate{
@@ -178,23 +246,30 @@ extension MVouchersViewController: UIViewControllerPreviewingDelegate{
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        guard let indexPath = tableView.indexPathForRow(at: location) else {
+        switch voucherType {
+        case .vouchers?:
+            guard let indexPath = tableView.indexPathForRow(at: location) else {
+                return nil
+            }
+            
+            self.voucherViewModel.userPressed(at: indexPath)
+            var detailViewController = UIViewController()
+            if voucherViewModel.selectedVoucher?.product != nil {
+                detailViewController = createDetailViewControllerIndexPath(vc: didSetPullUPWithoutSegue(storyBoardName: "ProductVoucher", isProduct: true),
+                                                                           indexPath: indexPath)
+            }else {
+                detailViewController = createDetailViewControllerIndexPath(vc: didSetPullUPWithoutSegue(storyBoardName: "Voucher", isProduct: false),
+                                                                           indexPath: indexPath)
+            }
+            
+            
+            
+            return detailViewController
+        default:
             return nil
         }
         
-        self.voucherViewModel.userPressed(at: indexPath)
-        var detailViewController = UIViewController()
-        if voucherViewModel.selectedVoucher?.product != nil {
-            detailViewController = createDetailViewControllerIndexPath(vc: didSetPullUPWithoutSegue(storyBoardName: "ProductVoucher", isProduct: true),
-                                                                       indexPath: indexPath)
-        }else {
-            detailViewController = createDetailViewControllerIndexPath(vc: didSetPullUPWithoutSegue(storyBoardName: "Voucher", isProduct: false),
-                                                                       indexPath: indexPath)
-        }
-        
-        
-        
-        return detailViewController
+       
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {

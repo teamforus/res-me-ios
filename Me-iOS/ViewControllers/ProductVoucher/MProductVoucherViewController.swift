@@ -46,6 +46,10 @@ class MProductVoucherViewController: UIViewController {
             
             DispatchQueue.main.async {
                 
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                    NotificationCenter.default.post(name: NotificationName.TogleStateWindowFormProduct, object: nil)
+                })
+                
                 self?.productNameLabel.text = voucher.product?.name ?? ""
                 self?.organizationNameLabel.text = voucher.fund?.organization?.name ?? ""
                 self?.organizationProductName.text = voucher.product?.organization?.name ?? ""
@@ -91,7 +95,7 @@ class MProductVoucherViewController: UIViewController {
         }
         
         if isReachable() {
-            
+            productViewModel.vc = self
             productViewModel.initFetchById(address: address)
             
         }else {
@@ -107,7 +111,7 @@ class MProductVoucherViewController: UIViewController {
     }
     
     @IBAction func opendQR(_ sender: UIButton) {
-        NotificationCenter.default.post(name: NotificationName.TogleStateWindow, object: nil)
+        NotificationCenter.default.post(name: NotificationName.TogleStateWindowFormProduct, object: nil)
     }
     
     @IBAction func sendByEmail(_ sender: Any) {

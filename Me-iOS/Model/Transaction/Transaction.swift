@@ -12,9 +12,11 @@ struct Transaction: Decodable {
     
     var organization_id: Int?
     var product_id: Int?
+    var fund_id: Int?
     var amount: String?
-    var adress: String?
+    var address: String?
     var organization: Organization?
     var product: Product?
-    var created_at: String?    
+    var created_at: String?
+    var date_time: String?
 }

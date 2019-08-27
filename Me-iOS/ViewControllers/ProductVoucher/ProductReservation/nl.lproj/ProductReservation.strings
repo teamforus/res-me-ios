@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Onderstaande aanbiedingen zijn door de klant gereserveerd"; ObjectID = "8tz-MG-HUF"; */
+"8tz-MG-HUF.text" = "Onderstaande aanbiedingen zijn door de klant gereserveerd";
+
+/* Class = "UILabel"; text = "Kindpakket"; ObjectID = "e2m-hC-zoQ"; */
+"e2m-hC-zoQ.text" = "Kindpakket";
+
+/* Class = "UILabel"; text = "Choose Reservation"; ObjectID = "j1C-Hn-7j5"; */
+"j1C-Hn-7j5.text" = "Kies reservering";
+
+/* Class = "UIButton"; normalTitle = "VUL ZELF EEN BEDRAG IN"; ObjectID = "uzM-Me-hi0"; */
+"uzM-Me-hi0.normalTitle" = "VUL ZELF EEN BEDRAG IN";
+
+/* Class = "UILabel"; text = "300 €"; ObjectID = "wfv-DJ-Ztw"; */
+"wfv-DJ-Ztw.text" = "300 €";

@@ -21,6 +21,7 @@ class MQRViewController: HSScanViewController {
         return QRViewModel()
     }()
     var voucher: Voucher!
+    var productVoucher: [Transaction]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class MQRViewController: HSScanViewController {
         self.scanCodeTypes  = [.qr]
         
         qrViewModel.vc = self
+        qrViewModel.vcAlert = self
         
         qrViewModel.authorizeToken = { [weak self] (statusCode) in
             DispatchQueue.main.async {
@@ -106,7 +108,18 @@ class MQRViewController: HSScanViewController {
                             
                             if voucher.allowed_organizations?.count != 0 && voucher.allowed_organizations?.count  != nil {
                                 
-                                self?.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                                if voucher.product_vouchers?.count != 0 {
+                                    voucher.product_vouchers?.forEach({ (voucherToken) in
+                                        if voucherToken.product?.organization_id == voucher.allowed_organizations?.first?.id {
+                                            self?.productVoucher.append(voucherToken)
+                                        }
+                                    })
+                                    
+                                    self?.performSegue(withIdentifier: "goToChooseProduct", sender: nil)
+                                }else {
+                                    
+                                    self?.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                                }
                                 
                             }else if voucher.product != nil{
                                 
@@ -135,8 +148,8 @@ class MQRViewController: HSScanViewController {
                             self?.showSimpleAlertWithSingleAction(title: "Error!".localized(),
                                                                   message: "The voucher is empty! No transactions can be done.".localized(),
                                                                   okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                self?.scanWorker.start()
-                            }))
+                                                                    self?.scanWorker.start()
+                                                                  }))
                         }
                     }else {
                         
@@ -166,12 +179,22 @@ class MQRViewController: HSScanViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let paymentVC = segue.destination as? MPaymentViewController {
-            
-            paymentVC.voucher = voucher
-            paymentVC.tabBar = self.tabBarController
-            
+        if segue.identifier == "goToVoucherPayment" {
+            if let paymentVC = segue.destination as? MPaymentViewController {
+                
+                paymentVC.voucher = voucher
+                paymentVC.tabBar = self.tabBarController
+                
+            }
+        }else if segue.identifier == "goToChooseProduct" {
+            if let productReservation = segue.destination as? MProductReservationViewController {
+                
+                productReservation.voucher = voucher
+                productReservation.voucherTokens = productVoucher
+                productReservation.vc = self
+                productReservation.tabBar = self.tabBarController
+                
+            }
         }
         
     }

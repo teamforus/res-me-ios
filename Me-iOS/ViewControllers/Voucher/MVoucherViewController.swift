@@ -38,7 +38,9 @@ class MVoucherViewController: UIViewController {
         voucherViewModel.reloadDataVoucher = { [weak self] (voucher) in
             
             DispatchQueue.main.async {
-                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
+                    NotificationCenter.default.post(name: NotificationName.TogleStateWindow, object: nil)
+                })
                 self?.voucherName.text = voucher.fund?.name ?? ""
                 self?.organizationName.text = voucher.fund?.organization?.name ?? ""
                 if let price = voucher.amount {
@@ -74,6 +76,7 @@ class MVoucherViewController: UIViewController {
         
         if isReachable() {
             
+            voucherViewModel.vc = self
             voucherViewModel.initFetchById(address: address)
             
         }else {
@@ -115,9 +118,17 @@ class MVoucherViewController: UIViewController {
     }
     
     @IBAction func info(_ sender: Any) {
-        if let url = URL(string: voucher.fund?.url_webshop ?? "") {
-            let safariVC = SFSafariViewController(url: url)
-            self.present(safariVC, animated: true, completion: nil)
+        voucherViewModel.openVoucher()
+        
+        voucherViewModel.completeExchangeToken = { [weak self] (token) in
+            
+            DispatchQueue.main.async {
+                
+                if let url = URL(string: (self?.voucher.fund!.url_webshop)! + "auth-link?token=" + token) {
+                    let safariVC = SFSafariViewController(url: url)
+                    self?.present(safariVC, animated: true, completion: nil)
+                }
+            }
         }
     }
 }

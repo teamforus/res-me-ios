@@ -42,6 +42,18 @@ class CustomCornerUIView: UIView {
         }
     }
     
+    @IBInspectable var borderColor :UIColor = UIColor.black {
+        didSet {
+            setSelectBorderColor()
+        }
+    }
+    
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        didSet {
+            setBorderWidth()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.masksToBounds = false
@@ -72,5 +84,12 @@ class CustomCornerUIView: UIView {
         self.layer.shadowRadius = shadowRadius
     }
 
+    func setBorderWidth(){
+        self.layer.borderWidth = borderWidth
+    }
+    
+    func setSelectBorderColor(){
+        self.layer.borderColor = borderColor.cgColor
+    }
 
 }

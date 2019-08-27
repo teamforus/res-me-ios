@@ -12,5 +12,6 @@ struct ResponseData<T: Decodable>: Decodable{
     
     var data: T?
      var message : String?
+    var error: String?
 //    var errors: Errors?
 }

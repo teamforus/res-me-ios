@@ -72,7 +72,7 @@ class ShadowButton: UIButton {
     }
     
     func setSelectBorderColor(){
-        self.layer.shadowColor = selectedShadowColor.cgColor
+        self.layer.borderColor = borderColor.cgColor
     }
     
     func setShadowOffset(){

@@ -46,3 +46,9 @@
 
 /* Class = "UIButton"; normalTitle = "Press for crash the app"; ObjectID = "uyU-tZ-kOJ"; */
 "uyU-tZ-kOJ.normalTitle" = "Press for crash the app";
+
+/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "NFR-Ik-UtF.text"; */
+"NFR-Ik-UtF.text" = "Dit is je persoonlijke QR-Code"";
+
+/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "MxW-qZ-33f.text"; */
+"MxW-qZ-33f.text" = "Scan deze QR-Code op een apparaat waar je al op ingelogd bent.";

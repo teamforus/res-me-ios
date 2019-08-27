@@ -31,7 +31,7 @@ class MRecordDetailViewController: UIViewController {
                 
                 self?.record = record
                 
-                self?.recordTypeLabel.text = record.key?.localized()
+                self?.recordTypeLabel.text = record.name ?? ""
                 self?.recordValue.text = record.value
                 self?.tableView.reloadData()
                 

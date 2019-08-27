@@ -33,13 +33,13 @@
 "o4b-Rb-FmZ.text" = "3";
 
 /* Class = "UITabBarItem"; title = "Vouchers"; ObjectID = "ony-rh-yQc"; */
-"ony-rh-yQc.title" = "Vouchers";
+"ony-rh-yQc.title" = "Eigendom";
 
 /* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "r3k-mS-eBG"; */
 "r3k-mS-eBG.text" = "Je hebt nog geen vouchers.";
 
 /* Class = "UILabel"; text = "Voucher"; ObjectID = "rIR-n0-vK4"; */
-"rIR-n0-vK4.text" = "Vouchers";
+"rIR-n0-vK4.text" = "Eigendom";
 
 /* Class = "UILabel"; text = "First Name"; ObjectID = "rpK-Zw-ROm"; */
 "rpK-Zw-ROm.text" = "First Name";

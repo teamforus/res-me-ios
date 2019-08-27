@@ -195,12 +195,14 @@ class CommonService: CommonServiceProtocol {
     }
     
     
+    
     func get<T>(request: String, complete: @escaping (T, Int) -> (), failure: @escaping (Error) -> ()) where T : Decodable {
         
         var request = URLRequest(url: URL(string: BaseURL.baseURL(url: request))!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(getLanguageISO(), forHTTPHeaderField: "Accept-Language")
         request.addValue("Bearer " + CurrentSession.shared.token, forHTTPHeaderField: "Authorization")
         
         let session = URLSession.shared
@@ -403,3 +405,10 @@ class CommonService: CommonServiceProtocol {
 }
 
 
+extension CommonService {
+    
+    func getLanguageISO() -> String {
+        return Locale.current.languageCode!
+    }
+    
+}

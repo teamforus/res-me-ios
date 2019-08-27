@@ -30,7 +30,7 @@ class RecordsTableViewCell: UITableViewCell {
                 
             }
             
-            cellTypeLabel.text = record.key?.localized()
+            cellTypeLabel.text = record.name ?? ""
             nameLabel.text = record.value
             
         }
