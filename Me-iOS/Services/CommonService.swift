@@ -203,7 +203,9 @@ class CommonService: CommonServiceProtocol {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(getLanguageISO(), forHTTPHeaderField: "Accept-Language")
-        request.addValue("Bearer " + CurrentSession.shared.token, forHTTPHeaderField: "Authorization")
+        if let token = CurrentSession.shared.token {
+        request.addValue("Bearer " + token , forHTTPHeaderField: "Authorization")
+        }
         
         let session = URLSession.shared
         

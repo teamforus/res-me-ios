@@ -17,4 +17,7 @@ struct Office: Decodable {
     var lat: String?
     var organization: Organization?
     var photo: Logo?
+    var wallet: Wallet?
 }
+
+

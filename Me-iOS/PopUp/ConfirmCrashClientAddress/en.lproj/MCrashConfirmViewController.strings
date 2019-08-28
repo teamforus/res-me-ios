@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "YkI-iF-A72"; */
+"YkI-iF-A72.normalTitle" = "CANCEL";
+
+/* Class = "UILabel"; text = "We want our app to give you best user experience. If crash happens, let us know your device id, so our support can contact you directly and solve the problem."; ObjectID = "wos-4I-fQl"; */
+"wos-4I-fQl.text" = "We want our app to give you best user experience. If crash happens, let us know your device id, so our support can contact you directly and solve the problem.";
+
+/* Class = "UIButton"; normalTitle = "CONFIRM"; ObjectID = "wuQ-y9-OwW"; */
+"wuQ-y9-OwW.normalTitle" = "CONFIRM";
+
+/* Class = "UILabel"; text = "Send crash report"; ObjectID = "gNB-Mv-yw2"; */
+"gNB-Mv-yw2.text" = "Send crash reports";

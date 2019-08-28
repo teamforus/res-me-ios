@@ -39,6 +39,13 @@ class MPaymentViewController: UIViewController {
     
     
     @IBAction func send(_ sender: Any) {
+        var limitEN = "0.01"
+        var limitDT = "0,01"
+        
+        if voucher.fund?.currency == "eth" {
+            limitEN = "0.0001"
+            limitDT = "0,0001"
+        }
         
         if voucher.product != nil {
             
@@ -57,7 +64,7 @@ class MPaymentViewController: UIViewController {
             
         }else if amountField.text != "" {
             
-            if amountField.text != "0.01" && amountField.text != "0,01"{
+            if amountField.text != limitEN && amountField.text != limitDT{
                 
                 let vc = ConfirmPaymentPopUp()
                 if isFromReservation != nil {
@@ -151,6 +158,7 @@ extension MPaymentViewController: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var dotString = ""
+        var limitAfterDot = 2
         if self.getLanguageISO() == "en"{
             
             dotString = "."
@@ -171,8 +179,10 @@ extension MPaymentViewController: UITextFieldDelegate{
                     {
                         return false
                     }
-                    
-                    if text.components(separatedBy: dotString)[1].count == 2 {
+                    if voucher.fund?.currency == "eth" {
+                        limitAfterDot = 4
+                    }
+                    if text.components(separatedBy: dotString)[1].count == limitAfterDot {
                         
                         return false
                     }

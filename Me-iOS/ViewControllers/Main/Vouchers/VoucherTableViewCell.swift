@@ -19,15 +19,15 @@ class VoucherTableViewCell: UITableViewCell {
             self.voucherTitleLabel.text = voucher?.product != nil ? voucher?.product?.name : voucher?.fund?.name
             self.organizationNameLabel.text = voucher?.fund?.organization?.name ?? ""
             
-//            if voucher?.transactions != nil{
-//                
-//                usedVoucherLabel.isHidden = false
-//                
-//            } else {
-//                
-//                self.usedVoucherLabel.isHidden = true
-//                
-//            }
+            //            if voucher?.transactions != nil{
+            //                
+            //                usedVoucherLabel.isHidden = false
+            //                
+            //            } else {
+            //                
+            //                self.usedVoucherLabel.isHidden = true
+            //                
+            //            }
             
             if voucher?.expire_at?.date?.formatDate() ?? Date() < Date() {
                 self.usedVoucherLabel.isHidden = false
@@ -38,13 +38,17 @@ class VoucherTableViewCell: UITableViewCell {
             if voucher?.product != nil{
                 
                 self.priceLabel.isHidden = true
-    
+                
                 self.voucherImage.loadImageUsingUrlString(urlString: voucher?.product?.photo?.sizes?.thumbnail ?? "", placeHolder: #imageLiteral(resourceName: "Resting"))
             }else{
                 self.priceLabel.isHidden = false
                 
                 if let price = voucher?.amount {
-                    self.priceLabel.attributedText = "€ \(price.substringLeftPart()).{\(price.substringRightPart())}".customText(fontBigSize: 20, minFontSize: 14)
+                    if voucher?.fund?.currency == "eur" {
+                        self.priceLabel.attributedText = "€ \(price.substringLeftPart()).{\(price.substringRightPart())}".customText(fontBigSize: 20, minFontSize: 14)
+                    }else {
+                        self.priceLabel.attributedText = "ETH \(price.substringLeftPart()).{\(price.substringRightPart())}".customText(fontBigSize: 20, minFontSize: 14)
+                    }
                 }else {
                     self.priceLabel.attributedText = "0.{0}".customText(fontBigSize: 20, minFontSize: 14)
                 }

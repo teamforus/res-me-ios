@@ -38,7 +38,7 @@ class VoucherViewModel{
             array.append(contentsOf: response.data?.product_vouchers ?? [])
             
             self.processFetchedLunche(transactions: array.sorted(by: { $0.created_at?.compare($1.created_at ?? "") == .orderedDescending}))
-            self.reloadDataVoucher!(response.data!)
+            self.reloadDataVoucher?(response.data!)
                 
             }else {
                 

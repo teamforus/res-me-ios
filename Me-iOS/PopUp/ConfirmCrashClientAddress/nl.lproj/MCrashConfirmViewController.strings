@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "ANNULEREN"; ObjectID = "YkI-iF-A72"; */
+"YkI-iF-A72.normalTitle" = "ANNULEREN";
+
+/* Class = "UILabel"; text = "Als er een crash optreedt, \nlaat ons uw apparaat-id weten, zodat onze ondersteuning rechtstreeks contact met u kan opnemen en het probleem kan oplossen"; ObjectID = "wos-4I-fQl"; */
+"wos-4I-fQl.text" = "Als er een crash optreedt, laat ons uw apparaat-id weten, zodat onze ondersteuning rechtstreeks contact met u kan opnemen en het probleem kan oplossen.";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIG"; ObjectID = "wuQ-y9-OwW"; */
+"wuQ-y9-OwW.normalTitle" = "BEVESTIG";
+
+/* Class = "UILabel"; text = "Stuur foutrapport"; ObjectID = "gNB-Mv-yw2"; */
+"gNB-Mv-yw2.text" = "Stuur foutrapport";

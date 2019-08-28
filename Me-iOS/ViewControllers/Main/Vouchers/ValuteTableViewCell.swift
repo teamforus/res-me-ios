@@ -13,6 +13,12 @@ class ValuteTableViewCell: UITableViewCell {
     @IBOutlet weak var vraagButton: UIButton!
     @IBOutlet weak var balanceEth: UILabel!
     
+    var wallet: Wallet! {
+        didSet{
+            balanceEth.text = wallet.balance
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

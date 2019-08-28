@@ -27,6 +27,8 @@ class MVouchersViewController: UIViewController {
         return VouchersViewModel()
     }()
     
+    var wallet: Office!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +73,15 @@ class MVouchersViewController: UIViewController {
             }
         }
         
+        voucherViewModel.completeIdentity = { [unowned self] (response) in
+            DispatchQueue.main.async {
+                self.wallet = response
+            }
+            
+        }
+        
+        voucherViewModel.getIndentity()
+        
         initFetch()
     }
     
@@ -106,9 +117,15 @@ class MVouchersViewController: UIViewController {
         case VoucherType.valute.rawValue:
             voucherType = .valute
             self.tableView.reloadData()
+            self.tableView.isHidden = false
             break
         case VoucherType.vouchers.rawValue:
             voucherType = .vouchers
+            if voucherViewModel.numberOfCells == 0 {
+                self.tableView.isHidden = true
+            }else {
+                self.tableView.isHidden = false
+            }
             self.tableView.reloadData()
             break
         default: break
@@ -177,8 +194,8 @@ extension MVouchersViewController: UITableViewDelegate, UITableViewDataSource{
         case .valute?:
             return 1
         case .vouchers?:
-           return voucherViewModel.numberOfCells
-         default:
+            return voucherViewModel.numberOfCells
+        default:
             return 0
         }
         
@@ -189,6 +206,7 @@ extension MVouchersViewController: UITableViewDelegate, UITableViewDataSource{
         switch voucherType {
         case .valute?:
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuteCell", for: indexPath) as! ValuteTableViewCell
+            cell.wallet = self.wallet.wallet
             cell.sendButton.addTarget(self, action: #selector(send(_:)), for: .touchUpInside)
             return cell
         case .vouchers?:
@@ -269,7 +287,7 @@ extension MVouchersViewController: UIViewControllerPreviewingDelegate{
             return nil
         }
         
-       
+        
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {

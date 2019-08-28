@@ -43,8 +43,11 @@ class ConfirmPaymentPopUp: UIViewController {
             
             
             if Double(amount!.replacingOccurrences(of: ",", with: "."))! > amountVoucher {
-                
+                if voucher.fund?.currency == "eur" {
                 insuficientLabel.text = String(format: NSLocalizedString("Insufficient funds on the voucher. Please, request extra payment of €%.02f", comment: ""), aditionalAmount)
+                }else {
+                insuficientLabel.text = String(format: NSLocalizedString("Insufficient funds on the voucher. Please, request extra payment of ETH%.02f", comment: ""), aditionalAmount)
+                }
                 
             }else{
                 

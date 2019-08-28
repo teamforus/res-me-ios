@@ -44,8 +44,11 @@ class MVoucherViewController: UIViewController {
                 self?.voucherName.text = voucher.fund?.name ?? ""
                 self?.organizationName.text = voucher.fund?.organization?.name ?? ""
                 if let price = voucher.amount {
-                    
+                    if voucher.fund?.currency == "eur" {
                     self?.priceLabel.attributedText = "€ \(price.substringLeftPart()).{\(price.substringRightPart())}".customText(fontBigSize: 20, minFontSize: 14)
+                    }else {
+                        self?.priceLabel.attributedText = "ETH \(price.substringLeftPart()).{\(price.substringRightPart())}".customText(fontBigSize: 20, minFontSize: 14)
+                    }
                 }else {
                     
                     self?.priceLabel.attributedText = "0.{0}".customText(fontBigSize: 20, minFontSize: 14)

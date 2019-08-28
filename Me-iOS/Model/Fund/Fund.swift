@@ -13,6 +13,7 @@ struct Fund: Decodable {
     var id: Int?
     var name: String?
     var state: String?
+    var currency: String?
     var url_webshop: String?
     var organization: Organization?
     var product_categories: [ProductCategory]?

@@ -17,6 +17,8 @@ class VouchersViewModel{
     var isAllowSegue: Bool = false
     var vc: UIViewController!
     
+     var completeIdentity: ((Office)->())!
+    
     private var cellViewModels: [Voucher] = [Voucher]() {
         didSet {
             complete(cellViewModels)
@@ -46,6 +48,14 @@ class VouchersViewModel{
             
         })
         
+    }
+    
+    func getIndentity(){
+        commonService.get(request: "identity", complete: { (response: Office, statusCode) in
+            self.completeIdentity?(response)
+        }) { (error) in
+            
+        }
     }
     
     var numberOfCells: Int {
