@@ -139,7 +139,7 @@ class CommonBottomViewController: UIViewController {
     }
     
     @objc func toglePullUpView(){
-        if pullUpController.state == .expanded{
+        if pullUpController?.state == .expanded{
             self.setStatusBarStyle(.default)
             if qrType != .Profile {
             self.view.isHidden = true
@@ -150,7 +150,7 @@ class CommonBottomViewController: UIViewController {
             self.view.isHidden = false
             }
         }
-        pullUpController.toggleState(animated: true)
+        pullUpController?.toggleState(animated: true)
     }
     
     @IBAction func close(_ sender: Any) {

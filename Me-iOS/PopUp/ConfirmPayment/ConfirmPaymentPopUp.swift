@@ -58,8 +58,8 @@ class ConfirmPaymentPopUp: UIViewController {
     }
     
     
-    @IBAction func confirm(_ sender: Any) {
-        
+    @IBAction func confirm(_ sender: UIButton) {
+        sender.isEnabled = false
         if isReachable() {
             
             KVSpinnerView.show()
@@ -83,6 +83,7 @@ class ConfirmPaymentPopUp: UIViewController {
                             }
                         }))
                     }else {
+                        sender.isEnabled = true
                         self.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "Voucher not have enough funds".localized(), okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
                             
                             
@@ -91,7 +92,7 @@ class ConfirmPaymentPopUp: UIViewController {
                 }
             }
         }else {
-            
+            sender.isEnabled = true
             showInternetUnable()
             
         }
