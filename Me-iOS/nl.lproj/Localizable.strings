@@ -135,3 +135,5 @@
 "meedoenregeling_2018_eligible" = "Recht op Meedoenregeling 2018";
 "klantnummer" = "Klantnummer";
 "Vouchers" = "Eigendom";
+"Do you want to login instead?" = "E-mailadres ingebruik! Wilt u inloggen?";
+"Your e-mail address is already used, do you instead want to login using this e-mail address?" = "Dit e-mail adres is al gebruikt. Wilt u inloggen met dit e-mailadres?";

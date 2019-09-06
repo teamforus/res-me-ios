@@ -23,6 +23,10 @@ class MRegisterViewController: UIViewController {
         return RegisterViewModel()
     }()
     
+    lazy var emailLoginViewModel: EmailLoginViewModel = {
+        return EmailLoginViewModel()
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,12 @@ class MRegisterViewController: UIViewController {
             
             DispatchQueue.main.async {
                 if statusCode == 422{
-                    
+                    self?.showSimpleAlertWithAction(title: "Do you want to login instead?".localized(), message: "Your e-mail address is already used, do you instead want to login using this e-mail address?".localized(), okAction: UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+                        
+                        self?.emailLoginViewModel.initLoginByEmail(email: self?.primaryEmailField.text ?? "")
+                    }), cancelAction: UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action) in
+                        
+                    }))
                 }else if statusCode == 500 {
                     
                     
@@ -42,8 +51,18 @@ class MRegisterViewController: UIViewController {
                     self?.performSegue(withIdentifier: "goToConfirm", sender: nil)
                 }
             }
+        }
+        
+        emailLoginViewModel.complete = { [weak self] (statusCode) in
             
-            
+            DispatchQueue.main.async {
+                
+                if statusCode == 200 {
+                    
+                    self?.performSegue(withIdentifier: "goToSuccessMail", sender: self)
+                    
+                }
+            }
         }
     }
     

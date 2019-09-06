@@ -212,6 +212,7 @@
                         <outlet property="validationConfirmEmail" destination="tMW-j0-viJ" id="apW-bP-uP8"/>
                         <outlet property="validationPrimaryEmail" destination="Bp7-aO-bUg" id="V4p-np-p1R"/>
                         <segue destination="HyN-f0-UZV" kind="show" identifier="goToConfirm" id="4eX-GT-k0C"/>
+                        <segue destination="S7F-0C-ohv" kind="show" identifier="goToSuccessMail" id="xiz-FV-bU8"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="VyD-w6-8cX"/>
@@ -226,6 +227,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuT-WQ-LPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1994" y="1593"/>
+        </scene>
+        <!--SuccessEmail-->
+        <scene sceneID="O5F-s6-r4C">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SuccessEmail" id="S7F-0C-ohv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbl-RF-mX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1995" y="1659"/>
         </scene>
     </scenes>
     <resources>

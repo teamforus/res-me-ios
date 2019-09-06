@@ -135,3 +135,5 @@
 "meedoenregeling_2018_eligible" = "Eligible for Meedoenregeling 2018";
 "klantnummer" = "Klantnummer";
 "Vouchers" = "Vouchers";
+"Do you want to login instead?" = "Do you want to login instead?";
+"Your e-mail address is already used, do you instead want to login using this e-mail address?" = "Your e-mail address is already used, do you instead want to login using this e-mail address?";
