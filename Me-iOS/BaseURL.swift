@@ -12,7 +12,7 @@ class BaseURL {
     
     static func baseURL(url:String) -> String{
         #if DEV
-        return "https://dev.api.forus.io/api/v1/\(url)"
+        return "https://lab.api.forus.io/api/v1/\(url)"
         #elseif ALPHA
         return "https://staging.api.forus.io/api/v1/\(url)"
         #elseif DEMO

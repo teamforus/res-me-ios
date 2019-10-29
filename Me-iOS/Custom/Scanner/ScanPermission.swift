@@ -5,7 +5,7 @@
 //  Created by Hanson on 2018/1/31.
 //
 
-import Foundation
+import UIKit
 import AssetsLibrary
 import Photos
 
