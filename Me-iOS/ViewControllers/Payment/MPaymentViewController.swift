@@ -99,7 +99,10 @@ class MPaymentViewController: UIViewController {
 extension MPaymentViewController {
     
     func initView(){
-        self.setStatusBarStyle(.default)
+        if #available(iOS 13, *) {
+        }else {
+            self.setStatusBarStyle(.default)
+        }
         if voucher?.product != nil {
             
             arrowIcon.isHidden = true

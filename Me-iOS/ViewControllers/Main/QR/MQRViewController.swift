@@ -172,7 +172,10 @@ class MQRViewController: HSScanViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setStatusBarStyle(.lightContent)
+        if #available(iOS 13, *) {
+        }else {
+            self.setStatusBarStyle(.lightContent)
+        }
         if scanWorker != nil {
             scanWorker.start()
         }

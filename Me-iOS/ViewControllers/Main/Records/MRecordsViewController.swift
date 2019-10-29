@@ -75,7 +75,10 @@ class MRecordsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         initFetch()
-        self.setStatusBarStyle(.default)
+        if #available(iOS 13, *) {
+        }else {
+            self.setStatusBarStyle(.default)
+        }
         self.tabBarController?.set(visible: true, animated: true)
     }
     

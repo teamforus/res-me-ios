@@ -82,7 +82,10 @@ class MLoginQRAndCodeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setStatusBarStyle(.default)
+        if #available(iOS 13, *) {
+        }else {
+            self.setStatusBarStyle(.default)
+        }
     }
     
     @objc func logIn(){
