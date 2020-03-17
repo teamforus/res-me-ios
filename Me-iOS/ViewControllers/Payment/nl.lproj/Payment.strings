@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "DenyK"; ObjectID = "7sB-in-Tb1"; */
-"7sB-in-Tb1.text" = "DenyK";
+"7sB-in-Tb1.text" = "Uw organisatie";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "S9m-QT-RjO"; */
 "S9m-QT-RjO.placeholder" = "Vul hier het bedrag in.";
@@ -9,16 +9,16 @@
 "TCR-Or-O4P.placeholder" = "Notitie";
 
 /* Class = "UILabel"; text = "Product categories"; ObjectID = "Zrf-29-ozl"; */
-"Zrf-29-ozl.text" = "Product categories";
+"Zrf-29-ozl.text" = "Aanbieding categorieën";
 
 /* Class = "UILabel"; text = " Redeem Voucher"; ObjectID = "eGE-du-sxe"; */
 "eGE-du-sxe.text" = "Betalingsverzoek";
 
 /* Class = "UILabel"; text = "NOT 2 DAGEN GELDIG VALID"; ObjectID = "kgf-iK-RAI"; */
-"kgf-iK-RAI.text" = "NOT 2 DAGEN GELDIG VALID";
+"kgf-iK-RAI.text" = "+1 Gemeente";
 
 /* Class = "UIButton"; normalTitle = "VERZOEK TOT BETALING"; ObjectID = "riy-om-vAr"; */
 "riy-om-vAr.normalTitle" = "VERZOEK TOT BETALING";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "uPP-YS-f4l"; */
-"uPP-YS-f4l.text" = "Kindpakket";
+"uPP-YS-f4l.text" = "Pakket +1";
