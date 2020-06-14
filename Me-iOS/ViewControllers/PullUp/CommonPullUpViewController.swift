@@ -13,23 +13,18 @@ import ISHPullUp
 @IBDesignable
 class CommonPullUpViewController: ISHPullUpViewController {
     
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            if self.contentViewController != nil && self.bottomViewController != nil {
-                print("nil")
-            }else {
-                commonInit()
-            }
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        if self.contentViewController != nil && self.bottomViewController != nil {
+        }else {
+            commonInit()
         }
-    
-    
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
-    
     
     private func commonInit() {
         let storyBoard = UIStoryboard(name: "Profile" , bundle: nil)
@@ -40,7 +35,6 @@ class CommonPullUpViewController: ISHPullUpViewController {
         bottomVC.pullUpController = self
         sizingDelegate = bottomVC
         stateDelegate = bottomVC
-        //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
     }
     
 }

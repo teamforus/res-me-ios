@@ -23,7 +23,17 @@ class MRecordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+        NotificationCenter.default.addObserver(self, selector: #selector(walkthroughCloseButtonPressed), name: NotificationName.ClosePageControll, object: nil)
+        setupRefreshContorl()
+        setupCompletion()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func setupView() {
         #if ALPHA
         newRecordButton.isHidden = false
         topConstraint.constant = 207
@@ -32,17 +42,9 @@ class MRecordsViewController: UIViewController {
         topConstraint.constant = 140
         newRecordButton.isHidden = true
         #endif
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(walkthroughCloseButtonPressed), name: NotificationName.ClosePageControll, object: nil)
-        
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-        
-        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        
+    }
+    
+    func setupCompletion() {
         recordViewModel.complete = { [weak self] (records) in
             
             DispatchQueue.main.async {
@@ -52,6 +54,16 @@ class MRecordsViewController: UIViewController {
                 self?.refreshControl.endRefreshing()
             }
         }
+    }
+    
+    func setupRefreshContorl() {
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
     }
     
     @IBAction func createRecord(_ sender: UIButton) {

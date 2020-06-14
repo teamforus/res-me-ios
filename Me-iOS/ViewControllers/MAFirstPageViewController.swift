@@ -35,12 +35,11 @@ class MAFirstPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        
-        
-        
+        enableKeyboardManager()
+        setupForEnvironment()
+    }
+    
+    func setupForEnvironment() {
         #if DEV
         chooseEnvironmentButton.isHidden = false
         if UserDefaults.standard.string(forKey: UserDefaultsName.EnvironmentURL) == nil{

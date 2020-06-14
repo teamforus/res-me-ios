@@ -21,10 +21,27 @@ class MLoginQRAndCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginQrViewModel.complete = { [weak self] (pinCode, token, statusCode) in
+        fetchPinCode()
+        setupCompletions()
+        NotificationCenter.default.addObserver(self, selector: #selector(logIn), name: NotificationName.LoginQR, object: nil)
+    }
+    
+    func fetchPinCode() {
+        if isReachable() {
             
+            KVSpinnerView.show()
+            loginQrViewModel.initFetchPinCode()
+            
+        }else {
+            
+            showInternetUnable()
+            
+        }
+    }
+    
+    func setupCompletions() {
+        loginQrViewModel.complete = { [weak self] (pinCode, token, statusCode) in
             DispatchQueue.main.async {
-                
                 if statusCode != 503 {
                     
                     KVSpinnerView.dismiss()
@@ -45,12 +62,9 @@ class MLoginQRAndCodeViewController: UIViewController {
                     
                 }
             }
-            
         }
         
-        
         loginQrViewModel.completeAuthorize = { [weak self] (message, statusCode) in
-            
             DispatchQueue.main.async {
                 if message == "active"{
                     self?.timer.invalidate()
@@ -63,22 +77,7 @@ class MLoginQRAndCodeViewController: UIViewController {
                     self?.performSegue(withIdentifier: "goToMain", sender: self)
                 }
             }
-            
         }
-        
-        if isReachable() {
-            
-            KVSpinnerView.show()
-            loginQrViewModel.initFetchPinCode()
-            
-        }else {
-            
-            showInternetUnable()
-            
-        }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(logIn), name: NotificationName.LoginQR, object: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +91,7 @@ class MLoginQRAndCodeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer.invalidate()
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func logIn(){

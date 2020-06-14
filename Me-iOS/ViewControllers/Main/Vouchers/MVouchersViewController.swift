@@ -31,7 +31,15 @@ class MVouchersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupRefrehshControl()
+        voucherType = .vouchers
+        setupSegmentController()
+        voucherViewModel.getIndentity()
+        completionsBlocks()
+        initFetch()
+    }
+    
+    func setupRefrehshControl() {
         registerForPreviewing(with: self, sourceView: tableView)
         
         if #available(iOS 10.0, *) {
@@ -39,9 +47,10 @@ class MVouchersViewController: UIViewController {
         } else {
             tableView.addSubview(refreshControl)
         }
-        
-        voucherType = .vouchers
-        
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+    
+    func setupSegmentController() {
         segmentController.items = ["Valute", Localize.vouchers()]
         segmentController.selectedIndex = 1
         segmentController.font = UIFont(name: "GoogleSans-Medium", size: 14)
@@ -50,11 +59,9 @@ class MVouchersViewController: UIViewController {
         segmentController.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
         segmentController.borderColor = .clear
         segmentView.layer.cornerRadius = 8.0
-        
-      
-        
-        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        
+    }
+    
+    func completionsBlocks() {
         voucherViewModel.complete = { [weak self] (vouchers) in
             
             DispatchQueue.main.async {
@@ -80,10 +87,6 @@ class MVouchersViewController: UIViewController {
                 self.wallet = response
             }
         }
-        
-        voucherViewModel.getIndentity()
-        
-        initFetch()
     }
     
     override func viewWillAppear(_ animated: Bool) {

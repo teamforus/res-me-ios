@@ -34,7 +34,12 @@ class MProductVoucherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startLoading()
+        setupView()
+        fetchVoucher()
+    }
+    
+    func startLoading() {
         labeles.forEach { (view) in
             view.startAnimating()
         }
@@ -42,6 +47,9 @@ class MProductVoucherViewController: UIViewController {
         images.forEach { (view) in
             view.startAnimating()
         }
+    }
+    
+    func setupView() {
         productViewModel.complete = { [weak self] (voucher) in
             
             DispatchQueue.main.async {
@@ -86,11 +94,11 @@ class MProductVoucherViewController: UIViewController {
                 self?.images.forEach { (view) in
                     view.stopAnimating()
                 }
-                
             }
-            
         }
-        
+    }
+    
+    func fetchVoucher() {
         if isReachable() {
             productViewModel.vc = self
             productViewModel.initFetchById(address: address)

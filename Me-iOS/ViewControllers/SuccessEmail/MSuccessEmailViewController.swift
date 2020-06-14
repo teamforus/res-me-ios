@@ -19,17 +19,12 @@ class MSuccessEmailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+        addObservers()
+    }
+    
+    func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(logIn), name: NotificationName.LoginQR, object: nil)
-        
-        let mainString = String(format: Localize.clickOnTheLinkYouReceivedOnToContinue(email))
-        let range = (mainString as NSString).range(of: email ?? "")
-        
-        let attributedString = NSMutableAttributedString(string:mainString)
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1) , range: range)
-        
-        textLabel.attributedText = attributedString
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(authorizeToken(notifcation:)),
@@ -41,6 +36,16 @@ class MSuccessEmailViewController: UIViewController {
         selector: #selector(authorizeRegistrationToken(notifcation:)),
         name: NotificationName.AuthorizeRegistrationTokenEmail,
         object: nil)
+    }
+    
+    func setupView() {
+        let mainString = String(format: Localize.clickOnTheLinkYouReceivedOnToContinue(email))
+        let range = (mainString as NSString).range(of: email ?? "")
+        
+        let attributedString = NSMutableAttributedString(string:mainString)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1) , range: range)
+        
+        textLabel.attributedText = attributedString
     }
     
     @objc func authorizeToken(notifcation: Notification){

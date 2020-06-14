@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import LocalAuthentication
 import CoreData
+import IQKeyboardManagerSwift
 
 extension UIViewController{
     
@@ -62,6 +63,11 @@ extension UIViewController{
             toastLabel2.removeFromSuperview()
             toastButton.removeFromSuperview()
         })
+    }
+    
+    func enableKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
     }
     
     func showSimpleToast(message : String) {

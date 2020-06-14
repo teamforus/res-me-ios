@@ -22,10 +22,11 @@ class MEmailLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        
+        enableKeyboardManager()
+        setupCompletion()
+    }
+    
+    func setupCompletion() {
         emailLoginViewModel.complete = { [weak self] (statusCode) in
             
             DispatchQueue.main.async {
@@ -41,7 +42,6 @@ class MEmailLoginViewController: UIViewController {
                     
                 }
             }
-            
         }
     }
     

@@ -28,6 +28,12 @@ class MVoucherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startLoading()
+        setupCompletions()
+        fetchVoucher()
+    }
+    
+    func startLoading() {
         labeles.forEach { (view) in
             view.startAnimating()
         }
@@ -35,6 +41,9 @@ class MVoucherViewController: UIViewController {
         images.forEach { (view) in
             view.startAnimating()
         }
+    }
+    
+    func setupCompletions() {
         voucherViewModel.reloadDataVoucher = { [weak self] (voucher) in
             
             DispatchQueue.main.async {
@@ -63,8 +72,6 @@ class MVoucherViewController: UIViewController {
                     view.stopAnimating()
                 }
             }
-            
-            
         }
         
         voucherViewModel.reloadTableViewClosure = { [weak self] in
@@ -73,8 +80,9 @@ class MVoucherViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
-        
-        
+    }
+    
+    func fetchVoucher() {
         if isReachable() {
             
             voucherViewModel.vc = self
