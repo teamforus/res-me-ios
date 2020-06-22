@@ -55,3 +55,6 @@
 
 /* Class = "UILabel"; text = "Fiets"; ObjectID = "yli-HN-EQC"; */
 "yli-HN-EQC.text" = "Fiets";
+
+/* Class = "UIButton"; title = "Archived record"; ObjectID = "owV-nu-EIT"; */
+"owV-nu-EIT.normalTitle" = "Archived record";
