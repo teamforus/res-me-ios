@@ -14,7 +14,6 @@ class MRecordsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var newRecordButton: ShadowButton!
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     
     lazy var recordViewModel: RecordsViewModel = {
@@ -23,15 +22,6 @@ class MRecordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        #if ALPHA
-        newRecordButton.isHidden = false
-        topConstraint.constant = 207
-        
-        #else
-        topConstraint.constant = 140
-        newRecordButton.isHidden = true
-        #endif
         
         NotificationCenter.default.addObserver(self, selector: #selector(walkthroughCloseButtonPressed), name: NotificationName.ClosePageControll, object: nil)
         
