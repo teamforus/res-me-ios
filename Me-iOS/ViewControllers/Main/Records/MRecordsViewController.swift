@@ -69,10 +69,9 @@ class MRecordsViewController: UIViewController {
                     textRecordController.setSelectedCategoryType()
                 }
             }
-            textRecordController.recordCreated = { [weak self] (recordType, value) in
+            textRecordController.recordCreated = { [weak self] (record) in
                 DispatchQueue.main.async {
-                    successRecordController.recordType = recordType
-                    successRecordController.value = value
+                    successRecordController.record = record
                     successRecordController.setupRecord()
                     self?.walthroughViewController.prevButton?.isHidden = true
                     self?.walthroughViewController.nextButton?.isHidden = true

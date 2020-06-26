@@ -16,11 +16,16 @@ class MTextRecordViewController: UIViewController {
     @IBOutlet weak var selectedType: ShadowButton!
     @IBOutlet weak var clearUIButton: UIButton!
     
-    var recordCreated:((RecordType, String)->())?
+    var recordCreated:((Record)->())?
     
     var recordType: RecordType!
+    var record: Record!
+    var recordId: Int!
     lazy var textRecordViewModel: TextRecordViewModel = {
         return TextRecordViewModel()
+    }()
+    lazy var recordDetailViewModel: RecordDetailViewModel = {
+        return RecordDetailViewModel()
     }()
     
     override func viewDidLoad() {
@@ -29,7 +34,7 @@ class MTextRecordViewController: UIViewController {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
-        textRecordViewModel.complete = { [weak self] (statusCode) in
+        textRecordViewModel.complete = { [weak self] (response, statusCode) in
             DispatchQueue.main.async {
                 
                 guard let self = self else { return}
@@ -40,7 +45,7 @@ class MTextRecordViewController: UIViewController {
                     self.showSimpleAlert(title: "Warning", message: "Something goes wrong please try again!")
                     
                 }else {
-                    self.recordCreated?(self.recordType, self.textUITextView.text ?? "")
+                    self.recordCreated?(response)
                     
                 }
             }
@@ -54,13 +59,22 @@ class MTextRecordViewController: UIViewController {
     }
     
     func setSelectedCategoryType(){
-        selectedType.setTitle(self.recordType?.name, for: .normal)
-        if self.recordType.type == "number" {
-            self.textUITextView.keyboardType = .numberPad
-        }
-        
-        if (self.recordType.name?.contains("E-mail"))!{
-            self.textUITextView.keyboardType = .emailAddress
+        if recordType != nil {
+            selectedType.setTitle(self.recordType?.name, for: .normal)
+            if self.recordType.type == "number" {
+                self.textUITextView.keyboardType = .numberPad
+            }
+            
+            if (self.recordType.name?.contains("E-mail"))!{
+                self.textUITextView.keyboardType = .emailAddress
+            }
+        }else {
+            selectedType.setTitle(self.record?.name ?? "", for: .normal)
+            
+            self.textUITextView.text = record.value ?? ""
+            if (self.record.name?.contains("E-mail"))!{
+                self.textUITextView.keyboardType = .emailAddress
+            }
         }
     }
     
@@ -75,7 +89,14 @@ class MTextRecordViewController: UIViewController {
             
             if textUITextView.text != "" {
                 KVSpinnerView.show()
-                textRecordViewModel.initCreateRecord(type: recordType.key ?? "", value: textUITextView.text)
+                
+                if recordId != nil {
+                    self.recordDetailViewModel.initDeleteById(id: String(self.recordId))
+                    textRecordViewModel.initCreateRecord(type: record.key ?? "", value: textUITextView.text)
+                }else {
+                    
+                    textRecordViewModel.initCreateRecord(type: recordType.key ?? "", value: textUITextView.text)
+                }
                 
             }else {
                 showSimpleAlert(title: "Warning", message: "Please fill textarea.")

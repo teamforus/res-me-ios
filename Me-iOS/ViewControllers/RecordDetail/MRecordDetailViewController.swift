@@ -15,6 +15,7 @@ class MRecordDetailViewController: UIViewController {
     @IBOutlet weak var recordValue: UILabel!
     @IBOutlet weak var borderView: CustomCornerUIView!
   
+    var walthroughViewController: BWWalkthroughViewController!
     var recordId: String!
     var timer : Timer! = Timer()
     var record: Record!
@@ -113,19 +114,50 @@ class MRecordDetailViewController: UIViewController {
         }
     }
     
-  @IBAction func editButton(_ sender: Any) {
-    let popUp = CustomWarningViewController(title: Localize.you_like_to_edit_record(), descriptions:Localize.description_to_edit_record(), buttonTitle: Localize.edit_button())
-    showPopUPWithAnimation(vc: popUp)
-    popUp.confirm = { [weak self] in
-      guard let self = self else {
-        return
-      }
-      DispatchQueue.main.async {
-        KVSpinnerView.show()
-       
-      }
+    @IBAction func editButton(_ sender: Any) {
+        let popUp = CustomWarningViewController(title: Localize.you_like_to_edit_record(), descriptions:Localize.description_to_edit_record(), buttonTitle: Localize.edit_button())
+        showPopUPWithAnimation(vc: popUp)
+        popUp.confirm = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            popUp.removeAnimate()
+            DispatchQueue.main.async {
+                if let walkthrough = R.storyboard.chooseTypeRecord.walk() {
+                    walkthrough.scrollview.isScrollEnabled = false
+                    walkthrough.delegate = self
+                    self.walthroughViewController = walkthrough
+                    
+                    guard let textRecordController = R.storyboard.textRecord.text(), let successRecordController = R.storyboard.successCreateRecord.successCreateRecord() else {
+                        return
+                    }
+                    
+                    walkthrough.add(viewController: textRecordController)
+                    textRecordController.record = self.record
+                    textRecordController.recordId = self.record.id
+                    textRecordController.setSelectedCategoryType()
+                    walkthrough.add(viewController: successRecordController)
+                    
+                    textRecordController.recordCreated = { [weak self] (record) in
+                        self?.recordId = String(record.id ?? 0)
+                        successRecordController.record = record
+                        successRecordController.setupRecord()
+                        walkthrough.nextPage()
+                    }
+                    
+
+
+                    successRecordController.completedCreateRecord = { [weak self] () in
+                        self?.dismiss(animated: true) {
+                            self?.fetchRecordDetail()
+                        }
+                    }
+                    
+                    self.present(walkthrough, animated: true)
+                }
+            }
+        }
     }
-  }
   
     @IBAction func showQRCode(_ sender: Any) {
         let popOverVC = PullUpQRViewController(nib: R.nib.pullUpQRViewController)
@@ -147,7 +179,6 @@ class MRecordDetailViewController: UIViewController {
           self.recordDetailViewModel.initDeleteById(id: self.recordId)
         }
       }
-      
     }
     
   
@@ -157,6 +188,20 @@ class MRecordDetailViewController: UIViewController {
         }
     }
     
+}
+
+extension MRecordDetailViewController: BWWalkthroughViewControllerDelegate{
+    
+    func walkthroughPageDidChange(_ pageNumber: Int) {
+        walthroughViewController.prevButton?.isHidden = true
+        walthroughViewController.nextButton?.isHidden = true
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismiss(animated: true) {
+            self.fetchRecordDetail()
+        }
+    }
 }
 
 extension MRecordDetailViewController: UITableViewDataSource, UITableViewDelegate {

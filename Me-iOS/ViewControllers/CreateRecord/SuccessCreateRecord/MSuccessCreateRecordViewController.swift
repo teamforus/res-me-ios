@@ -12,8 +12,7 @@ class MSuccessCreateRecordViewController: UIViewController {
     @IBOutlet weak var recordTypeLabel: UILabel!
     @IBOutlet weak var recordValueLabel: UILabel!
     
-    var recordType: RecordType!
-    var value: String!
+    var record: Record!
     
     var completedCreateRecord: (() -> Void)?
     
@@ -22,8 +21,8 @@ class MSuccessCreateRecordViewController: UIViewController {
     }
     
     func setupRecord() {
-        recordTypeLabel.text = recordType.name
-        recordValueLabel.text = value
+        recordTypeLabel.text = record.name
+        recordValueLabel.text = record.value ?? ""
     }
     
     @IBAction func next(_ sender: Any) {

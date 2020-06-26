@@ -17,7 +17,7 @@ class TextRecordViewModel {
         self.commonService = commonService
     }
     
-    var complete: ((Int)->())?
+    var complete: ((Record, Int)->())?
     
     func initCreateRecord(type: String, value: String){
         
@@ -25,7 +25,7 @@ class TextRecordViewModel {
                            "value" : value]
         
         commonService.postWithParameters(request: "identity/records", parameters: parameters, complete: { (response: Record, statusCode) in
-            self.complete?(statusCode)
+            self.complete?(response, statusCode)
         }) { (error) in
             
         }
