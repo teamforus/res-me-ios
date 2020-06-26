@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GoogleSans-Bold.ttf">
+            <string>GoogleSans-Bold</string>
+        </array>
+        <array key="GoogleSans-Regular.ttf">
+            <string>GoogleSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Text Record View Controller-->
+        <scene sceneID="83O-xy-chB">
+            <objects>
+                <viewController storyboardIdentifier="text" id="KJe-GC-e1P" customClass="MTextRecordViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PbQ-5Y-xGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tew-LF-BS7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCf-Ry-pqi">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bOl-hB-lCp">
+                                                <rect key="frame" x="15" y="298" width="345" height="147"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="KJe-GC-e1P" id="esb-Ky-7zO"/>
+                                                </connections>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8K-Wt-MAV" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="494" width="355" height="50"/>
+                                                <color key="backgroundColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="4du-Ok-4uO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
+                                                <state key="normal" title="SUBMIT">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createRecord:" destination="KJe-GC-e1P" eventType="touchUpInside" id="8YQ-Lj-IMj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g0-SO-Zes">
+                                                <rect key="frame" x="326" y="312" width="16" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="closeIcon"/>
+                                                <connections>
+                                                    <action selector="clear:" destination="KJe-GC-e1P" eventType="touchUpInside" id="5G8-f4-o48"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9L-Lo-cKn">
+                                                <rect key="frame" x="0.0" y="45" width="375" height="223"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoZ-cX-WQ0">
+                                                        <rect key="frame" x="18" y="38" width="349" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nieuwe Eigenschappen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ck-KU-mWB">
+                                                        <rect key="frame" x="18" y="9" width="127" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="12"/>
+                                                        <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create the text or value for the current record" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sah-Cv-Y6y">
+                                                        <rect key="frame" x="18" y="95" width="288" height="52"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Up-1w-BOc" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="17" y="169" width="165" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
+                                                        <state key="normal" title="Persoonlijk">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="18"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-tb-ErD" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="18" y="168" width="165" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
+                                                        <state key="normal" title="Given Name">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="18"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="223" id="vt0-hF-ugr"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LX-ey-lOc">
+                                                <rect key="frame" x="24" y="561" width="39" height="37"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="39" id="Scc-cg-dRu"/>
+                                                    <constraint firstAttribute="height" constant="37" id="iWl-T6-VNn"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="bOl-hB-lCp" firstAttribute="top" secondItem="N9L-Lo-cKn" secondAttribute="bottom" constant="30" id="1lW-iu-v7C"/>
+                                            <constraint firstAttribute="bottom" secondItem="6LX-ey-lOc" secondAttribute="bottom" constant="69" id="Can-WD-gt4"/>
+                                            <constraint firstItem="H8K-Wt-MAV" firstAttribute="top" secondItem="bOl-hB-lCp" secondAttribute="bottom" constant="49" id="HUA-ov-Opq"/>
+                                            <constraint firstItem="bOl-hB-lCp" firstAttribute="leading" secondItem="uCf-Ry-pqi" secondAttribute="leading" constant="15" id="OTp-Fk-2bK"/>
+                                            <constraint firstAttribute="trailing" secondItem="6LX-ey-lOc" secondAttribute="trailing" constant="312" id="YAJ-Kf-Cmw"/>
+                                            <constraint firstItem="6LX-ey-lOc" firstAttribute="leading" secondItem="uCf-Ry-pqi" secondAttribute="leading" constant="24" id="eGx-Fp-c1l"/>
+                                            <constraint firstItem="6LX-ey-lOc" firstAttribute="top" secondItem="H8K-Wt-MAV" secondAttribute="bottom" constant="17" id="hMR-fF-KhK"/>
+                                            <constraint firstItem="H8K-Wt-MAV" firstAttribute="leading" secondItem="uCf-Ry-pqi" secondAttribute="leading" constant="10" id="kaB-Yb-IMr"/>
+                                            <constraint firstItem="N9L-Lo-cKn" firstAttribute="centerX" secondItem="uCf-Ry-pqi" secondAttribute="centerX" id="ozh-j4-VpI"/>
+                                            <constraint firstAttribute="trailing" secondItem="H8K-Wt-MAV" secondAttribute="trailing" constant="10" id="pAw-op-1pO"/>
+                                            <constraint firstItem="N9L-Lo-cKn" firstAttribute="leading" secondItem="uCf-Ry-pqi" secondAttribute="leading" id="puI-49-EL1"/>
+                                            <constraint firstAttribute="trailing" secondItem="bOl-hB-lCp" secondAttribute="trailing" constant="15" id="qEu-iR-yLY"/>
+                                            <constraint firstItem="N9L-Lo-cKn" firstAttribute="top" secondItem="uCf-Ry-pqi" secondAttribute="top" constant="45" id="ugY-1s-3cW"/>
+                                            <constraint firstAttribute="trailing" secondItem="N9L-Lo-cKn" secondAttribute="trailing" id="wnd-kD-axD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Saq-1I-m2e" appends="YES" id="K7f-lz-AES"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uCf-Ry-pqi" secondAttribute="bottom" id="4FL-rF-2TR"/>
+                                    <constraint firstItem="uCf-Ry-pqi" firstAttribute="leading" secondItem="Tew-LF-BS7" secondAttribute="leading" id="7Ps-up-jax"/>
+                                    <constraint firstItem="uCf-Ry-pqi" firstAttribute="top" secondItem="Tew-LF-BS7" secondAttribute="top" id="C8H-WQ-Lpn"/>
+                                    <constraint firstItem="uCf-Ry-pqi" firstAttribute="width" secondItem="Tew-LF-BS7" secondAttribute="width" id="O13-hO-8fh"/>
+                                    <constraint firstAttribute="trailing" secondItem="uCf-Ry-pqi" secondAttribute="trailing" id="ebs-rO-Lyy"/>
+                                    <constraint firstItem="uCf-Ry-pqi" firstAttribute="height" secondItem="Tew-LF-BS7" secondAttribute="height" id="tCw-X8-P0O"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDN-ac-4p4" customClass="StatusView" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Tew-LF-BS7" firstAttribute="trailing" secondItem="1zi-Cp-Zr1" secondAttribute="trailing" id="Bue-vo-YZf"/>
+                            <constraint firstItem="Tew-LF-BS7" firstAttribute="leading" secondItem="1zi-Cp-Zr1" secondAttribute="leading" id="Z0w-h2-ovU"/>
+                            <constraint firstItem="Tew-LF-BS7" firstAttribute="bottom" secondItem="1zi-Cp-Zr1" secondAttribute="bottom" id="xHC-Z2-ap9"/>
+                            <constraint firstItem="Tew-LF-BS7" firstAttribute="top" secondItem="PbQ-5Y-xGU" secondAttribute="top" id="xMF-tp-bCu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1zi-Cp-Zr1"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearUIButton" destination="3g0-SO-Zes" id="24b-N4-fEM"/>
+                        <outlet property="selectedCategory" destination="5Up-1w-BOc" id="Ua0-d6-DSw"/>
+                        <outlet property="selectedType" destination="K5Z-tb-ErD" id="fIO-WU-RVg"/>
+                        <outlet property="textUITextView" destination="bOl-hB-lCp" id="pOC-pS-3vy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdh-LJ-Sl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Saq-1I-m2e">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="KJe-GC-e1P" id="DZD-h8-fEu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2992.8000000000002" y="230.73463268365819"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeIcon" width="24" height="24"/>
+    </resources>
+</document>

@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import BWWalkthrough
 import KVSpinnerView
 
 class MRecordsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var newRecordButton: ShadowButton!
+    
+    var walthroughViewController: BWWalkthroughViewController!
     
     
     lazy var recordViewModel: RecordsViewModel = {
@@ -49,13 +50,40 @@ class MRecordsViewController: UIViewController {
         if let walkthrough = R.storyboard.chooseTypeRecord.walk() {
             walkthrough.delegate = self
             walkthrough.scrollview.isScrollEnabled = false
+            walthroughViewController = walkthrough
             
-            if let pageOne = R.storyboard.chooseTypeRecord.types() {
-                walkthrough.add(viewController:pageOne)
+            guard let chooseTypeRecordController = R.storyboard.chooseTypeRecord.types(), let textRecordController = R.storyboard.textRecord.text(), let successRecordController = R.storyboard.successCreateRecord.successCreateRecord() else {
+                return
             }
             
-            if let pageTwo = R.storyboard.textRecord.text() {
-                walkthrough.add(viewController:pageTwo)
+            walkthrough.add(viewController: chooseTypeRecordController)
+            walkthrough.add(viewController: textRecordController)
+            walkthrough.add(viewController: successRecordController)
+            
+            chooseTypeRecordController.chooseTypeCompleted = {  [weak self] (recordType) in
+                DispatchQueue.main.async {
+                    textRecordController.recordType = recordType
+                    self?.walthroughViewController.nextButton?.tintColor = #colorLiteral(red: 0.1903552711, green: 0.369412154, blue: 0.9929068685, alpha: 1)
+                    self?.walthroughViewController.nextButton?.isEnabled = true
+                    self?.walthroughViewController.nextButton?.setTitleColor(#colorLiteral(red: 0.1903552711, green: 0.369412154, blue: 0.9929068685, alpha: 1), for: .normal)
+                    textRecordController.setSelectedCategoryType()
+                }
+            }
+            textRecordController.recordCreated = { [weak self] (recordType, value) in
+                DispatchQueue.main.async {
+                    successRecordController.recordType = recordType
+                    successRecordController.value = value
+                    successRecordController.setupRecord()
+                    self?.walthroughViewController.prevButton?.isHidden = true
+                    self?.walthroughViewController.nextButton?.isHidden = true
+                    walkthrough.nextPage()
+                }
+            }
+            
+            successRecordController.completedCreateRecord = { [weak self] () in
+                self?.dismiss(animated: true) {
+                    self?.initFetch()
+                }
             }
             
             self.present(walkthrough, animated: true, completion: nil)
@@ -104,13 +132,19 @@ class MRecordsViewController: UIViewController {
 extension MRecordsViewController: BWWalkthroughViewControllerDelegate{
     
     func walkthroughPageDidChange(_ pageNumber: Int) {
-        if pageNumber == 3{
-            NotificationCenter.default.post(name: Notification.Name("HidePageNumber"), object: nil)
+        if pageNumber == 0 {
+            walthroughViewController.prevButton?.isHidden = true
+            walthroughViewController.nextButton?.isHidden = false
+        } else if pageNumber == 1 {
+            walthroughViewController.prevButton?.isHidden = false
+            walthroughViewController.nextButton?.isHidden = true
         }
     }
     
     func walkthroughCloseButtonPressed() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.initFetch()
+        }
     }
 }
 

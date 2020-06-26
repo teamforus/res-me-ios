@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NgU-xJ-VUS">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GoogleSans-Bold.ttf">
+            <string>GoogleSans-Bold</string>
+        </array>
+        <array key="GoogleSans-Medium.ttf">
+            <string>GoogleSans-Medium</string>
+        </array>
+        <array key="GoogleSans-Regular.ttf">
+            <string>GoogleSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Success Create Record View Controller-->
+        <scene sceneID="TE8-b1-ncd">
+            <objects>
+                <viewController storyboardIdentifier="SuccessCreateRecord" id="NgU-xJ-VUS" customClass="MSuccessCreateRecordViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hnh-9t-prV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-om-2fb" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="31" y="666" width="354" height="54.333333333333371"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54.5" id="Cde-Qd-Xgc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
+                                <state key="normal" title="VOLGENDE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedShadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="next:" destination="NgU-xJ-VUS" eventType="touchUpInside" id="Xdt-nc-AAM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record created succesfully!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G79-IW-GNZ">
+                                <rect key="frame" x="17" y="90" width="380" height="97"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="38"/>
+                                <color key="textColor" red="0.18039215689999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-d1-Bbt">
+                                <rect key="frame" x="0.0" y="205.99999999999997" width="414" height="332.33333333333326"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IllustrationSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="m4x-pq-DuC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="332"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-8T-MPy" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="10" y="566.33333333333337" width="394" height="78"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEN-Q6-iae">
+                                        <rect key="frame" x="19" y="19" width="32" height="17"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.5216418505" green="0.52914708850000003" blue="0.54510098699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHW-wV-cnG">
+                                        <rect key="frame" x="18.999999999999996" y="42" width="45.666666666666657" height="23"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="1ns-Me-jdR"/>
+                                    <constraint firstItem="nHW-wV-cnG" firstAttribute="leading" secondItem="aFW-8T-MPy" secondAttribute="leading" constant="19" id="HXw-ow-X59"/>
+                                    <constraint firstItem="nHW-wV-cnG" firstAttribute="top" secondItem="YEN-Q6-iae" secondAttribute="bottom" constant="6" id="LS8-AQ-Zgi"/>
+                                    <constraint firstItem="YEN-Q6-iae" firstAttribute="top" secondItem="aFW-8T-MPy" secondAttribute="top" constant="19" id="T9m-8Z-XBT"/>
+                                    <constraint firstItem="YEN-Q6-iae" firstAttribute="leading" secondItem="aFW-8T-MPy" secondAttribute="leading" constant="19" id="YHT-re-7Wd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.93726116420000005" green="0.93724364039999997" blue="0.93725550170000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nieuwe Eigenschappen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-pp-YoK">
+                                <rect key="frame" x="17" y="32" width="127" height="15.666666666666664"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="12"/>
+                                <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PLn-mj-5YT" firstAttribute="trailing" secondItem="G79-IW-GNZ" secondAttribute="trailing" constant="17" id="17M-cq-YFS"/>
+                            <constraint firstItem="PLn-mj-5YT" firstAttribute="bottom" secondItem="zd6-om-2fb" secondAttribute="bottom" constant="15.666666666666629" id="7J8-Vm-O8F"/>
+                            <constraint firstItem="G79-IW-GNZ" firstAttribute="leading" secondItem="PLn-mj-5YT" secondAttribute="leading" constant="17" id="CXz-oT-EmZ"/>
+                            <constraint firstItem="zd6-om-2fb" firstAttribute="leading" secondItem="PLn-mj-5YT" secondAttribute="leading" constant="31" id="Lsa-cL-tsY"/>
+                            <constraint firstItem="aFW-8T-MPy" firstAttribute="leading" secondItem="PLn-mj-5YT" secondAttribute="leading" constant="10" id="RsM-ZG-G5c"/>
+                            <constraint firstItem="PLn-mj-5YT" firstAttribute="trailing" secondItem="aFW-8T-MPy" secondAttribute="trailing" constant="10" id="TgF-St-rgH"/>
+                            <constraint firstItem="PLn-mj-5YT" firstAttribute="trailing" secondItem="zd6-om-2fb" secondAttribute="trailing" constant="29" id="Wst-v4-Jc8"/>
+                            <constraint firstItem="aFW-8T-MPy" firstAttribute="top" secondItem="6vZ-d1-Bbt" secondAttribute="bottom" constant="28" id="XI0-aU-9UD"/>
+                            <constraint firstItem="zd6-om-2fb" firstAttribute="top" secondItem="aFW-8T-MPy" secondAttribute="bottom" constant="21.666666666666515" id="cLA-cD-qQC"/>
+                            <constraint firstItem="gl9-pp-YoK" firstAttribute="top" secondItem="PLn-mj-5YT" secondAttribute="top" constant="32" id="cXh-42-9Ln"/>
+                            <constraint firstItem="6vZ-d1-Bbt" firstAttribute="trailing" secondItem="PLn-mj-5YT" secondAttribute="trailing" id="djp-LT-0n0"/>
+                            <constraint firstItem="6vZ-d1-Bbt" firstAttribute="leading" secondItem="PLn-mj-5YT" secondAttribute="leading" id="gr0-4W-Wde"/>
+                            <constraint firstItem="G79-IW-GNZ" firstAttribute="top" secondItem="PLn-mj-5YT" secondAttribute="top" constant="90" id="mPu-Kr-LiS"/>
+                            <constraint firstItem="gl9-pp-YoK" firstAttribute="leading" secondItem="PLn-mj-5YT" secondAttribute="leading" constant="17" id="rct-vv-DDS"/>
+                            <constraint firstItem="6vZ-d1-Bbt" firstAttribute="top" secondItem="G79-IW-GNZ" secondAttribute="bottom" constant="19" id="tLu-8g-7sf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PLn-mj-5YT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yo3-Mn-l2Y"/>
+                    <connections>
+                        <outlet property="recordTypeLabel" destination="YEN-Q6-iae" id="qwr-Io-NWt"/>
+                        <outlet property="recordValueLabel" destination="nHW-wV-cnG" id="j64-hS-KNM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGS-Ok-05K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949.60000000000002" y="1591.7541229385308"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IllustrationSuccess" width="375" height="391"/>
+    </resources>
+</document>

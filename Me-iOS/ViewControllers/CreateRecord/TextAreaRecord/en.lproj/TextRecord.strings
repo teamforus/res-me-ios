@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "2ck-KU-mWB"; */
+"2ck-KU-mWB.text" = "New Record";
+
+/* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "5Up-1w-BOc"; */
+"5Up-1w-BOc.normalTitle" = "Personal";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "H8K-Wt-MAV"; */
+"H8K-Wt-MAV.normalTitle" = "SUBMIT";
+
+/* Class = "UIButton"; normalTitle = "Given Name"; ObjectID = "K5Z-tb-ErD"; */
+"K5Z-tb-ErD.normalTitle" = "Given Name";
+
+/* Class = "UILabel"; text = "Enter the value"; ObjectID = "LoZ-cX-WQ0"; */
+"LoZ-cX-WQ0.text" = "Enter the value";
+
+/* Class = "UITextView"; text = "Text"; ObjectID = "bOl-hB-lCp"; */
+"bOl-hB-lCp.text" = "Text";
+
+/* Class = "UILabel"; text = "Create the text or value for the current record"; ObjectID = "sah-Cv-Y6y"; */
+"sah-Cv-Y6y.text" = "Create the text or value for the current record";

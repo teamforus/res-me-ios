@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56A3D85D1E55DF148D1F13AD /* Pods_Me_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AF2BDD09D02DD6E21DE333 /* Pods_Me_iOSUITests.framework */; };
 		5B10CCAC240D021C00199C28 /* BottomQrWithPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCAA240D021C00199C28 /* BottomQrWithPinViewController.swift */; };
 		5B10CCB0240D1FD900199C28 /* EnablePersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCAF240D1FD900199C28 /* EnablePersonalInformationViewController.swift */; };
 		5B10CCB4240D292000199C28 /* MSuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCB3240D292000199C28 /* MSuccessRegisterViewController.swift */; };
@@ -173,11 +174,16 @@
 		65F52E462316797900B9D229 /* MCrashConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F52E422316797900B9D229 /* MCrashConfirmViewController.swift */; };
 		65F52E4A23167E0D00B9D229 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F52E4923167E0D00B9D229 /* Wallet.swift */; };
 		65FE8E02229FF16A00BB1596 /* RecordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE8E01229FF16A00BB1596 /* RecordValidation.swift */; };
-		CECB06D5C049466A525F37E6 /* Pods_Me_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A89BE88EEB1A6C3C9A22BE7 /* Pods_Me_iOSUITests.framework */; };
-		CF22307B8167F520952552BE /* Pods_Me_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB0BB041DF2B085D794CD5 /* Pods_Me_iOSTests.framework */; };
-		E234190710AA58EB6F4C206A /* Pods_Me_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43960597C5DD3C7D7D6E0BF0 /* Pods_Me_iOS.framework */; };
+		9BE6A19AC6D1FF3491F67EAE /* Pods_Me_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F34955FE9B4BF959E909C9 /* Pods_Me_iOSTests.framework */; };
+		F005F73D4C1A91D922F77EEC /* Pods_Me_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8C010C688E3DAB93AD8598 /* Pods_Me_iOS.framework */; };
 		FF0DACBE246AD0A80034E3E4 /* OrganizationValidatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3B141A243722EE003FDDD9 /* OrganizationValidatorViewController.xib */; };
 		FF48062924632AA70055E346 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48062824632AA70055E346 /* RecordsTableViewCell.swift */; };
+		FF7C8EF124A54EB200E7DF00 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EEF24A54EB100E7DF00 /* BWWalkthroughPageViewController.swift */; };
+		FF7C8EF224A54EB200E7DF00 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EF024A54EB200E7DF00 /* BWWalkthroughViewController.swift */; };
+		FF7C8EF824A5597C00E7DF00 /* CustomWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EF624A5597C00E7DF00 /* CustomWarningViewController.swift */; };
+		FF7C8EF924A5597C00E7DF00 /* CustomWarningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */; };
+		FFE37B4C24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */; };
+		FFE37B4E24A5252D00CC3B59 /* SuccessCreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */; };
 		FFFF8AAC2450CAA2001673DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF8AAB2450CAA2001673DB /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
@@ -199,13 +205,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A89BE88EEB1A6C3C9A22BE7 /* Pods_Me_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA3C002535BEC0C09894BC7 /* Pods-Me-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1ABB0BB041DF2B085D794CD5 /* Pods_Me_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16AF2BDD09D02DD6E21DE333 /* Pods_Me_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4F14FBEF270B54FA6F330B /* Pods-Me-iOS.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOS.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOS/Pods-Me-iOS.alpha.xcconfig"; sourceTree = "<group>"; };
 		27C5698FBEA4D2ECE5592544 /* Pods-Me-iOSTests.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.alpha.xcconfig"; sourceTree = "<group>"; };
 		419E6D0E1450A2994CF709CB /* Pods-Me-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		43960597C5DD3C7D7D6E0BF0 /* Pods_Me_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10CCAA240D021C00199C28 /* BottomQrWithPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomQrWithPinViewController.swift; sourceTree = "<group>"; };
 		5B10CCAF240D1FD900199C28 /* EnablePersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnablePersonalInformationViewController.swift; sourceTree = "<group>"; };
 		5B10CCB3240D292000199C28 /* MSuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSuccessRegisterViewController.swift; sourceTree = "<group>"; };
@@ -437,11 +441,19 @@
 		CA1908806607F2B5393C2931 /* Pods-Me-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4DAE6D5AF45B3C9784E971D /* Pods-Me-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD33B298743ED6923528A696 /* Pods-Me-iOSUITests.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.alpha.xcconfig"; sourceTree = "<group>"; };
+		DD8C010C688E3DAB93AD8598 /* Pods_Me_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E9ECB144534F67E9BA608D /* Pods-Me-iOSUITests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.demo.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.demo.xcconfig"; sourceTree = "<group>"; };
+		F9F34955FE9B4BF959E909C9 /* Pods_Me_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3B1419243722EE003FDDD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrganizationValidatorViewController.xib; sourceTree = "<group>"; };
 		FF3B141E243722F6003FDDD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrganizationValidatorViewController.strings; sourceTree = "<group>"; };
 		FF3B1422243722F8003FDDD9 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/OrganizationValidatorViewController.strings; sourceTree = "<group>"; };
 		FF48062824632AA70055E346 /* RecordsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTableViewCell.swift; sourceTree = "<group>"; };
+		FF7C8EEF24A54EB100E7DF00 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		FF7C8EF024A54EB200E7DF00 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		FF7C8EF624A5597C00E7DF00 /* CustomWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWarningViewController.swift; sourceTree = "<group>"; };
+		FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWarningViewController.xib; sourceTree = "<group>"; };
+		FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSuccessCreateRecordViewController.swift; sourceTree = "<group>"; };
+		FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessCreateRecord.storyboard; sourceTree = "<group>"; };
 		FFFF8AAB2450CAA2001673DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -450,7 +462,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E234190710AA58EB6F4C206A /* Pods_Me_iOS.framework in Frameworks */,
+				F005F73D4C1A91D922F77EEC /* Pods_Me_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF22307B8167F520952552BE /* Pods_Me_iOSTests.framework in Frameworks */,
+				9BE6A19AC6D1FF3491F67EAE /* Pods_Me_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +478,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECB06D5C049466A525F37E6 /* Pods_Me_iOSUITests.framework in Frameworks */,
+				56A3D85D1E55DF148D1F13AD /* Pods_Me_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,9 +510,9 @@
 		32CD4EE748A941E16A0DF051 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43960597C5DD3C7D7D6E0BF0 /* Pods_Me_iOS.framework */,
-				1ABB0BB041DF2B085D794CD5 /* Pods_Me_iOSTests.framework */,
-				0A89BE88EEB1A6C3C9A22BE7 /* Pods_Me_iOSUITests.framework */,
+				DD8C010C688E3DAB93AD8598 /* Pods_Me_iOS.framework */,
+				F9F34955FE9B4BF959E909C9 /* Pods_Me_iOSTests.framework */,
+				16AF2BDD09D02DD6E21DE333 /* Pods_Me_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1008,8 +1020,7 @@
 				65A8B7412282ED5300B7DF05 /* Profile */,
 				654F97AB229BF767009C9FFA /* RecordDetail */,
 				65100B04229D76C9007892D1 /* RecordValidators */,
-				65F1BB20229EBF6F007D2C8A /* ChooseTypeRecord */,
-				65F1BB2F229EDD90007D2C8A /* TextAreaRecord */,
+				FF7C8EEE24A53DC000E7DF00 /* CreateRecord */,
 				650FF63322AD2E14004C3A85 /* About */,
 				5B87BFDD24113408007C24DA /* EnablePersonalInfo */,
 				5B87BFDE24113413007C24DA /* SuccessRegister */,
@@ -1293,6 +1304,8 @@
 				656FDDB8235DF04E002422B2 /* OrganizationValidator */,
 				65F9742C236313C20008BDB0 /* BottomQR */,
 				5B10CCAE240D022100199C28 /* BottomQRWithPin */,
+				FF7C8EF624A5597C00E7DF00 /* CustomWarningViewController.swift */,
+				FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -1391,6 +1404,35 @@
 				6511CB172362FCFC00863E85 /* PullUpQRViewController.xib */,
 			);
 			path = BottomQR;
+			sourceTree = "<group>";
+		};
+		FF7C8EED24A53DAB00E7DF00 /* SuccessCreateRecord */ = {
+			isa = PBXGroup;
+			children = (
+				FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */,
+				FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */,
+			);
+			path = SuccessCreateRecord;
+			sourceTree = "<group>";
+		};
+		FF7C8EEE24A53DC000E7DF00 /* CreateRecord */ = {
+			isa = PBXGroup;
+			children = (
+				FF7C8EF324A558FB00E7DF00 /* PageControll */,
+				65F1BB20229EBF6F007D2C8A /* ChooseTypeRecord */,
+				65F1BB2F229EDD90007D2C8A /* TextAreaRecord */,
+				FF7C8EED24A53DAB00E7DF00 /* SuccessCreateRecord */,
+			);
+			path = CreateRecord;
+			sourceTree = "<group>";
+		};
+		FF7C8EF324A558FB00E7DF00 /* PageControll */ = {
+			isa = PBXGroup;
+			children = (
+				FF7C8EEF24A54EB100E7DF00 /* BWWalkthroughPageViewController.swift */,
+				FF7C8EF024A54EB200E7DF00 /* BWWalkthroughViewController.swift */,
+			);
+			path = PageControll;
 			sourceTree = "<group>";
 		};
 		FFFF8AAA2450C8B9001673DB /* Resources */ = {
@@ -1525,6 +1567,7 @@
 				65139C50228029C0003E0CDE /* LICENSE in Resources */,
 				650FF60922AD237A004C3A85 /* LoginQRAndCodeViewController.storyboard in Resources */,
 				65139C4F228029C0003E0CDE /* backspaceBlue@2x.png in Resources */,
+				FF7C8EF924A5597C00E7DF00 /* CustomWarningViewController.xib in Resources */,
 				650FF61722AD2ACF004C3A85 /* RecordDetail.storyboard in Resources */,
 				655D6477231598D300EABD57 /* SendEtherViewController.xib in Resources */,
 				5BF8461F241FA60100B0BAAD /* BottomQrWithPinViewController.xib in Resources */,
@@ -1534,6 +1577,7 @@
 				65A8B7022282DD2C00B7DF05 /* GoogleSans-Regular.ttf in Resources */,
 				650FF63C22AD2EBA004C3A85 /* ConfirmPaymentPopUp.xib in Resources */,
 				65A8B7032282DD2C00B7DF05 /* GoogleSans-MediumItalic.ttf in Resources */,
+				FFE37B4E24A5252D00CC3B59 /* SuccessCreateRecord.storyboard in Resources */,
 				650FF5FB22AD22A3004C3A85 /* SuccessEmail.storyboard in Resources */,
 				658B488622ABF8B700B6236C /* Payment.storyboard in Resources */,
 				650FF62522AD2D31004C3A85 /* ChooseTypeRecord.storyboard in Resources */,
@@ -1686,7 +1730,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\"${PODS_ROOT}/R.swift/rswift\" generate \"$SRCROOT/Me-iOS/Resources/R.generated.swift\"\n";
+			shellScript = "\"${PODS_ROOT}/R.swift/rswift\" generate \"$SRCROOT/Me-iOS/Resources/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1704,6 +1748,7 @@
 				65F52E462316797900B9D229 /* MCrashConfirmViewController.swift in Sources */,
 				657DBA4A2289871400C67500 /* CommonBottomViewModel.swift in Sources */,
 				65911B54228D900500EA30D6 /* Product.swift in Sources */,
+				FF7C8EF824A5597C00E7DF00 /* CustomWarningViewController.swift in Sources */,
 				65A8B6F02282DB0200B7DF05 /* Extension+UIViewController.swift in Sources */,
 				65A8B71E2282E6BF00B7DF05 /* MVoucherViewController.swift in Sources */,
 				656FDDBC235DF3DB002422B2 /* OrganizationValidatorTableViewCell.swift in Sources */,
@@ -1729,6 +1774,7 @@
 				655D64792315A04300EABD57 /* MAFirstPageViewController.swift in Sources */,
 				65A8B7252282EADE00B7DF05 /* MPaymentViewController.swift in Sources */,
 				65F1BB2A229ECA8F007D2C8A /* MTextRecordViewController.swift in Sources */,
+				FF7C8EF124A54EB200E7DF00 /* BWWalkthroughPageViewController.swift in Sources */,
 				65A8B7302282EBD000B7DF05 /* ProductVoucherViewModel.swift in Sources */,
 				65A8B6EE2282CE4500B7DF05 /* CommonBottomViewController.swift in Sources */,
 				65BDB8632292CFFC0016296C /* PausedMarqueLabel.swift in Sources */,
@@ -1744,6 +1790,7 @@
 				65911B46228D7DBC00EA30D6 /* VoucherTableViewCell.swift in Sources */,
 				65139C54228029C0003E0CDE /* UI.swift in Sources */,
 				6511CB182362FCFC00863E85 /* PullUpQRViewController.swift in Sources */,
+				FFE37B4C24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift in Sources */,
 				65FE8E02229FF16A00BB1596 /* RecordValidation.swift in Sources */,
 				65B3784D22C241F50095A2EF /* Reachability.swift in Sources */,
 				654F979F229BE71F009C9FFA /* Record.swift in Sources */,
@@ -1803,6 +1850,7 @@
 				65D11B7022A69CE600756BE0 /* AllowedOrganizationsViewController.swift in Sources */,
 				5B10CCB0240D1FD900199C28 /* EnablePersonalInformationViewController.swift in Sources */,
 				65D11B7B22A69D5200756BE0 /* OrganizationTableViewCell.swift in Sources */,
+				FF7C8EF224A54EB200E7DF00 /* BWWalkthroughViewController.swift in Sources */,
 				65F1BB25229EC1C4007D2C8A /* RecordType.swift in Sources */,
 				65A8B73E2282ED1D00B7DF05 /* MProfileViewController.swift in Sources */,
 				65A8B7322282EBDC00B7DF05 /* VoucherViewModel.swift in Sources */,

@@ -1,5 +1,4 @@
 PODS:
-  - BWWalkthrough (3.0.0)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
@@ -14,7 +13,6 @@ PODS:
   - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
-  - BWWalkthrough
   - Crashlytics
   - Fabric
   - IQKeyboardManagerSwift
@@ -27,7 +25,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - BWWalkthrough
     - Crashlytics
     - Fabric
     - IQKeyboardManagerSwift
@@ -41,7 +38,6 @@ SPEC REPOS:
     - R.swift.Library
 
 SPEC CHECKSUMS:
-  BWWalkthrough: b86abce6aa2e4ce21e36a12a277fa6e89a5db075
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
@@ -53,6 +49,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 9243e540d2beb01cfeff323515910c62495792ed
+PODFILE CHECKSUM: 24dd21562a6a90c2bdf21601c10342e548a006e0
 
 COCOAPODS: 1.9.1
