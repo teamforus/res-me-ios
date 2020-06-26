@@ -146,3 +146,10 @@
 "validation_approved" = "Validation approved.";
 "test_transaction" = "Test transaction";
 "test_organization" = "Test organisation";
+"you_like_to_archive_record" = "Would you like to archive record?";
+"description_to_archive_record" = "All validations for this record will be removed. You will not be able to return
+the record back";
+"archive_button" = "ARCHIVE";
+"you_like_to_edit_record" = "Would you like to edit record?";
+"description_to_edit_record" = "All validations for this record will be removed. You must select validators again for the edited record";
+"edit_button" = "EDIT";

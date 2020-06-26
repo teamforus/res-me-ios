@@ -146,3 +146,9 @@
 "validation_approved" = "Validatie goedgekeurd.";
 "test_transaction" = "Test transactie";
 "test_organization" = "Test bedrijf";
+"you_like_to_archive_record" = "Wil u deze eigenschap archiveren?";
+"description_to_archive_record" = "Alle validaties worden verwijderd. U kunt het record niet terugsturen";
+"archive_button" = "VERWIJDER";
+"you_like_to_edit_record" = "Wil je deze eigenschap bewerken?";
+"description_to_edit_record" = "Alle validaties worden verwijderd. U dient opnieuw validaties aan te vragen voor de nieuwe eigenschap.";
+"edit_button" = "BEWERK";

@@ -681,7 +681,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 69 images.
+  /// This `R.image` struct is generated, and contains static references to 70 images.
   struct image {
     /// Image `5XVoucherContainerWElevation`.
     static let xVoucherContainerWElevation = Rswift.ImageResource(bundle: R.hostingBundle, name: "5XVoucherContainerWElevation")
@@ -785,6 +785,8 @@ struct R: Rswift.Validatable {
     static let nightMode = Rswift.ImageResource(bundle: R.hostingBundle, name: "nightMode")
     /// Image `notifications`.
     static let notifications = Rswift.ImageResource(bundle: R.hostingBundle, name: "notifications")
+    /// Image `pencil (2) 1-2`.
+    static let pencil212 = Rswift.ImageResource(bundle: R.hostingBundle, name: "pencil (2) 1-2")
     /// Image `plus`.
     static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "plus")
     /// Image `prevButton`.
@@ -1176,6 +1178,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "notifications", bundle: ..., traitCollection: ...)`
     static func notifications(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.notifications, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pencil (2) 1-2", bundle: ..., traitCollection: ...)`
+    static func pencil212(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pencil212, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2671,7 +2680,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 138 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 144 localization keys.
     struct localizable {
       /// en translation: -voucher in the form of a QR-code
       ///
@@ -2685,6 +2694,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let aRecordHasBeenValidated = Rswift.StringResource(key: "A record has been validated!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: ARCHIVE
+      ///
+      /// Locales: en, nl
+      static let archive_button = Rswift.StringResource(key: "archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: About Me
       ///
       /// Locales: en, nl
@@ -2693,6 +2706,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let address = Rswift.StringResource(key: "address", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: All validations for this record will be removed. You must select validators again for the edited record
+      ///
+      /// Locales: en, nl
+      static let description_to_edit_record = Rswift.StringResource(key: "description_to_edit_record", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: All validations for this record will be removed. You will not be able to return the record back
+      ///
+      /// Locales: en, nl
+      static let description_to_archive_record = Rswift.StringResource(key: "description_to_archive_record", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Amount of children
       ///
       /// Locales: en, nl
@@ -2793,6 +2814,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let eMailToMe = Rswift.StringResource(key: "E-mail to me", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: EDIT
+      ///
+      /// Locales: en, nl
+      static let edit_button = Rswift.StringResource(key: "edit_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Eligible for Kindpakket 2018
       ///
       /// Locales: en, nl
@@ -3197,6 +3222,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let withTheMeYouCanCreateAnIdentityReceiveAndUseYourVouchersForMoreInformationPleaseVisitOurWebsiteHttpsZuidhornForusIo = Rswift.StringResource(key: "With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: Would you like to archive record?
+      ///
+      /// Locales: en, nl
+      static let you_like_to_archive_record = Rswift.StringResource(key: "you_like_to_archive_record", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: Would you like to edit record?
+      ///
+      /// Locales: en, nl
+      static let you_like_to_edit_record = Rswift.StringResource(key: "you_like_to_edit_record", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Would you like to send us your feedback by e-mail?
       ///
       /// Locales: en, nl
@@ -3271,6 +3304,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("A record has been validated!", bundle: bundle, comment: "")
       }
 
+      /// en translation: ARCHIVE
+      ///
+      /// Locales: en, nl
+      static func archive_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("archive_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "archive_button"
+        }
+
+        return NSLocalizedString("archive_button", bundle: bundle, comment: "")
+      }
+
       /// en translation: About Me
       ///
       /// Locales: en, nl
@@ -3299,6 +3347,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("address", bundle: bundle, comment: "")
+      }
+
+      /// en translation: All validations for this record will be removed. You must select validators again for the edited record
+      ///
+      /// Locales: en, nl
+      static func description_to_edit_record(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("description_to_edit_record", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "description_to_edit_record"
+        }
+
+        return NSLocalizedString("description_to_edit_record", bundle: bundle, comment: "")
+      }
+
+      /// en translation: All validations for this record will be removed. You will not be able to return the record back
+      ///
+      /// Locales: en, nl
+      static func description_to_archive_record(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("description_to_archive_record", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "description_to_archive_record"
+        }
+
+        return NSLocalizedString("description_to_archive_record", bundle: bundle, comment: "")
       }
 
       /// en translation: Amount of children
@@ -3676,6 +3754,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("E-mail to me", bundle: bundle, comment: "")
+      }
+
+      /// en translation: EDIT
+      ///
+      /// Locales: en, nl
+      static func edit_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("edit_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "edit_button"
+        }
+
+        return NSLocalizedString("edit_button", bundle: bundle, comment: "")
       }
 
       /// en translation: Eligible for Kindpakket 2018
@@ -5199,6 +5292,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Would you like to archive record?
+      ///
+      /// Locales: en, nl
+      static func you_like_to_archive_record(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("you_like_to_archive_record", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "you_like_to_archive_record"
+        }
+
+        return NSLocalizedString("you_like_to_archive_record", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Would you like to edit record?
+      ///
+      /// Locales: en, nl
+      static func you_like_to_edit_record(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("you_like_to_edit_record", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "you_like_to_edit_record"
+        }
+
+        return NSLocalizedString("you_like_to_edit_record", bundle: bundle, comment: "")
       }
 
       /// en translation: Would you like to send us your feedback by e-mail?
@@ -8820,6 +8943,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "closeIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeIcon' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "delete24Px", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete24Px' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_launcher_APP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_launcher_APP' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pencil (2) 1-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pencil (2) 1-2' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrCode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrCode' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrImage2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrImage2' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {

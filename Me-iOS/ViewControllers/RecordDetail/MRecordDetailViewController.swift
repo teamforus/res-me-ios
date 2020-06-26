@@ -14,7 +14,7 @@ class MRecordDetailViewController: UIViewController {
     @IBOutlet weak var recordTypeLabel: UILabel!
     @IBOutlet weak var recordValue: UILabel!
     @IBOutlet weak var borderView: CustomCornerUIView!
-    
+  
     var recordId: String!
     var timer : Timer! = Timer()
     var record: Record!
@@ -113,7 +113,20 @@ class MRecordDetailViewController: UIViewController {
         }
     }
     
-    
+  @IBAction func editButton(_ sender: Any) {
+    let popUp = CustomWarningViewController(title: Localize.you_like_to_edit_record(), descriptions:Localize.description_to_edit_record(), buttonTitle: Localize.edit_button())
+    showPopUPWithAnimation(vc: popUp)
+    popUp.confirm = { [weak self] in
+      guard let self = self else {
+        return
+      }
+      DispatchQueue.main.async {
+        KVSpinnerView.show()
+       
+      }
+    }
+  }
+  
     @IBAction func showQRCode(_ sender: Any) {
         let popOverVC = PullUpQRViewController(nib: R.nib.pullUpQRViewController)
         popOverVC.idRecord = Int(recordId)
@@ -123,11 +136,21 @@ class MRecordDetailViewController: UIViewController {
     }
     
     @IBAction func deleteRecord(_ sender: UIButton) {
-        KVSpinnerView.show()
-        recordDetailViewModel.initDeleteById(id: recordId)
-        
+      let popUp = CustomWarningViewController(title: Localize.you_like_to_archive_record(), descriptions:Localize.description_to_archive_record(), buttonTitle: Localize.archive_button())
+      showPopUPWithAnimation(vc: popUp)
+      popUp.confirm = { [weak self] in
+        guard let self = self else {
+          return
+        }
+        DispatchQueue.main.async {
+          KVSpinnerView.show()
+          self.recordDetailViewModel.initDeleteById(id: self.recordId)
+        }
+      }
+      
     }
     
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let recordValidatorVC = segue.destination as? MRecordValidatorsViewController {
             recordValidatorVC.record = self.record
