@@ -179,6 +179,8 @@
 		FF7C8EF224A54EB200E7DF00 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EF024A54EB200E7DF00 /* BWWalkthroughViewController.swift */; };
 		FF7C8EF824A5597C00E7DF00 /* CustomWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EF624A5597C00E7DF00 /* CustomWarningViewController.swift */; };
 		FF7C8EF924A5597C00E7DF00 /* CustomWarningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */; };
+		FFA3328824CAF0C600DF87DE /* MArchivedRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3328724CAF0C600DF87DE /* MArchivedRecordsViewController.swift */; };
+		FFA3328A24CAF25200DF87DE /* MArchivedRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3328924CAF25200DF87DE /* MArchivedRecordTableViewCell.swift */; };
 		FFE37B4C24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */; };
 		FFE37B4E24A5252D00CC3B59 /* SuccessCreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */; };
 		FFFF8AAC2450CAA2001673DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF8AAB2450CAA2001673DB /* R.generated.swift */; };
@@ -446,6 +448,8 @@
 		FF7C8EF024A54EB200E7DF00 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		FF7C8EF624A5597C00E7DF00 /* CustomWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWarningViewController.swift; sourceTree = "<group>"; };
 		FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWarningViewController.xib; sourceTree = "<group>"; };
+		FFA3328724CAF0C600DF87DE /* MArchivedRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MArchivedRecordsViewController.swift; sourceTree = "<group>"; };
+		FFA3328924CAF25200DF87DE /* MArchivedRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MArchivedRecordTableViewCell.swift; sourceTree = "<group>"; };
 		FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSuccessCreateRecordViewController.swift; sourceTree = "<group>"; };
 		FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessCreateRecord.storyboard; sourceTree = "<group>"; };
 		FFFF8AAB2450CAA2001673DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -1012,6 +1016,7 @@
 				650FF63322AD2E14004C3A85 /* About */,
 				5B87BFDD24113408007C24DA /* EnablePersonalInfo */,
 				5B87BFDE24113413007C24DA /* SuccessRegister */,
+				FFA3328B24CAF25800DF87DE /* ArchivedRecords */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1423,6 +1428,23 @@
 			path = PageControll;
 			sourceTree = "<group>";
 		};
+		FFA3328B24CAF25800DF87DE /* ArchivedRecords */ = {
+			isa = PBXGroup;
+			children = (
+				FFA3328724CAF0C600DF87DE /* MArchivedRecordsViewController.swift */,
+				FFA3328C24CAF26300DF87DE /* Cell */,
+			);
+			path = ArchivedRecords;
+			sourceTree = "<group>";
+		};
+		FFA3328C24CAF26300DF87DE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFA3328924CAF25200DF87DE /* MArchivedRecordTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FFFF8AAA2450C8B9001673DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1778,6 +1800,7 @@
 				65911B46228D7DBC00EA30D6 /* VoucherTableViewCell.swift in Sources */,
 				65139C54228029C0003E0CDE /* UI.swift in Sources */,
 				6511CB182362FCFC00863E85 /* PullUpQRViewController.swift in Sources */,
+				FFA3328824CAF0C600DF87DE /* MArchivedRecordsViewController.swift in Sources */,
 				FFE37B4C24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift in Sources */,
 				65FE8E02229FF16A00BB1596 /* RecordValidation.swift in Sources */,
 				65B3784D22C241F50095A2EF /* Reachability.swift in Sources */,
@@ -1836,6 +1859,7 @@
 				65139C7B228034DA003E0CDE /* BaseURL.swift in Sources */,
 				5B697EE6242CDA7700153F0D /* RegisterViewModel.swift in Sources */,
 				65D11B7022A69CE600756BE0 /* AllowedOrganizationsViewController.swift in Sources */,
+				FFA3328A24CAF25200DF87DE /* MArchivedRecordTableViewCell.swift in Sources */,
 				5B10CCB0240D1FD900199C28 /* EnablePersonalInformationViewController.swift in Sources */,
 				65D11B7B22A69D5200756BE0 /* OrganizationTableViewCell.swift in Sources */,
 				FF7C8EF224A54EB200E7DF00 /* BWWalkthroughViewController.swift in Sources */,

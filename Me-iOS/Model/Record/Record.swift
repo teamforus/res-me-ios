@@ -13,6 +13,7 @@ struct Record: Decodable {
     var id: Int?
     var value: String?
     var order: Int?
+    var deleted: Bool?
     var name: String?
     var key: String?
     var record_category_id: Int?

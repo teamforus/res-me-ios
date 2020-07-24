@@ -16,6 +16,7 @@ class RecordsViewModel{
     var selectedRecord: Record?
     var isAllowSegue: Bool = false
     var vc: UIViewController!
+    var isArchived: Bool = false
     
     private var cellViewModels: [Record] = [Record]() {
         didSet {
@@ -30,8 +31,9 @@ class RecordsViewModel{
     }
     
     func initFitch(){
+        let request = isArchived ? "identity/records?deleted=1" : "identity/records"
         
-        commonService.get(request: "identity/records", complete: { (response: [Record], statusCode) in
+        commonService.get(request: request, complete: { (response: [Record], statusCode) in
             if statusCode == 503 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()

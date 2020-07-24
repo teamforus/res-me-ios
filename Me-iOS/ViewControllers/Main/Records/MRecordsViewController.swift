@@ -113,6 +113,11 @@ class MRecordsViewController: UIViewController {
         }
     }
     
+    @IBAction func showArchivedRecords(_ sender: UIButton) {
+        let archivedRecordsVC = MArchivedRecordsViewController()
+        self.present(archivedRecordsVC, animated: true)
+    }
+    
     @objc func refreshData(_ sender: Any) {
         initFetch()
     }
