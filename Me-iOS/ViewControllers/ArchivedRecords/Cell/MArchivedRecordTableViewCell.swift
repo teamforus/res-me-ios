@@ -51,6 +51,7 @@ class MArchivedRecordTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
         addCnstraints()
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

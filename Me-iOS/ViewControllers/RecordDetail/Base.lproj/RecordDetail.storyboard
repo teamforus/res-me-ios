@@ -210,14 +210,6 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9b-CN-vxm">
-                                                        <rect key="frame" x="331" y="21" width="44" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" image="pencil (2) 1-2"/>
-                                                        <connections>
-                                                            <action selector="editButton:" destination="KwI-hr-Xm2" eventType="touchUpInside" id="EOT-U7-cic"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -416,7 +408,6 @@
         <image name="closeIcon" width="24" height="24"/>
         <image name="delete24Px" width="24" height="24"/>
         <image name="ic_launcher_APP" width="210" height="210"/>
-        <image name="pencil (2) 1-2" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>
     </resources>

@@ -11,8 +11,8 @@ import KVSpinnerView
 import HMSegmentedControl
 
 enum RecordsListType: String, CaseIterable {
-    case myRecords = "My Records"
-    case archive = "Archive"
+    case myRecords = "my_records"
+    case archive = "archive"
 }
 
 class MRecordsViewController: UIViewController {
@@ -53,7 +53,7 @@ class MRecordsViewController: UIViewController {
     func setupSegmentControl() {
         let selectedColor = #colorLiteral(red: 0.1702004969, green: 0.3387943804, blue: 1, alpha: 1)
         let normalColor = #colorLiteral(red: 0.3333011568, green: 0.3333538771, blue: 0.3332896829, alpha: 1)
-        segmentControll.sectionTitles = RecordsListType.allCases.map({$0.rawValue})
+        segmentControll.sectionTitles = RecordsListType.allCases.map({$0.rawValue.localized()})
         segmentControll.addTarget(self, action: #selector(segmentedControlChangedValue(segmentControl:)), for: .valueChanged)
         segmentControll.selectionIndicatorLocation = .bottom
         segmentControll.selectionIndicatorColor = selectedColor

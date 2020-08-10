@@ -153,3 +153,5 @@ the record back";
 "you_like_to_edit_record" = "Would you like to edit record?";
 "description_to_edit_record" = "All validations for this record will be removed. You must select validators again for the edited record";
 "edit_button" = "EDIT";
+"my_records" = "My Records";
+"archive" = "Archive";

@@ -152,3 +152,5 @@
 "you_like_to_edit_record" = "Wil je deze eigenschap bewerken?";
 "description_to_edit_record" = "Alle validaties worden verwijderd. U dient opnieuw validaties aan te vragen voor de nieuwe eigenschap.";
 "edit_button" = "BEWERK";
+"my_records" = "Mijn eigenschappen";
+"archive" = "Archive";

@@ -2680,7 +2680,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 144 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 146 localization keys.
     struct localizable {
       /// en translation: -voucher in the form of a QR-code
       ///
@@ -2718,6 +2718,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let children_nth = Rswift.StringResource(key: "children_nth", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: Archive
+      ///
+      /// Locales: en, nl
+      static let archive = Rswift.StringResource(key: "archive", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Are you sure you want to confirm this transaction.
       ///
       /// Locales: en, nl
@@ -2946,6 +2950,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let medical = Rswift.StringResource(key: "Medical", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: My Records
+      ///
+      /// Locales: en, nl
+      static let my_records = Rswift.StringResource(key: "my_records", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: My currencies
       ///
       /// Locales: en, nl
@@ -3392,6 +3400,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("children_nth", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Archive
+      ///
+      /// Locales: en, nl
+      static func archive(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("archive", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "archive"
+        }
+
+        return NSLocalizedString("archive", bundle: bundle, comment: "")
       }
 
       /// en translation: Are you sure you want to confirm this transaction.
@@ -4255,6 +4278,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Medical", bundle: bundle, comment: "")
+      }
+
+      /// en translation: My Records
+      ///
+      /// Locales: en, nl
+      static func my_records(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_records", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_records"
+        }
+
+        return NSLocalizedString("my_records", bundle: bundle, comment: "")
       }
 
       /// en translation: My currencies
@@ -8942,7 +8980,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "closeIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeIcon' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "delete24Px", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete24Px' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_launcher_APP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_launcher_APP' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "pencil (2) 1-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pencil (2) 1-2' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrCode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrCode' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrImage2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrImage2' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
