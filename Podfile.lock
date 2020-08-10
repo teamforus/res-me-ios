@@ -2,6 +2,7 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
+  - HMSegmentedControl (1.5.6)
   - IQKeyboardManagerSwift (6.2.0)
   - ISHPullUp (1.0.7)
   - KVSpinnerView (1.0.1)
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
+  - HMSegmentedControl
   - IQKeyboardManagerSwift
   - ISHPullUp
   - KVSpinnerView
@@ -34,12 +36,14 @@ SPEC REPOS:
     - SkyFloatingLabelTextField
     - UICheckbox.Swift
   trunk:
+    - HMSegmentedControl
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
@@ -49,6 +53,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 24dd21562a6a90c2bdf21601c10342e548a006e0
+PODFILE CHECKSUM: 743752603586cddc286f0f94e66e153e07595053
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.3

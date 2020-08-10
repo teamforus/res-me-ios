@@ -9,6 +9,7 @@ target 'Me-iOS' do
 pod 'ISHPullUp'
 pod 'SkyFloatingLabelTextField'
 pod 'MarqueeLabel/Swift'
+pod 'HMSegmentedControl'
 pod 'UICheckbox.Swift'
 pod 'Fabric'
 pod 'Crashlytics'

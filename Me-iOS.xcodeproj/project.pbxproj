@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C253286D40592ABFD3C5A10 /* Pods_Me_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7246FE18624EF869E147531C /* Pods_Me_iOSUITests.framework */; };
+		5126F6B42B5EE3DC4FB9A9B4 /* Pods_Me_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81CCA3BBA5ECCF2829BD2DB /* Pods_Me_iOSTests.framework */; };
 		5B10CCAC240D021C00199C28 /* BottomQrWithPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCAA240D021C00199C28 /* BottomQrWithPinViewController.swift */; };
 		5B10CCB0240D1FD900199C28 /* EnablePersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCAF240D1FD900199C28 /* EnablePersonalInformationViewController.swift */; };
 		5B10CCB4240D292000199C28 /* MSuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10CCB3240D292000199C28 /* MSuccessRegisterViewController.swift */; };
@@ -82,7 +84,6 @@
 		654F97A8229BF5C5009C9FFA /* ValidatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F97A7229BF5C5009C9FFA /* ValidatorTableViewCell.swift */; };
 		654F97AA229BF671009C9FFA /* MRecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F97A9229BF671009C9FFA /* MRecordDetailViewController.swift */; };
 		654F97AE229C03D0009C9FFA /* RecordDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F97AD229C03D0009C9FFA /* RecordDetailViewModel.swift */; };
-		655D64712315903900EABD57 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D64702315903900EABD57 /* HBSegmentedControl.swift */; };
 		655D64732315948900EABD57 /* ValuteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D64722315948900EABD57 /* ValuteTableViewCell.swift */; };
 		655D6476231598D300EABD57 /* SendEtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D6474231598D300EABD57 /* SendEtherViewController.swift */; };
 		655D6477231598D300EABD57 /* SendEtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655D6475231598D300EABD57 /* SendEtherViewController.xib */; };
@@ -173,6 +174,7 @@
 		65F52E462316797900B9D229 /* MCrashConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F52E422316797900B9D229 /* MCrashConfirmViewController.swift */; };
 		65F52E4A23167E0D00B9D229 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F52E4923167E0D00B9D229 /* Wallet.swift */; };
 		65FE8E02229FF16A00BB1596 /* RecordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE8E01229FF16A00BB1596 /* RecordValidation.swift */; };
+		694AA452EED67742484321C1 /* Pods_Me_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA25E448FD28733C6D2C29 /* Pods_Me_iOS.framework */; };
 		FF0DACBE246AD0A80034E3E4 /* OrganizationValidatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3B141A243722EE003FDDD9 /* OrganizationValidatorViewController.xib */; };
 		FF48062924632AA70055E346 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48062824632AA70055E346 /* RecordsTableViewCell.swift */; };
 		FF7C8EF124A54EB200E7DF00 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C8EEF24A54EB100E7DF00 /* BWWalkthroughPageViewController.swift */; };
@@ -181,6 +183,7 @@
 		FF7C8EF924A5597C00E7DF00 /* CustomWarningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */; };
 		FFA3328824CAF0C600DF87DE /* MArchivedRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3328724CAF0C600DF87DE /* MArchivedRecordsViewController.swift */; };
 		FFA3328A24CAF25200DF87DE /* MArchivedRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3328924CAF25200DF87DE /* MArchivedRecordTableViewCell.swift */; };
+		FFD9E36524E14CB700FC3A9A /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9E36424E14CB700FC3A9A /* HBSegmentedControl.swift */; };
 		FFE37B4C24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */; };
 		FFE37B4E24A5252D00CC3B59 /* SuccessCreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */; };
 		FFFF8AAC2450CAA2001673DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF8AAB2450CAA2001673DB /* R.generated.swift */; };
@@ -325,7 +328,6 @@
 		654F97A9229BF671009C9FFA /* MRecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRecordDetailViewController.swift; sourceTree = "<group>"; };
 		654F97AD229C03D0009C9FFA /* RecordDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewModel.swift; sourceTree = "<group>"; };
 		65529EB022DF682C00B8941B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		655D64702315903900EABD57 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		655D64722315948900EABD57 /* ValuteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuteTableViewCell.swift; sourceTree = "<group>"; };
 		655D6474231598D300EABD57 /* SendEtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEtherViewController.swift; sourceTree = "<group>"; };
 		655D6475231598D300EABD57 /* SendEtherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendEtherViewController.xib; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 		65F52E482316798900B9D229 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MCrashConfirmViewController.strings; sourceTree = "<group>"; };
 		65F52E4923167E0D00B9D229 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		65FE8E01229FF16A00BB1596 /* RecordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordValidation.swift; path = ../RecordValidation.swift; sourceTree = "<group>"; };
+		7246FE18624EF869E147531C /* Pods_Me_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDD935B59E7B64986126EBB /* Pods-Me-iOSTests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.demo.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.demo.xcconfig"; sourceTree = "<group>"; };
 		B28B23E09EB36C61675A84C4 /* Pods-Me-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Me-iOS/Pods-Me-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B35DBF08EFFB23E932F2520B /* Pods-Me-iOSUITests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.dev.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.dev.xcconfig"; sourceTree = "<group>"; };
@@ -437,8 +440,10 @@
 		B70E502D6FE61D276D1C2E49 /* Pods-Me-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOS.release.xcconfig"; path = "Target Support Files/Pods-Me-iOS/Pods-Me-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		B7BD7674D374A359FD04AE88 /* Pods-Me-iOSTests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.dev.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.dev.xcconfig"; sourceTree = "<group>"; };
 		CA1908806607F2B5393C2931 /* Pods-Me-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3BA25E448FD28733C6D2C29 /* Pods_Me_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DAE6D5AF45B3C9784E971D /* Pods-Me-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD33B298743ED6923528A696 /* Pods-Me-iOSUITests.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.alpha.xcconfig"; sourceTree = "<group>"; };
+		E81CCA3BBA5ECCF2829BD2DB /* Pods_Me_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E9ECB144534F67E9BA608D /* Pods-Me-iOSUITests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.demo.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.demo.xcconfig"; sourceTree = "<group>"; };
 		FF3B1419243722EE003FDDD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrganizationValidatorViewController.xib; sourceTree = "<group>"; };
 		FF3B141E243722F6003FDDD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrganizationValidatorViewController.strings; sourceTree = "<group>"; };
@@ -450,6 +455,7 @@
 		FF7C8EF724A5597C00E7DF00 /* CustomWarningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWarningViewController.xib; sourceTree = "<group>"; };
 		FFA3328724CAF0C600DF87DE /* MArchivedRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MArchivedRecordsViewController.swift; sourceTree = "<group>"; };
 		FFA3328924CAF25200DF87DE /* MArchivedRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MArchivedRecordTableViewCell.swift; sourceTree = "<group>"; };
+		FFD9E36424E14CB700FC3A9A /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		FFE37B4B24A5249F00CC3B59 /* MSuccessCreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSuccessCreateRecordViewController.swift; sourceTree = "<group>"; };
 		FFE37B4D24A5252D00CC3B59 /* SuccessCreateRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessCreateRecord.storyboard; sourceTree = "<group>"; };
 		FFFF8AAB2450CAA2001673DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -460,6 +466,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694AA452EED67742484321C1 /* Pods_Me_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5126F6B42B5EE3DC4FB9A9B4 /* Pods_Me_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +482,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C253286D40592ABFD3C5A10 /* Pods_Me_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +514,9 @@
 		32CD4EE748A941E16A0DF051 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3BA25E448FD28733C6D2C29 /* Pods_Me_iOS.framework */,
+				E81CCA3BBA5ECCF2829BD2DB /* Pods_Me_iOSTests.framework */,
+				7246FE18624EF869E147531C /* Pods_Me_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -696,7 +708,7 @@
 				65139C362280273E003E0CDE /* Scanner */,
 				65139C3F228029C0003E0CDE /* AppLocker */,
 				65139C5C228029EF003E0CDE /* CornerImageView.swift */,
-				655D64702315903900EABD57 /* HBSegmentedControl.swift */,
+				FFD9E36424E14CB700FC3A9A /* HBSegmentedControl.swift */,
 				65A8B6F12282DB9500B7DF05 /* MANavicationController.swift */,
 				65139C5B228029EF003E0CDE /* CustomCornerUIView.swift */,
 				65139C59228029EF003E0CDE /* Formater.swift */,
@@ -1750,6 +1762,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655D6476231598D300EABD57 /* SendEtherViewController.swift in Sources */,
+				FFD9E36524E14CB700FC3A9A /* HBSegmentedControl.swift in Sources */,
 				65139C7322802EFF003E0CDE /* LoginService.swift in Sources */,
 				65A8B70F2282E19F00B7DF05 /* MQRViewController.swift in Sources */,
 				65F52E4A23167E0D00B9D229 /* Wallet.swift in Sources */,
@@ -1848,7 +1861,6 @@
 				65B4DE3E22A15F5C00AFC878 /* SuccessEmailViewModel.swift in Sources */,
 				654F97A1229BE762009C9FFA /* Validator.swift in Sources */,
 				65A8B7112282E1A900B7DF05 /* MRecordsViewController.swift in Sources */,
-				655D64712315903900EABD57 /* HBSegmentedControl.swift in Sources */,
 				65139C7522802F25003E0CDE /* PinCode.swift in Sources */,
 				65911B48228D892800EA30D6 /* Voucher.swift in Sources */,
 				5B42874623AD0EBE00FEABE7 /* User+CoreDataProperties.swift in Sources */,

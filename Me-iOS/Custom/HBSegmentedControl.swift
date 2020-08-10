@@ -1,11 +1,10 @@
 //
 //  HBSegmentedControl.swift
-//  HBSegmentedControl
+//  Me
 //
-//  Created by Hilal Baig on 8/13/17.
-//  Copyright © 2017 Hilal Baig. All rights reserved.
+//  Created by Tcacenco Daniel on 11/30/18.
+//  Copyright © 2018 Foundation Forus. All rights reserved.
 //
-
 
 import UIKit
 

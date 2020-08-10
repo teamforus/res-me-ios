@@ -24,7 +24,7 @@ class MArchivedRecordTableViewCell: UITableViewCell {
     }()
     
     private var archivedLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel(frame: .zero)
         label.font = UIFont(name: "GoogleSans-Regular", size: 14)
         label.textColor = #colorLiteral(red: 0.5150660276, green: 0.5296565294, blue: 0.5467811227, alpha: 1)
         label.text = "Archived"
@@ -32,11 +32,17 @@ class MArchivedRecordTableViewCell: UITableViewCell {
     }()
     
     private var dateLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel(frame: .zero)
         label.font = UIFont(name: "GoogleSans-Regular", size: 14)
         label.textColor = #colorLiteral(red: 0.5150660276, green: 0.5296565294, blue: 0.5467811227, alpha: 1)
         label.isHidden = true
         return label
+    }()
+    
+    private var separator: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = #colorLiteral(red: 0.9502839446, green: 0.9651113153, blue: 0.9734370112, alpha: 1)
+        return view
     }()
     
     static let indentifier = "MArchivedRecordTableViewCell"
@@ -73,7 +79,7 @@ class MArchivedRecordTableViewCell: UITableViewCell {
 
 extension MArchivedRecordTableViewCell {
     func addSubviews() {
-        let views = [typeRecord, valueRecord, archivedLabel]
+        let views = [typeRecord, valueRecord, archivedLabel, separator]
         views.forEach { (view) in
             self.contentView.addSubview(view)
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +103,13 @@ extension MArchivedRecordTableViewCell {
             archivedLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             archivedLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10),
             archivedLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separator.heightAnchor.constraint(equalToConstant: 1),
+            separator.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
+            separator.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 0),
+            separator.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 0)
         ])
     }
 }

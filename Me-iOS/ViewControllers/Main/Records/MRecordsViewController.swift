@@ -8,13 +8,22 @@
 
 import UIKit
 import KVSpinnerView
+import HMSegmentedControl
+
+enum RecordsListType: String, CaseIterable {
+    case myRecords = "My Records"
+    case archive = "Archive"
+}
 
 class MRecordsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var newRecordButton: ShadowButton!
+    @IBOutlet weak var segmentControll: HMSegmentedControl!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
     var walthroughViewController: BWWalkthroughViewController!
+    var recordTypeList: RecordsListType = .myRecords
     
     
     lazy var recordViewModel: RecordsViewModel = {
@@ -25,7 +34,13 @@ class MRecordsViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(walkthroughCloseButtonPressed), name: NotificationName.ClosePageControll, object: nil)
-        
+        setupTableView()
+        setupSegmentControl()
+        completeFetchRecords()
+    }
+    
+    func setupTableView() {
+        tableView.register(MArchivedRecordTableViewCell.self, forCellReuseIdentifier: MArchivedRecordTableViewCell.indentifier)
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
@@ -33,16 +48,46 @@ class MRecordsViewController: UIViewController {
         }
         
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+    
+    func setupSegmentControl() {
+        let selectedColor = #colorLiteral(red: 0.1702004969, green: 0.3387943804, blue: 1, alpha: 1)
+        let normalColor = #colorLiteral(red: 0.3333011568, green: 0.3333538771, blue: 0.3332896829, alpha: 1)
+        segmentControll.sectionTitles = RecordsListType.allCases.map({$0.rawValue})
+        segmentControll.addTarget(self, action: #selector(segmentedControlChangedValue(segmentControl:)), for: .valueChanged)
+        segmentControll.selectionIndicatorLocation = .bottom
+        segmentControll.selectionIndicatorColor = selectedColor
+        segmentControll.selectionIndicatorHeight = 2.0
+        segmentControll.selectionStyle = .fullWidthStripe
+        let font = UIFont(name: "GoogleSans-Medium", size: 14)!
+        segmentControll.titleTextAttributes = [NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor:  normalColor]
+        segmentControll.selectedTitleTextAttributes = [NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor:  selectedColor]
         
-        recordViewModel.complete = { [weak self] (records) in
-            
-            DispatchQueue.main.async {
-                
-                self?.tableView.reloadData()
-                KVSpinnerView.dismiss()
-                self?.refreshControl.endRefreshing()
-            }
+    }
+    
+    @objc func segmentedControlChangedValue(segmentControl: HMSegmentedControl) {
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            recordViewModel.isArchived = false
+            recordTypeList = .myRecords
+            newRecordButton.isHidden = false
+            self.tabBarController?.tabBar.isHidden = false
+            self.tableViewTopConstraint.constant = 1
+            break
+        case 1:
+            recordViewModel.isArchived = true
+            recordTypeList = .archive
+            newRecordButton.isHidden = true
+            self.tabBarController?.tabBar.isHidden = true
+            tableViewTopConstraint.constant = 10
+            break
+        default:
+            break
         }
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        initFetchRecords()
     }
     
     @IBAction func createRecord(_ sender: UIButton) {
@@ -81,7 +126,7 @@ class MRecordsViewController: UIViewController {
             
             successRecordController.completedCreateRecord = { [weak self] () in
                 self?.dismiss(animated: true) {
-                    self?.initFetch()
+                    self?.initFetchRecords()
                 }
             }
             
@@ -93,14 +138,14 @@ class MRecordsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        initFetch()
+        initFetchRecords()
         if #available(iOS 13, *) {
         }else {
             self.setStatusBarStyle(.default)
         }
     }
     
-    func initFetch() {
+    func initFetchRecords() {
         if isReachable() {
             KVSpinnerView.show()
             recordViewModel.vc = self
@@ -113,13 +158,25 @@ class MRecordsViewController: UIViewController {
         }
     }
     
+    func completeFetchRecords() {
+        recordViewModel.complete = { [weak self] (records) in
+            
+            DispatchQueue.main.async {
+                
+                self?.tableView.reloadData()
+                KVSpinnerView.dismiss()
+                self?.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
     @IBAction func showArchivedRecords(_ sender: UIButton) {
         let archivedRecordsVC = MArchivedRecordsViewController()
         self.present(archivedRecordsVC, animated: true)
     }
     
     @objc func refreshData(_ sender: Any) {
-        initFetch()
+        initFetchRecords()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -147,7 +204,7 @@ extension MRecordsViewController: BWWalkthroughViewControllerDelegate{
     
     func walkthroughCloseButtonPressed() {
         self.dismiss(animated: true) {
-            self.initFetch()
+            self.initFetchRecords()
         }
     }
 }
@@ -163,12 +220,20 @@ extension MRecordsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecordsTableViewCell
+        switch recordTypeList {
+        case .myRecords:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecordsTableViewCell
+            
+            cell.record = recordViewModel.getCellViewModel(at: indexPath)
+            
+            return cell
+        case .archive:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MArchivedRecordTableViewCell.indentifier, for: indexPath) as! MArchivedRecordTableViewCell
+            cell.configure(record: recordViewModel.getCellViewModel(at: indexPath))
+            
+            return cell
+        }
         
-        cell.record = recordViewModel.getCellViewModel(at: indexPath)
-        
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
