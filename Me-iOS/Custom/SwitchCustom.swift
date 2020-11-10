@@ -6,7 +6,7 @@ class UISwitchCustom: UISwitch {
         didSet {
             self.tintColor = OffTint
             self.layer.cornerRadius = self.frame.height / 2.2
-            self.backgroundColor = OffTint
+          self.backgroundColor = .clear
         }
     }
 }

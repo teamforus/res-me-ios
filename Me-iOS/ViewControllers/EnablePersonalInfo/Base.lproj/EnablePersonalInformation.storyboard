@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m0o-iy-LOr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m0o-iy-LOr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,11 +23,11 @@
         <scene sceneID="uBU-KZ-reP">
             <objects>
                 <viewController id="m0o-iy-LOr" customClass="EnablePersonalInformationViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uMr-92-hIe">
+                    <view key="view" contentMode="scaleToFill" id="uMr-92-hIe" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informatie delen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-oV-vYl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informatie delen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-oV-vYl" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="17" y="92" width="380" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="32g-kU-fV0"/>
@@ -39,7 +39,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Me app" translatesAutoresizingMaskIntoConstraints="NO" id="nPy-mT-oak">
                                 <rect key="frame" x="0.0" y="202" width="414" height="201"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCw-B0-HvF" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCw-B0-HvF" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="33" y="628.5" width="348" height="51"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -70,17 +70,16 @@
                                     <segue destination="DVW-t5-MuU" kind="presentation" identifier="goToMain" modalPresentationStyle="fullScreen" id="DLI-9H-UnZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bOk-mY-Yl9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bOk-mY-Yl9" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="21" y="442" width="372" height="81.5"/>
                                 <string key="text">Door uw identificatie nummer te delen, kunnen problemen beter en sneller worden opgelost, en kunnen de ontwikkelaars eventueel contact met u opnemen.</string>
                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-Cq-Cbu">
-                                <rect key="frame" x="14" y="54" width="24" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-Cq-Cbu" customClass="BackButton_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="11" y="49" width="30" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="dismiss:" destination="m0o-iy-LOr" eventType="touchUpInside" id="P5u-Ri-oD1"/>
                                 </connections>
@@ -88,11 +87,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-fx-WDO" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="33" y="549.5" width="348" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deel identificatienummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgT-1R-Aax">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deel identificatienummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgT-1R-Aax" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                         <rect key="frame" x="18" y="18" width="247" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B6I-FH-DWW" customClass="UISwitchCustom" customModule="Me_iOS" customModuleProvider="target">
@@ -117,9 +116,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Gray_Dark_DarkTheme"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="v4Y-9y-d00"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v4Y-9y-d00" firstAttribute="trailing" secondItem="Pp9-oV-vYl" secondAttribute="trailing" constant="17" id="4Q7-oZ-IE7"/>
@@ -138,8 +139,15 @@
                             <constraint firstItem="aCw-B0-HvF" firstAttribute="leading" secondItem="v4Y-9y-d00" secondAttribute="leading" constant="33" id="v6e-yH-v2V"/>
                             <constraint firstItem="bOk-mY-Yl9" firstAttribute="leading" secondItem="v4Y-9y-d00" secondAttribute="leading" constant="21" id="zzf-Jy-NDp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="v4Y-9y-d00"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="identificationSwitch" destination="B6I-FH-DWW" id="0HM-w0-V0a"/>
+                        <outlet property="identificationView" destination="0Lk-fx-WDO" id="KEk-61-r8D"/>
+                        <outlet property="titleLabel" destination="Pp9-oV-vYl" id="aKx-Ep-niT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O4-mk-yrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,8 +162,15 @@
             <point key="canvasLocation" x="1871" y="208"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="B6I-FH-DWW">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="aCw-B0-HvF">
+            <size key="intrinsicContentSize" width="78" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Me app" width="200" height="201"/>
-        <image name="back" width="24" height="24"/>
     </resources>
 </document>

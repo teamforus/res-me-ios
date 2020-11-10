@@ -1,72 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
+        <array key="GoogleSans-Bold.ttf">
+            <string>GoogleSans-Bold</string>
         </array>
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans-Regular</string>
+        <array key="GoogleSans-Regular.ttf">
+            <string>GoogleSans-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="eZb-O9-KwV" customClass="AppLocker" customModule="Me" customModuleProvider="target">
+        <viewController id="eZb-O9-KwV" customClass="AppLocker" customModule="Me_iOS" customModuleProvider="target">
             <layoutGuides>
                 <viewControllerLayoutGuide type="top" id="1Nd-Cx-bNb"/>
                 <viewControllerLayoutGuide type="bottom" id="lR7-xf-1EX"/>
             </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="IOf-8m-rm3">
+            <view key="view" contentMode="scaleToFill" id="IOf-8m-rm3" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ks-4Ii">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ks-4Ii" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-18-l1J">
-                                <rect key="frame" x="167.5" y="42.5" width="40" height="60"/>
+                                <rect key="frame" x="167.5" y="44" width="40" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hVx-18-l1J" secondAttribute="height" multiplier="1:1" constant="-20" id="wcK-td-OD3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-iv-5oK">
-                                <rect key="frame" x="20" y="111" width="335" height="49.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-iv-5oK" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="131.5" width="335" height="46"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
-                                <rect key="frame" x="8" y="210" width="359" height="28"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="8" y="226" width="359" height="28"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="Me" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="Me_iOS" customModuleProvider="target">
                                         <rect key="frame" x="121.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y48-OI-bV6" secondAttribute="height" multiplier="1:1" id="cHE-Dp-W1T"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-fK-aNd" userLabel="second" customClass="Indicator" customModule="Me" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-fK-aNd" userLabel="second" customClass="Indicator" customModule="Me_iOS" customModuleProvider="target">
                                         <rect key="frame" x="155.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EvL-fK-aNd" secondAttribute="height" multiplier="1:1" id="mWJ-SV-lPQ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-rX-vyo" userLabel="third" customClass="Indicator" customModule="Me" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-rX-vyo" userLabel="third" customClass="Indicator" customModule="Me_iOS" customModuleProvider="target">
                                         <rect key="frame" x="189.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ty0-rX-vyo" secondAttribute="height" multiplier="1:1" id="Bb2-Nk-aDy"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-Y6-U7g" userLabel="four" customClass="Indicator" customModule="Me" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-Y6-U7g" userLabel="four" customClass="Indicator" customModule="Me_iOS" customModuleProvider="target">
                                         <rect key="frame" x="223.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -89,13 +87,16 @@
                                     <constraint firstItem="EvL-fK-aNd" firstAttribute="height" secondItem="nQv-Y6-U7g" secondAttribute="height" id="qPY-vt-Y5M"/>
                                     <constraint firstItem="nQv-Y6-U7g" firstAttribute="height" secondItem="6kS-ba-3rR" secondAttribute="height" multiplier="1:2" id="rTb-Fm-qBg"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verkeerde inlogcode, probeer het opnieuw" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr">
-                                <rect key="frame" x="20" y="163.5" width="335" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verkeerde inlogcode, probeer het opnieuw" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="53" y="185.5" width="269" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="80p-wg-cpz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -104,24 +105,27 @@
                             <constraint firstItem="hVx-18-l1J" firstAttribute="centerX" secondItem="O4o-Ks-4Ii" secondAttribute="centerX" id="4ph-gk-YLp"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="height" secondItem="O4o-Ks-4Ii" secondAttribute="height" multiplier="1:8" constant="-3.875" id="5vT-yP-MeY"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="centerX" secondItem="O4o-Ks-4Ii" secondAttribute="centerX" id="ABR-dq-2Dy"/>
-                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="top" secondItem="BiA-iv-5oK" secondAttribute="bottom" constant="3" id="FD0-he-TB2"/>
+                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="top" secondItem="BiA-iv-5oK" secondAttribute="bottom" constant="8" id="FD0-he-TB2"/>
                             <constraint firstAttribute="trailing" secondItem="BiA-iv-5oK" secondAttribute="trailing" constant="20" id="IN1-bn-LyO"/>
-                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="cb0-Xj-5lK"/>
-                            <constraint firstItem="BiA-iv-5oK" firstAttribute="centerY" secondItem="O4o-Ks-4Ii" secondAttribute="centerY" constant="8" id="cod-xi-qy4"/>
-                            <constraint firstItem="BiA-iv-5oK" firstAttribute="top" secondItem="hVx-18-l1J" secondAttribute="bottom" constant="8.5" id="dUH-mc-nNL"/>
+                            <constraint firstAttribute="bottom" secondItem="6kS-ba-3rR" secondAttribute="bottom" constant="1" id="N5l-h7-YEN"/>
+                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="53" id="cb0-Xj-5lK"/>
+                            <constraint firstItem="BiA-iv-5oK" firstAttribute="centerY" secondItem="O4o-Ks-4Ii" secondAttribute="centerY" constant="27" id="cod-xi-qy4"/>
+                            <constraint firstItem="BiA-iv-5oK" firstAttribute="top" secondItem="hVx-18-l1J" secondAttribute="bottom" constant="27.5" id="dUH-mc-nNL"/>
                             <constraint firstAttribute="trailing" secondItem="6kS-ba-3rR" secondAttribute="trailing" constant="8" id="gi3-Ze-ZlI"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="hm6-JS-fkp"/>
-                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="2.5" id="rwf-wn-aLV"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="8" id="x0K-gx-1Dy"/>
-                            <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="20" id="y15-Jy-o4e"/>
+                            <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="53" id="y15-Jy-o4e"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-9U-A1v" userLabel="keyboard">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-9U-A1v" userLabel="keyboard" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="255" width="375" height="412"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-3y-6MP" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-3y-6MP" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="55" y="7" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -132,12 +136,12 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="XYs-GF-s9W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-BT-9eb" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-BT-9eb" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="150" y="7" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HJZ-BT-9eb" secondAttribute="height" multiplier="1:1" id="1VR-Td-HwG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -148,9 +152,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="vLv-Z7-c4R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cog-Nd-UYd" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cog-Nd-UYd" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="245" y="7" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -161,9 +165,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="kUY-ac-H1J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-a6-MYe" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-a6-MYe" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="55" y="98" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -174,9 +178,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="vVP-wW-7UM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sva-ss-Jmv" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sva-ss-Jmv" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="150" y="98" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -187,9 +191,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="4M3-s9-Shf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uve-ti-7ya" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uve-ti-7ya" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="245" y="98" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -200,9 +204,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="6ST-Wn-yxf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAE-1L-zxN" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAE-1L-zxN" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="55" y="189" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -213,9 +217,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="I4e-kV-iez"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abq-s3-wbI" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abq-s3-wbI" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="150" y="189" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -226,9 +230,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="VeO-5Y-HF2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-qE-N40" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-qE-N40" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="245" y="189" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -241,6 +245,7 @@
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-KO-vKM">
                                 <rect key="frame" x="245" y="280" width="75" height="75"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" image="backspaceBlue.png">
                                     <color key="titleColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -251,9 +256,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="LXj-tf-Iwj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-bP-FZg" customClass="Button" customModule="Me" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-bP-FZg" customClass="Button" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="150" y="280" width="75" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -264,9 +269,9 @@
                                     <action selector="keyboardPressed:" destination="eZb-O9-KwV" eventType="touchUpInside" id="SKt-zf-xYu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-9Q-OSg">
+                            <button opaque="NO" clipsSubviews="YES" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-9Q-OSg">
                                 <rect key="frame" x="29" y="280" width="101" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="18"/>
                                 <state key="normal" title="Annuleer">
                                     <color key="titleColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -329,6 +334,9 @@
                             <constraint firstItem="sva-ss-Jmv" firstAttribute="bottom" secondItem="xRu-9U-A1v" secondAttribute="centerY" constant="-33" id="yDb-aw-x5h"/>
                             <constraint firstItem="abq-s3-wbI" firstAttribute="height" secondItem="sva-ss-Jmv" secondAttribute="height" id="zaU-Xb-Hb6"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -343,6 +351,9 @@
                     <constraint firstAttribute="trailing" secondItem="O4o-Ks-4Ii" secondAttribute="trailing" id="xJg-Dp-gkv"/>
                     <constraint firstItem="O4o-Ks-4Ii" firstAttribute="leading" secondItem="IOf-8m-rm3" secondAttribute="leading" id="xNr-xt-esq"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                </userDefinedRuntimeAttributes>
             </view>
             <connections>
                 <outlet property="cancelButton" destination="CIU-9Q-OSg" id="jph-Ge-Qt9"/>
@@ -354,7 +365,7 @@
                 <outletCollection property="pinIndicators" destination="ty0-rX-vyo" collectionClass="NSMutableArray" id="evP-lU-FiQ"/>
                 <outletCollection property="pinIndicators" destination="nQv-Y6-U7g" collectionClass="NSMutableArray" id="jYB-cR-2wD"/>
             </connections>
-            <point key="canvasLocation" x="-213.75" y="-163.73239436619718"/>
+            <point key="canvasLocation" x="-215.19999999999999" y="-164.16791604197903"/>
         </viewController>
     </objects>
     <resources>

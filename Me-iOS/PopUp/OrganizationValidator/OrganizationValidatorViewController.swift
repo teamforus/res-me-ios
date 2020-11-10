@@ -11,21 +11,37 @@ import UIKit
 protocol OrganizationValidatorViewControllerDelegate: class {
     func close()
     func selectOrganization(organization: EmployeesOrganization, vc: UIViewController)
+    func selectOrganizationVoucher(organization: AllowedOrganization, vc: UIViewController)
+}
+
+enum OrganizationListType {
+    case recordOrganization, subsidieOrganization
 }
 
 class OrganizationValidatorViewController: UIViewController {
+    @IBOutlet weak var blurView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bodyView: CustomCornerUIView!
     @IBOutlet weak var bottomConstraintView: NSLayoutConstraint!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var closeButton: UIButton!
     
+    var organizationType: OrganizationListType = .recordOrganization
     weak var delegate: OrganizationValidatorViewControllerDelegate!
     var recordEmployeesOrganizations: [EmployeesOrganization] = []
+    var allowedOrganization: [AllowedOrganization] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAccessibility()
+        setupView()
+    }
+    
+    func setupView() {
+        setupTitle()
+        self.blurView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(close(_:))))
         tableView.register(UINib(nibName: "OrganizationValidatorTableViewCell", bundle: nil), forCellReuseIdentifier: "OrganizationValidatorTableViewCell")
-        self.bottomConstraintView.constant = -600
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.bottomConstraintView.constant = -12
             UIView.animate(withDuration: 0.5) {
@@ -34,11 +50,14 @@ class OrganizationValidatorViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    func setupTitle() {
+        switch organizationType {
+        case .recordOrganization:
+            self.titleLabel.text = Localize.choose_validator()
+        case .subsidieOrganization:
+            self.titleLabel.text = Localize.choose_organization()
+        }
     }
-    
     
     @IBAction func close(_ sender: UIButton){
         bottomConstraintView.constant = -1000
@@ -59,19 +78,36 @@ extension OrganizationValidatorViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recordEmployeesOrganizations.count
+        switch organizationType {
+        case .recordOrganization:
+            return recordEmployeesOrganizations.count
+        case .subsidieOrganization:
+            return allowedOrganization.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrganizationValidatorTableViewCell", for: indexPath) as! OrganizationValidatorTableViewCell
         
-        cell.organization = recordEmployeesOrganizations[indexPath.row]
+        switch organizationType {
+        case .recordOrganization:
+            cell.setupRecordOrganization(organization: recordEmployeesOrganizations[indexPath.row])
+        case .subsidieOrganization:
+            cell.setupVoucherOrganization(organization: allowedOrganization[indexPath.row])
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.selectOrganization(organization: recordEmployeesOrganizations[indexPath.row], vc: self)
+        switch organizationType {
+        case .recordOrganization:
+            delegate.selectOrganization(organization: recordEmployeesOrganizations[indexPath.row], vc: self)
+        case .subsidieOrganization:
+            delegate.selectOrganizationVoucher(organization: allowedOrganization[indexPath.row], vc: self)
+        }
+        close(closeButton)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -81,6 +117,14 @@ extension OrganizationValidatorViewController: UITableViewDelegate, UITableViewD
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+// MARK: - Accessibility Protocol
+
+extension OrganizationValidatorViewController: AccessibilityProtocol {
+    func setupAccessibility() {
+        closeButton.setupAccesibility(description: "Close", accessibilityTraits: .button)
     }
 }
 

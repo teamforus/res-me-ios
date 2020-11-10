@@ -64,6 +64,20 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
+Carthage/Build
+=======
+!default.xcworkspace
+xcuserdata
+*.moved-aside
+DerivedData
+.idea/
+Pods
+*.swp
+node_modules
+package-lock.json
+Me-iOS.xcodeproj/xcshareddata/xcschemes
+
+
 Carthage/Build/
 
 # Accio dependency management
@@ -88,3 +102,5 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Me-iOS.xcworkspace/contents.xcworkspacedata
+Me-iOS.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist

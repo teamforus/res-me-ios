@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum FundType: String {
+    case subsidies = "subsidies"
+}
+
 struct Fund: Decodable {
     
     var id: Int?
@@ -16,6 +20,7 @@ struct Fund: Decodable {
     var currency: String?
     var url_webshop: String?
     var organization: Organization?
+    var type: String?
     var product_categories: [ProductCategory]?
     var logo: Logo?
 }

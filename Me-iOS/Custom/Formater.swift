@@ -10,7 +10,6 @@ import UIKit
 
 extension Date {
     
-    
     func dateFormaterFromDate() -> String  {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy HH:mm"

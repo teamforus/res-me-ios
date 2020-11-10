@@ -21,6 +21,7 @@ struct NotificationName{
     public static let AuthorizeTokenEmail = Notification.Name("authorizeToken")
     public static let AuthorizeRegistrationTokenEmail = Notification.Name("authorizeRegistrationToken")
     public static let AuthorizeTokenSignUp = Notification.Name("authorizeTokenSignUp")
+    public static let CloseAppNotifier = Notification.Name("CloseAppNotifier")
 }
 
 

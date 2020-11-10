@@ -8,7 +8,6 @@
 
 import UIKit
 import BWWalkthrough
-import KVSpinnerView
 
 class MChooseTypeRecordViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

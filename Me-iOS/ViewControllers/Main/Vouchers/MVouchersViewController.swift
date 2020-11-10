@@ -8,7 +8,7 @@
 
 import UIKit
 import ISHPullUp
-import KVSpinnerView
+import StoreKit
 
 enum VoucherType: Int {
     case valute = 0
@@ -21,8 +21,10 @@ class MVouchersViewController: UIViewController {
     var isFromLogin: Bool!
     @IBOutlet weak var segmentController: HBSegmentedControl!
     @IBOutlet weak var segmentView: UIView!
+    @IBOutlet weak var transactionButton: UIButton!
     
-    var voucherType: VoucherType!
+  @IBOutlet weak var titleLabel: UILabel_DarkMode!
+  var voucherType: VoucherType!
     lazy var voucherViewModel: VouchersViewModel = {
         return VouchersViewModel()
     }()
@@ -40,6 +42,10 @@ class MVouchersViewController: UIViewController {
     }
     
     func setupRefrehshControl() {
+        if !Preference.tapToSeeTransactionTipHasShown {
+            Preference.tapToSeeTransactionTipHasShown = true
+            transactionButton?.toolTip(message: Localize.tap_here_you_want_to_see_list_transaction(), style: .dark, location: .bottom, offset: CGPoint(x: -50, y: 0))
+        }
         registerForPreviewing(with: self, sourceView: tableView)
         
         if #available(iOS 10.0, *) {
@@ -87,6 +93,11 @@ class MVouchersViewController: UIViewController {
                 self.wallet = response
             }
         }
+        
+        voucherViewModel.getIndentity()
+        
+        initFetch()
+        setupAccessibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,6 +146,13 @@ class MVouchersViewController: UIViewController {
             break
         default: break
         }
+    }
+    
+    @IBAction func openTransaction(_ sender: UIButton) {
+        transactionButton.removeToolTip(with: Localize.tap_here_you_want_to_see_list_transaction())
+        let transactionVC = MTransactionsViewController()
+        transactionVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(transactionVC, animated: true)
     }
     
     
@@ -214,8 +232,8 @@ extension MVouchersViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
         case .vouchers?:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VoucherTableViewCell
-            
-            cell.voucher = voucherViewModel.getCellViewModel(at: indexPath)
+            let voucher = voucherViewModel.getCellViewModel(at: indexPath)
+            cell.setupVoucher(voucher: voucher)
             
             return cell
         default:
@@ -290,22 +308,18 @@ extension MVouchersViewController: UIViewControllerPreviewingDelegate{
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
+// MARK: - Accessibility Protocol
 
-extension UIViewController{
+extension MVouchersViewController: AccessibilityProtocol {
     
-    func didSetPullUP(storyboard: UIStoryboard, segue: UIStoryboardSegue) -> CommonPullUpViewController {
+    func setupAccessibility() {
+        if let valute = segmentController.accessibilityElement(at: 0) as? UIView {
+            valute.setupAccesibility(description: "Choose to show all valute", accessibilityTraits: .causesPageTurn)
+        }
         
-        let passVC = segue.destination as! CommonPullUpViewController
-        
-        passVC.contentViewController = storyboard.instantiateViewController(withIdentifier: "content")
-        
-        passVC.bottomViewController = storyboard.instantiateViewController(withIdentifier: "bottom")
-        
-        (passVC.bottomViewController as! CommonBottomViewController).pullUpController = passVC
-        passVC.sizingDelegate = (passVC.bottomViewController as! CommonBottomViewController)
-        passVC.stateDelegate = (passVC.bottomViewController as! CommonBottomViewController)
-        
-        return passVC
+        if let vouchers = segmentController.accessibilityElement(at: 1) as? UIView {
+            vouchers.setupAccesibility(description: "Choose to show all vouchers", accessibilityTraits: .causesPageTurn)
+        }
+      titleLabel.setupAccesibility(description: Localize.vouchers(), accessibilityTraits: .header)
     }
-    
 }

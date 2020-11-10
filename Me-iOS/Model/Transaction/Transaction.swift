@@ -10,12 +10,15 @@ import Foundation
 
 struct Transaction: Decodable {
     
+    var id: Int?
     var organization_id: Int?
     var product_id: Int?
     var fund_id: Int?
     var amount: String?
     var address: String?
+    var state: String?
     var organization: Organization?
+    var fund: Fund?
     var product: Product?
     var created_at: String?
     var date_time: String?

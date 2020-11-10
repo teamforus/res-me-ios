@@ -33,13 +33,13 @@
 "o4b-Rb-FmZ.text" = "3";
 
 /* Class = "UITabBarItem"; title = "Eigendom"; ObjectID = "ony-rh-yQc"; */
-"ony-rh-yQc.title" = "Vouchers";
+"ony-rh-yQc.title" = "Balances";
 
 /* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "r3k-mS-eBG"; */
 "r3k-mS-eBG.text" = "You have no vouchers yet";
 
 /* Class = "UILabel"; text = "Voucher"; ObjectID = "rIR-n0-vK4"; */
-"JOr-Qw-UNr.text" = "Vouchers";
+"JOr-Qw-UNr.text" = "Balances";
 
 /* Class = "UILabel"; text = "First Name"; ObjectID = "rpK-Zw-ROm"; */
 "rpK-Zw-ROm.text" = "First Name";
@@ -47,3 +47,8 @@
 /* Class = "UILabel"; text = "Personal"; ObjectID = "uLp-89-Zk0"; */
 "uLp-89-Zk0.text" = "Personal";
 
+/* Class = "UITabBarItem"; title = "Records"; ObjectID = "S2m-RV-PJB"; */
+"S2m-RV-PJB.title" = "Profile";
+
+/* Class = "UILabel"; text = "On this page you can see the funds you receive. You haven't received any funds yet"; ObjectID = "9G1-Sj-fzE"; */
+"9G1-Sj-fzE.text" = "On this page you can see the funds you receive. You haven't received any funds yet.";

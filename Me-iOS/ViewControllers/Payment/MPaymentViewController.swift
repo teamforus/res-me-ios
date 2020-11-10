@@ -41,6 +41,8 @@ class MPaymentViewController: UIViewController {
         }else {
             titleLabel.text = Localize.test_transaction()
             allowedOriganizationLabel.text = Localize.test_organization()
+            organizationLabel.isHidden = true
+            priceUILabel.isHidden = true
         }
         
     }
@@ -90,13 +92,13 @@ class MPaymentViewController: UIViewController {
                     self.present(vc, animated: true)
                 }else {
                     
-                    showSimpleAlert(title: "Warning".localized(), message: "A payment of € 0.01 is too low to be paid out, choose a higher amount.".localized())
+                    showSimpleAlert(title: Localize.warning(), message: Localize.payment_of_001_is_to_low_to_be_paid_out_choose_highe_amount())
                     
                 }
                 
             } else {
                 
-                showSimpleAlert(title: "Warning".localized(), message: "Please enter the amount".localized())
+                showSimpleAlert(title: Localize.warning(), message: Localize.please_enter_the_amount())
                 
             }
             
@@ -156,7 +158,15 @@ extension MPaymentViewController {
             organizationIcon.loadImageUsingUrlString(urlString: voucher.allowed_organizations?.first?.logo?.sizes?.thumbnail ?? "", placeHolder: #imageLiteral(resourceName: "Resting"))
             selectedAllowerdOrganization = voucher.allowed_organizations?.first
         }
-        
+        amountField.setPlaceholderColor(with: Localize.enter_the_price_here(), and: .lightGray)
+        notesField.setPlaceholderColor(with: Localize.note(), and: .lightGray)
+       let image = UIImage(named: "roundedRight")?.withRenderingMode(.alwaysTemplate)
+        self.arrowIcon.image = image
+        if #available(iOS 11.0, *) {
+            self.arrowIcon.tintColor = UIColor(named: "Black_Light_DarkTheme")
+        } else {
+          // Fallback on earlier versions
+        }
     }
     
     @IBAction func showOrganizations(_ sender: UIButton) {
@@ -228,4 +238,10 @@ extension MPaymentViewController: UITextFieldDelegate{
         return true
     }
     
+}
+extension MPaymentViewController: AccessibilityProtocol {
+    func setupAccessibility() {
+     // sendEmailButton.chooseOrganizationButton(description: "Choose Organization Button", accessibilityTraits: .button)
+       
+   }
 }

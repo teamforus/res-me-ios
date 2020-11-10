@@ -60,6 +60,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>De camera wordt gebruikt om QR-Codes te scannen</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>The Me app want to access your FaceID.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GoogleSans.ttf</string>
@@ -90,7 +92,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 </dict>
 </plist>

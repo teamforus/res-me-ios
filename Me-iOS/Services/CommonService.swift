@@ -59,23 +59,18 @@ class CommonService: CommonServiceProtocol {
         do {
             let encodePost = ApiService.getPostString(params: ["id" : (body as! BodyId).id!]).data(using: .utf8)
             request.httpBody = encodePost
-        } catch{}
+        }
         
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            do {
-                
-                let httpResponse = response as? HTTPURLResponse
-                
-                complete( httpResponse!.statusCode)
-            } catch let error {
-                
-                failure(error)
-                
-            }
+            guard data != nil else { return }
+            _ = JSONDecoder()
+            
+            let httpResponse = response as? HTTPURLResponse
+            
+            complete( httpResponse!.statusCode)
+            
         }
         
         task.resume()
@@ -94,23 +89,18 @@ class CommonService: CommonServiceProtocol {
         do {
             let encodePost = ApiService.getPostString(params: ["id" : (body as! BodyId).id!]).data(using: .utf8)
             request.httpBody = encodePost
-        } catch{}
+        }
         
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            do {
-                
-                let httpResponse = response as? HTTPURLResponse
-                
-                complete( httpResponse!.statusCode)
-            } catch let error {
-                
-                failure(error)
-                
-            }
+            guard data != nil else { return }
+            let _ = JSONDecoder()
+            
+            let httpResponse = response as? HTTPURLResponse
+            
+            complete( httpResponse!.statusCode)
+            
         }
         
         task.resume()
@@ -118,7 +108,6 @@ class CommonService: CommonServiceProtocol {
     
     
     func postWithoutParamtersAndResponse(request: String, complete: @escaping (Int) -> (), failure: @escaping (Error) -> ()) {
-        
         
         let url = URL(string: BaseURL.baseURL(url: request))!
         var request = URLRequest(url: url)
@@ -132,18 +121,12 @@ class CommonService: CommonServiceProtocol {
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            do {
-                
-                let httpResponse = response as? HTTPURLResponse
-                
-                complete( httpResponse!.statusCode)
-            } catch let error {
-                
-                failure(error)
-                
-            }
+            guard data != nil else { return }
+            _ = JSONDecoder()
+            let httpResponse = response as? HTTPURLResponse
+            
+            complete( httpResponse!.statusCode)
+            
         }
         
         task.resume()
@@ -252,6 +235,7 @@ class CommonService: CommonServiceProtocol {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("me_app-ios", forHTTPHeaderField: "Client-Type")
+        request.addValue("general", forHTTPHeaderField: "Client-key")
         
         request.httpBody = ApiService.getPostString(params: parameters).data(using: .utf8)
         

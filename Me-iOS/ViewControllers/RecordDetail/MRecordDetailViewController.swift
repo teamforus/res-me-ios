@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KVSpinnerView
 
 class MRecordDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

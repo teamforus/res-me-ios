@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import KVSpinnerView
 
 class QRViewModel{
     
@@ -39,7 +38,7 @@ class QRViewModel{
             if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }
@@ -61,7 +60,7 @@ class QRViewModel{
                 DispatchQueue.main.async {
                     
                     KVSpinnerView.dismiss()
-                    self.vcAlert.showSimpleAlertWithSingleAction(title: "Warning".localized(), message: "This voucher is expired.", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.vcAlert.showSimpleAlertWithSingleAction(title: Localize.warning(), message: "This voucher is expired.", okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                         self.vc?.scanWorker.start()
                     }))
                 }
@@ -70,14 +69,14 @@ class QRViewModel{
                 DispatchQueue.main.async {
                     
                     KVSpinnerView.dismiss()
-                    self.vcAlert.showSimpleAlertWithSingleAction(title: "Error!".localized(), message: response.message ?? "", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.vcAlert.showSimpleAlertWithSingleAction(title:  Localize.error(), message: response.message ?? "", okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                         self.vc?.scanWorker.start()
                     }))
                 }
             }else if statusCode == 404 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vcAlert.showSimpleAlertWithSingleAction(title: "Error!".localized(), message: response.message ?? "", okAction: UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.vcAlert.showSimpleAlertWithSingleAction(title: Localize.error(), message: response.message ?? "", okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                         self.vc?.scanWorker.start()
                     }))
                 }
@@ -85,7 +84,7 @@ class QRViewModel{
             }else if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }
@@ -132,7 +131,7 @@ class QRViewModel{
             if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }
@@ -150,7 +149,7 @@ class QRViewModel{
              if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }
@@ -168,7 +167,7 @@ class QRViewModel{
             if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }
@@ -184,7 +183,7 @@ class QRViewModel{
             if statusCode == 401 {
                 DispatchQueue.main.async {
                     KVSpinnerView.dismiss()
-                    self.vc.showSimpleAlertWithSingleAction(title: "Expired session".localized(), message: "Your session has expired. You are being logged out.".localized() , okAction: UIAlertAction(title: "Log out".localized(), style: .default, handler: { (action) in
+                    self.vc.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                         self.vc.logoutOptions()
                     }))
                 }

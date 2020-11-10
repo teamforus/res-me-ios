@@ -1,6 +1,0 @@
-framework module KVSpinnerView {
-  umbrella header "KVSpinnerView-umbrella.h"
-
-  export *
-  module * { export * }
-}

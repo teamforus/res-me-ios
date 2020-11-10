@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,6 +21,7 @@
             <connections>
                 <outlet property="bodyView" destination="2JC-nf-Lc6" id="udn-9f-ptp"/>
                 <outlet property="bottomConstraint" destination="3kd-ZW-QgW" id="N6F-ey-0To"/>
+                <outlet property="closeButton" destination="beR-lT-vIp" id="7fz-8t-4Un"/>
                 <outlet property="dateExpireLabel" destination="u3y-E5-z7W" id="jWB-aN-Nrn"/>
                 <outlet property="descriptionLabel" destination="RIG-Qf-C8f" id="61m-Dc-mg1"/>
                 <outlet property="qrImage" destination="uGu-yz-Ntp" id="OfF-yh-GRo"/>
@@ -45,7 +47,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-nf-Lc6" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
                     <rect key="frame" x="10" y="667" width="355" height="439"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-4n-7vK">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-4n-7vK" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="60" width="355" height="198"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageView:uGu-yz-Ntp:image" translatesAutoresizingMaskIntoConstraints="NO" id="uGu-yz-Ntp">
@@ -57,8 +59,11 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="198" id="1Eo-y8-NLN"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="DarkGray_DarkTheme"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bTK-4w-hix">
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bTK-4w-hix" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="59"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A29-XZ-wyn">
@@ -87,6 +92,12 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="59" id="vG2-aJ-P5V"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="DarkGray_DarkTheme"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="9"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beR-lT-vIp" userLabel="Button Info">
                             <rect key="frame" x="311" y="20" width="24" height="24"/>
@@ -126,7 +137,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="xNk-cG-YEN" firstAttribute="top" secondItem="UgP-4n-7vK" secondAttribute="bottom" constant="19" id="6jp-8l-UzN"/>
                         <constraint firstItem="bTK-4w-hix" firstAttribute="top" secondItem="2JC-nf-Lc6" secondAttribute="top" id="Bo8-dJ-Jrj"/>
@@ -149,16 +160,20 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="DarkGray_DarkTheme"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2JC-nf-Lc6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="439" id="3kd-ZW-QgW"/>
                 <constraint firstItem="2JC-nf-Lc6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="VcH-FS-cHN"/>
                 <constraint firstItem="2JC-nf-Lc6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-10" id="rFB-kv-KUM"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="79.610194902548727"/>
         </view>
         <tapGestureRecognizer id="KgD-ZS-eqI">
@@ -30010,5 +30025,8 @@ AAAAAAQBAAAAAAAAAGcAAAAAAAAAAAAAAAAAG072A
 </mutableData>
         </image>
         <image name="qrImage2" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

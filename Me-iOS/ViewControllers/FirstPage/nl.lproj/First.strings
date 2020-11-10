@@ -1,6 +1,6 @@
 
-/* Class = "UIButton"; normalTitle = "AANMAKEN"; ObjectID = "0ZO-XA-PbT"; */
-"0ZO-XA-PbT.normalTitle" = "AANMAKEN";
+/* Class = "UIButton"; normalTitle = "AANMELDEN"; ObjectID = "0ZO-XA-PbT"; */
+"0ZO-XA-PbT.normalTitle" = "AANMELDEN";
 
 /* Class = "UIButton"; normalTitle = "Staging"; ObjectID = "7I0-FI-Yf1"; */
 "7I0-FI-Yf1.normalTitle" = "Staging";
@@ -15,7 +15,7 @@
 "IrT-93-1Nw.normalTitle" = "Choose Environmnet";
 
 /* Class = "UITextField"; placeholder = "Uw email"; ObjectID = "YwF-T9-4XR"; */
-"YwF-T9-4XR.placeholder" = "Uw email";
+"YwF-T9-4XR.placeholder" = "Uw e-mailadres";
 
 /* Class = "UILabel"; text = "Inloggen vanaf een ander apparaat"; ObjectID = "aoI-oj-U12"; */
 "aoI-oj-U12.text" = "Inloggen vanaf een ander apparaat";

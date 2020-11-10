@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="40b-lJ-usN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="40b-lJ-usN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,7 @@
                                                 <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F9-1e-TZn" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F9-1e-TZn" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="33" y="469" width="348" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,7 +77,7 @@
                                                 <rect key="frame" x="14" y="13" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAL-h6-Y1w">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAL-h6-Y1w">
                                                 <rect key="frame" x="0.0" y="9" width="55" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
@@ -144,6 +144,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2oF-rh-6TM"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zJH-EI-uRd" firstAttribute="top" secondItem="rOJ-6L-bcp" secondAttribute="top" id="2aQ-9J-XDW"/>
@@ -151,7 +152,6 @@
                             <constraint firstItem="zJH-EI-uRd" firstAttribute="trailing" secondItem="2oF-rh-6TM" secondAttribute="trailing" id="cPU-g0-LPU"/>
                             <constraint firstItem="zJH-EI-uRd" firstAttribute="bottom" secondItem="2oF-rh-6TM" secondAttribute="bottom" id="oa8-oh-dXu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2oF-rh-6TM"/>
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="9F9-1e-TZn" id="qwR-ah-ooD"/>
@@ -178,6 +178,14 @@
             <point key="canvasLocation" x="980" y="208"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9Bi-Ec-fhu">
+            <size key="intrinsicContentSize" width="354" height="45.409671875000001"/>
+        </designable>
+        <designable name="9F9-1e-TZn">
+            <size key="intrinsicContentSize" width="68" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="back" width="24" height="24"/>
         <image name="proper" width="14" height="14"/>

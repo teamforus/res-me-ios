@@ -11,13 +11,14 @@ import CoreData
 import UserNotifications
 import Fabric
 import Crashlytics
-import KVSpinnerView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var commonService: CommonServiceProtocol! = CommonService()
+    var appnotifier = AppVersionUpdateNotifier()
+    var timer = Timer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -36,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
          UserDefaults.standard.setValue("https://staging.api.forus.io/api/v1/", forKey: UserDefaultsName.ALPHAURL)
         #endif
+        NotificationCenter.default.addObserver(self, selector: #selector(closeAppNotifierView), name: NotificationName.CloseAppNotifier, object: nil)
         
         #if DEBUG
         #else
@@ -80,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didCheckPasscode(vc: self.window!.rootViewController!)
         initPush(application)
         
+        appnotifier.initNotifier(self)
         
         return true
     }
@@ -117,19 +120,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        timer.invalidate()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        setupTimer()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        setupTimer()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        Preference.userHasCloseUpdateNotifier = false
         self.saveContext()
     }
-    
-    
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -163,11 +168,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - ShortCut Items
     
     func addShortcuts(application: UIApplication) {
-        let voucherItem = UIMutableApplicationShortcutItem(type: "Vouchers", localizedTitle: "Voucher", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "wallet"), userInfo: nil)
+        let voucherItem = UIMutableApplicationShortcutItem(type: "Vouchers", localizedTitle: Localize.vouchers(), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "wallet"), userInfo: nil)
         
         let qrItem = UIMutableApplicationShortcutItem(type: "QR", localizedTitle: "QR", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "iconGrey"), userInfo: nil)
         
-        let recordItem = UIMutableApplicationShortcutItem(type: "Profile", localizedTitle: "Profile".localized(), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "activeBlue"), userInfo: nil)
+        let recordItem = UIMutableApplicationShortcutItem(type: "Records", localizedTitle: Localize.records(), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "records"), userInfo: nil)
         
         application.shortcutItems = [voucherItem, qrItem, recordItem]
     }
@@ -195,7 +200,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initialViewController.selectedIndex = 1
             handle = true
             break
-        case "Profile":
+        case "Records":
             initialViewController.selectedIndex = 2
             handle = true
             break
@@ -338,7 +343,7 @@ extension AppDelegate {
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Enter login code".localized()
+            appearance.title = Localize.enter_login_code()
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = false
             appearance.delegate = self
@@ -358,3 +363,42 @@ extension AppDelegate: AppLockerDelegate{
     
 }
 
+extension AppDelegate {
+    
+    func setupTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(checkForUpdate), userInfo: nil, repeats: true)
+    }
+    
+    @objc func checkForUpdate() {
+        if !Preference.userHasCloseUpdateNotifier{
+            appnotifier.isUpdateAvailable()
+        }
+    }
+}
+
+extension AppDelegate: AppUpdateNotifier {
+    func hasNewVersion(shouldBeUpdated: Bool) {
+        if shouldBeUpdated && !appnotifier.viewIsShoun {
+            if let vc = window?.rootViewController as? HiddenNavBarNavigationController {
+                vc.topViewController?.view.addSubview(appnotifier.showUpdateView())
+                appnotifier.vc = vc.topViewController
+                appnotifier.setupView()
+            }else if let vc = window?.rootViewController as? MMainTabBarController {
+                if let navVC = vc.selectedViewController as? HiddenNavBarNavigationController {
+                    navVC.topViewController?.view.addSubview(appnotifier.showUpdateView())
+                    appnotifier.vc = navVC.topViewController
+                    appnotifier.setupView()
+                }else {
+                    vc.selectedViewController?.view.addSubview(appnotifier.showUpdateView())
+                    appnotifier.vc = vc.selectedViewController
+                    appnotifier.setupView()
+                }
+            }
+        }
+    }
+    
+   @objc func closeAppNotifierView() {
+        appnotifier.closeBodyView()
+    }
+}

@@ -23,6 +23,7 @@ class PullUpQRViewController: UIViewController {
     @IBOutlet weak var bodyView: CustomCornerUIView!
     @IBOutlet weak var titleDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
     
     var timer : Timer! = Timer()
     var token: String!
@@ -44,6 +45,7 @@ class PullUpQRViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         }
+        setupAccessibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +57,7 @@ class PullUpQRViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     
-                    self?.qrImage.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\": \"\(token)\" }")
+                    self?.qrImage.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\": \"\(token)\", \"imgUrl\" : \"https://media.forus.io/assets/me-logo.png\" }")
                     self?.timer = Timer.scheduledTimer(timeInterval: 7, target: self!, selector: #selector(self?.checkAuthorizeToken), userInfo: nil, repeats: true)
                     self?.token = accessToken
                     
@@ -67,10 +69,10 @@ class PullUpQRViewController: UIViewController {
             break
         case .Voucher?:
             
-            self.titleDescriptionLabel.text = Localize.thisIsYourVoucherSQRCode()
-            self.descriptionLabel.text = Localize.letTheShopkeeperScanItToMakeAPaymentFromYourVoucher()
+            self.titleDescriptionLabel.text = Localize.this_is_your_vouchers_qr_code()
+            self.descriptionLabel.text = Localize.let_shopkeeper_scan_it_make_payment_from_your_voucher()
             
-            self.qrImage.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(self.voucher.address ?? "")\" }")
+            self.qrImage.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(self.voucher.address ?? "")\", \"imgUrl\" : \"https://media.forus.io/assets/me-logo.png\" }")
             
             if voucher.product != nil {
                 
@@ -82,15 +84,15 @@ class PullUpQRViewController: UIViewController {
                 
             }
             
-            dateExpireLabel.text = Localize.thisVoucherExpiresOn() + (voucher.expire_at?.date?.dateFormaterExpireDate())!
+            dateExpireLabel.text = Localize.this_voucher_is_expired_on((voucher.expire_at?.date?.dateFormaterExpireDate())!)
             
             break
         case .Record?:
             self.voucherNameLabel.isHidden = true
             self.dateExpireLabel.isHidden = true
-            self.titleDescriptionLabel.text = Localize.thisIsYourVoucherSQRCode()
+            self.titleDescriptionLabel.text = Localize.this_is_your_vouchers_qr_code()
             if let name = self.record.name {
-                self.descriptionLabel.text = Localize.letTheShopkeeperScanItToMakeAValidtionToYourRecord(name)
+                self.descriptionLabel.text = Localize.let_shopkeeper_scan_it_to_make_validtion_to_your_record(name)
             }
             
             
@@ -98,7 +100,7 @@ class PullUpQRViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     UserDefaults.standard.set(record.uuid ?? "", forKey: UserDefaultsName.CurrentRecordUUID)
-                    self?.qrImage.generateQRCode(from: "{ \"type\": \"record\",\"value\": \"\(record.uuid ?? "")\" }")
+                    self?.qrImage.generateQRCode(from: "{ \"type\": \"record\",\"value\": \"\(record.uuid ?? "")\", \"imgUrl\" : \"https://media.forus.io/assets/me-logo.png\" }")
                     
                 }
             }
@@ -111,7 +113,7 @@ class PullUpQRViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     
-                    self?.qrImage.generateQRCode(from: "{ \"type\": \"identity\",\"value\": \"\(identityAddress)\" }")
+                    self?.qrImage.generateQRCode(from: "{ \"type\": \"identity\",\"value\": \"\(identityAddress)\", \"imgUrl\" : \"https://media.forus.io/assets/me-logo.png\" }")
                     
                 }
             }
@@ -167,4 +169,13 @@ class PullUpQRViewController: UIViewController {
         })
     }
     
+}
+
+// MARK: - Accessibility Protocol
+
+extension PullUpQRViewController: AccessibilityProtocol {
+    func setupAccessibility() {
+        qrImage.setupAccesibility(description: "QR Code", accessibilityTraits: .image)
+        closeButton.setupAccesibility(description: "Close", accessibilityTraits: .button)
+    }
 }

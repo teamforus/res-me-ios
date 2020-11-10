@@ -2,9 +2,6 @@
 /* Class = "UIButton"; normalTitle = "About Me"; ObjectID = "0RT-Bm-Z42"; */
 "0RT-Bm-Z42.normalTitle" = "About Me";
 
-/* Class = "UIButton"; normalTitle = "feedback@forus.io"; ObjectID = "5cN-1Z-L4K"; */
-"5cN-1Z-L4K.normalTitle" = "feedback@forus.io";
-
 /* Class = "UILabel"; text = "1.0.4"; ObjectID = "6fM-yO-VsB"; */
 "6fM-yO-VsB.text" = "1.0.4";
 
@@ -52,3 +49,4 @@
 
 /* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "MxW-qZ-33f.text"; */
 "MxW-qZ-33f.text" = "Let someone scan your personal QR code to send your currency, property or vouchers.";
+"NFd-zA-OpX.text" = "Personal account";

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eu3-EV-5Ar">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eu3-EV-5Ar">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="GoogleSans-Bold.ttf">
             <string>GoogleSans-Bold</string>
+        </array>
+        <array key="GoogleSans-Medium.ttf">
+            <string>GoogleSans-Medium</string>
         </array>
         <array key="GoogleSans-Regular.ttf">
             <string>GoogleSans-Regular</string>
@@ -24,20 +28,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYl-68-xkp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYl-68-xkp" customClass="BackgroundScrollView_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTi-eV-EKy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTi-eV-EKy" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="757"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-Uv-ahd">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-Uv-ahd" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="-15" width="375" height="179"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6YL-vS-yZM">
-                                                        <rect key="frame" x="95" y="88" width="180" height="54"/>
+                                                        <rect key="frame" x="95" y="102" width="180" height="49"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uw Profiel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ncj-5F-IHr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="34.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uw Profiel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ncj-5F-IHr" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="31.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="180" id="aXr-PV-Eyy"/>
                                                                 </constraints>
@@ -45,8 +49,8 @@
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@mail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-EJ-VPa">
-                                                                <rect key="frame" x="0.0" y="34.5" width="180" height="19.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@mail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-EJ-VPa" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="31.5" width="180" height="17.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="180" id="nx2-12-LKm"/>
                                                                 </constraints>
@@ -56,68 +60,98 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-sr-b6h">
-                                                        <rect key="frame" x="17" y="53" width="47" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <state key="normal" title="Close"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-sr-b6h">
+                                                        <rect key="frame" x="311" y="31" width="43" height="41"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="closeBlack"/>
                                                         <connections>
                                                             <action selector="dismiss:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="Wk6-Ed-AA0"/>
                                                         </connections>
                                                     </button>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-eG-8rA">
-                                                        <rect key="frame" x="351" y="105" width="13" height="20"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-eG-8rA">
+                                                        <rect key="frame" x="351" y="119" width="13" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                         <state key="normal" title="Edit"/>
                                                     </button>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qpz-eR-AUn">
-                                                        <rect key="frame" x="0.0" y="182" width="375" height="1"/>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qpz-eR-AUn" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="196" width="375" height="1"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="xSt-Fk-qAe" customClass="RoundImageView" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="17" y="83" width="64" height="64"/>
+                                                        <rect key="frame" x="17" y="97" width="64" height="64"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Un3-9D-dk8">
-                                                        <rect key="frame" x="352" y="104" width="9" height="21"/>
+                                                        <rect key="frame" x="352" y="118" width="9" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyY-eH-eFk">
-                                                        <rect key="frame" x="8" y="81" width="367" height="70"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyY-eH-eFk">
+                                                        <rect key="frame" x="8" y="95" width="367" height="70"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Gray_Dark_DarkTheme"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="cz6-ov-H3w" kind="presentation" modalPresentationStyle="fullScreen" id="0oA-uh-S2M"/>
+                                                            <segue destination="cz6-ov-H3w" kind="presentation" modalPresentationStyle="fullScreen" id="OXA-Jq-Fp8"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0O-m1-j6W" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="80" width="375" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Line_DarkMode"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFd-zA-OpX" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="120.5" y="40" width="134.5" height="20"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
+                                                        <color key="textColor" red="0.99936085939999997" green="0.1497559547" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNa-po-sV7">
+                                                        <rect key="frame" x="120" y="40" width="44" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="179" id="8VR-mG-XI6"/>
+                                                    <constraint firstItem="NFd-zA-OpX" firstAttribute="centerX" secondItem="mQt-Uv-ahd" secondAttribute="centerX" id="Hax-j5-g4l"/>
                                                     <constraint firstItem="6YL-vS-yZM" firstAttribute="leading" secondItem="mQt-Uv-ahd" secondAttribute="leading" constant="95" id="Zs9-U2-PeA"/>
-                                                    <constraint firstItem="6YL-vS-yZM" firstAttribute="top" secondItem="mQt-Uv-ahd" secondAttribute="top" constant="88" id="fcP-yc-STi"/>
+                                                    <constraint firstItem="NFd-zA-OpX" firstAttribute="top" secondItem="mQt-Uv-ahd" secondAttribute="top" constant="40" id="bVB-QK-I9Q"/>
+                                                    <constraint firstItem="6YL-vS-yZM" firstAttribute="top" secondItem="mQt-Uv-ahd" secondAttribute="top" constant="102" id="fcP-yc-STi"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-xg-yMS">
-                                                <rect key="frame" x="16" y="176" width="343" height="249"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-xg-yMS" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="176" width="355" height="249"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AQ-Ho-bqt" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="56"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrImage" translatesAutoresizingMaskIntoConstraints="NO" id="lnl-tz-VdM">
-                                                                <rect key="frame" x="10" y="16" width="24" height="24"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start from scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-mk-0LQ">
-                                                                <rect key="frame" x="46" y="18" width="211" height="22"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start from scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-mk-0LQ" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="18" width="211" height="22"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-o1-SKo" customClass="UISwitchCustom" customModule="Me_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="280" y="14" width="49" height="31"/>
+                                                                <rect key="frame" x="292" y="14" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -138,24 +172,24 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNw-9x-l3y" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="71" width="342" height="56"/>
+                                                        <rect key="frame" x="0.0" y="71" width="355" height="56"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="dsY-ow-X7Q">
-                                                                <rect key="frame" x="10" y="16" width="24" height="24"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change 4-digit passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-ew-Qz7">
-                                                                <rect key="frame" x="46" y="18" width="240" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change 4-digit passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-ew-Qz7" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="18" width="240" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-8C-4bj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-8C-4bj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="355" height="56"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <connections>
                                                                     <action selector="creatEditPasscode:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="hEO-Od-ZcN"/>
@@ -170,24 +204,21 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-7Q-nI7" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="1" y="132" width="342" height="56"/>
+                                                        <rect key="frame" x="0.0" y="132" width="355" height="56"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wnu-qu-28i">
-                                                                <rect key="frame" x="10" y="16" width="24" height="24"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn off passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-SX-GJZ">
-                                                                <rect key="frame" x="46" y="18" width="240" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn off passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-SX-GJZ" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="18" width="240" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-5w-dnO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-5w-dnO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="355" height="56"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <connections>
                                                                     <action selector="deletePasscode:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="WKd-YK-eik"/>
@@ -202,24 +233,24 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLQ-IY-Xhm" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="193" width="342" height="56"/>
+                                                        <rect key="frame" x="0.0" y="193" width="354" height="56"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faceId-1" translatesAutoresizingMaskIntoConstraints="NO" id="M9T-2N-Gxi">
-                                                                <rect key="frame" x="10" y="16" width="24" height="24"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Face ID for login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scn-SY-tGf">
-                                                                <rect key="frame" x="46" y="17" width="203" height="22"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Face ID for login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scn-SY-tGf" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="17" width="203" height="22"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aF3-gf-gHS" customClass="UISwitchCustom" customModule="Me_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="279" y="13" width="49" height="31"/>
+                                                                <rect key="frame" x="291" y="13" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -240,6 +271,7 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
@@ -247,29 +279,37 @@
                                                 <constraints>
                                                     <constraint firstItem="6AQ-Ho-bqt" firstAttribute="leading" secondItem="ZtQ-xg-yMS" secondAttribute="leading" id="0UM-6C-TkR"/>
                                                     <constraint firstItem="pLQ-IY-Xhm" firstAttribute="top" secondItem="wNw-9x-l3y" secondAttribute="bottom" constant="66" id="JHA-Sf-Y0d"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AHo-7Q-nI7" secondAttribute="trailing" id="QNY-gb-gYR"/>
                                                     <constraint firstAttribute="trailing" secondItem="pLQ-IY-Xhm" secondAttribute="trailing" constant="1" id="X88-S2-otM"/>
                                                     <constraint firstItem="pLQ-IY-Xhm" firstAttribute="leading" secondItem="ZtQ-xg-yMS" secondAttribute="leading" id="YuZ-pd-WoR"/>
                                                     <constraint firstItem="AHo-7Q-nI7" firstAttribute="top" secondItem="wNw-9x-l3y" secondAttribute="bottom" constant="5" id="crM-wZ-CA9"/>
                                                     <constraint firstItem="wNw-9x-l3y" firstAttribute="leading" secondItem="ZtQ-xg-yMS" secondAttribute="leading" id="crz-i7-Sqy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wNw-9x-l3y" secondAttribute="trailing" constant="1" id="g5y-pX-wgc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wNw-9x-l3y" secondAttribute="trailing" id="g5y-pX-wgc"/>
                                                     <constraint firstItem="6AQ-Ho-bqt" firstAttribute="top" secondItem="ZtQ-xg-yMS" secondAttribute="top" id="i47-zi-1IM"/>
                                                     <constraint firstItem="wNw-9x-l3y" firstAttribute="top" secondItem="6AQ-Ho-bqt" secondAttribute="bottom" constant="15" id="jMo-ZU-lQs"/>
                                                     <constraint firstAttribute="height" constant="249" id="mmG-cv-HBd"/>
+                                                    <constraint firstItem="AHo-7Q-nI7" firstAttribute="leading" secondItem="ZtQ-xg-yMS" secondAttribute="leading" id="omn-aG-POx"/>
                                                     <constraint firstAttribute="trailing" secondItem="6AQ-Ho-bqt" secondAttribute="trailing" constant="1" id="z4U-2C-qiL"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaK-7a-IlP" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="438" width="343" height="56"/>
+                                                <rect key="frame" x="10" y="438" width="355" height="56"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send crash reports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA8-VO-WKT">
-                                                        <rect key="frame" x="8" y="18" width="249" height="22"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send crash reports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA8-VO-WKT" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="18" width="249" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="629-dg-gyi" customClass="UISwitchCustom" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="280" y="14" width="49" height="31"/>
+                                                        <rect key="frame" x="292" y="14" width="49" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -290,80 +330,66 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="9"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-c8-BxS">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-c8-BxS" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="507" width="375" height="250"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szP-vk-gG7">
-                                                        <rect key="frame" x="24" y="16" width="173" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0.4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fM-yO-VsB">
-                                                        <rect key="frame" x="231" y="16" width="122" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <color key="textColor" red="0.2470588235" green="0.47843137250000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-5Z-MNy" userLabel="Feedback">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-5Z-MNy" userLabel="Feedback" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="119" width="130" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-1Z-L4K">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-1Z-L4K">
                                                         <rect key="frame" x="207" y="119" width="146" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <state key="normal" title="feedback@forus.io"/>
+                                                        <state key="normal" title="support@forus.io">
+                                                            <color key="titleColor" red="0.60002678629999995" green="0.59986692669999997" blue="0.60784477000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="feedback:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="b0D-R4-aP2"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RT-Bm-Z42">
-                                                        <rect key="frame" x="24" y="67" width="211" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <state key="normal" title="About Me">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="rSU-ff-RMe" kind="presentation" id="npX-g4-JPY"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hz7-Gv-NGk">
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hz7-Gv-NGk" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="100" width="375" height="2"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Zs-YTi">
-                                                        <rect key="frame" x="0.0" y="153" width="375" height="102"/>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Zs-YTi" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="153" width="375" height="101"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCl-JE-4Rl" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCl-JE-4Rl" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="17" y="176" width="341" height="36"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="12"/>
                                                         <state key="normal" title="LOG OUT">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="darkTextColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Button_DarkTheme"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorNameTitle" value="Black_Light_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="logout:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="6RN-6P-vb2"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-ZQ-ypq">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-ZQ-ypq">
                                                         <rect key="frame" x="108" y="217" width="159" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Press for crash the app"/>
@@ -371,11 +397,55 @@
                                                             <action selector="crash:" destination="eu3-EV-5Ar" eventType="touchUpInside" id="gaK-OI-BYD"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-Lo-wbW" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="7" width="359" height="85"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhS-84-KLb" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="11" width="173" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0.4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzj-KA-RoL">
+                                                                <rect key="frame" x="216" y="11" width="130" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                                <color key="textColor" red="0.2470588235" green="0.47843137250000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-cg-Pla" customClass="UIButtonBackground_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="42" width="343" height="35"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                                <state key="normal" title="About Me">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Button_DarkTheme"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="rSU-ff-RMe" kind="presentation" id="6vl-3x-NpX"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="Baf-1S-jzb"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Profile_Row_DarkTheme"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -384,18 +454,19 @@
                                             <constraint firstItem="dmL-c8-BxS" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" id="AHG-RC-d1M"/>
                                             <constraint firstItem="mQt-Uv-ahd" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" id="EEE-cr-DUd"/>
                                             <constraint firstAttribute="trailing" secondItem="dmL-c8-BxS" secondAttribute="trailing" id="Gtd-uJ-GGO"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZtQ-xg-yMS" secondAttribute="trailing" constant="16" id="Lah-1t-Uwh"/>
-                                            <constraint firstItem="ZtQ-xg-yMS" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" constant="16" id="Lsm-gR-nfD"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZtQ-xg-yMS" secondAttribute="trailing" constant="10" id="Lah-1t-Uwh"/>
+                                            <constraint firstItem="ZtQ-xg-yMS" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" constant="10" id="Lsm-gR-nfD"/>
                                             <constraint firstItem="UaK-7a-IlP" firstAttribute="top" secondItem="ZtQ-xg-yMS" secondAttribute="bottom" constant="13" id="Qy4-P1-fTf"/>
-                                            <constraint firstAttribute="trailing" secondItem="AHo-7Q-nI7" secondAttribute="trailing" constant="16" id="Whe-3L-5UV"/>
-                                            <constraint firstItem="AHo-7Q-nI7" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" constant="17" id="Wxh-r1-sMN"/>
-                                            <constraint firstAttribute="trailing" secondItem="UaK-7a-IlP" secondAttribute="trailing" constant="16" id="bLl-0v-2pJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="UaK-7a-IlP" secondAttribute="trailing" constant="10" id="bLl-0v-2pJ"/>
                                             <constraint firstItem="ZtQ-xg-yMS" firstAttribute="top" secondItem="mQt-Uv-ahd" secondAttribute="bottom" constant="12" id="h1x-lE-JG3"/>
-                                            <constraint firstAttribute="bottom" secondItem="dmL-c8-BxS" secondAttribute="bottom" constant="8" id="ieM-qL-3Xy"/>
-                                            <constraint firstItem="UaK-7a-IlP" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" constant="16" id="ifE-Tn-IgC"/>
+                                            <constraint firstAttribute="bottom" secondItem="dmL-c8-BxS" secondAttribute="bottom" id="ieM-qL-3Xy"/>
+                                            <constraint firstItem="UaK-7a-IlP" firstAttribute="leading" secondItem="WTi-eV-EKy" secondAttribute="leading" constant="10" id="ifE-Tn-IgC"/>
                                             <constraint firstItem="mQt-Uv-ahd" firstAttribute="top" secondItem="WTi-eV-EKy" secondAttribute="top" constant="-15" id="w8D-aj-LiZ"/>
                                             <constraint firstAttribute="trailing" secondItem="mQt-Uv-ahd" secondAttribute="trailing" id="zjL-OP-hSg"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -405,22 +476,26 @@
                                     <constraint firstAttribute="trailing" secondItem="WTi-eV-EKy" secondAttribute="trailing" id="kaS-Jx-4BW"/>
                                     <constraint firstItem="WTi-eV-EKy" firstAttribute="top" secondItem="pYl-68-xkp" secondAttribute="top" id="rgk-Gk-Vpd"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ncr-28-1Z9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pYl-68-xkp" firstAttribute="leading" secondItem="Ncr-28-1Z9" secondAttribute="leading" id="6JI-sX-llf"/>
                             <constraint firstItem="WTi-eV-EKy" firstAttribute="width" secondItem="erS-Sv-h0v" secondAttribute="width" id="6Za-Nb-XBV"/>
-                            <constraint firstItem="pYl-68-xkp" firstAttribute="bottom" secondItem="Ncr-28-1Z9" secondAttribute="bottom" id="Gv0-Ir-mVM"/>
+                            <constraint firstItem="pYl-68-xkp" firstAttribute="bottom" secondItem="erS-Sv-h0v" secondAttribute="bottom" id="Gv0-Ir-mVM"/>
                             <constraint firstItem="pYl-68-xkp" firstAttribute="trailing" secondItem="Ncr-28-1Z9" secondAttribute="trailing" id="Xty-hI-HQM"/>
                             <constraint firstItem="WTi-eV-EKy" firstAttribute="height" secondItem="erS-Sv-h0v" secondAttribute="height" priority="250" id="ZO9-rR-N9H"/>
                             <constraint firstItem="pYl-68-xkp" firstAttribute="top" secondItem="erS-Sv-h0v" secondAttribute="top" id="cCB-Mt-jzI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ncr-28-1Z9"/>
                     </view>
                     <size key="freeformSize" width="375" height="765"/>
                     <connections>
-                        <outlet property="appVersionLabel" destination="6fM-yO-VsB" id="gjH-Q5-kdv"/>
+                        <outlet property="aboutMeButton" destination="o9m-cg-Pla" id="Byz-n3-XoZ"/>
+                        <outlet property="appVersionLabel" destination="Qzj-KA-RoL" id="u92-JV-yij"/>
                         <outlet property="buttonConstraingHeight" destination="mmG-cv-HBd" id="cMy-C3-s00"/>
                         <outlet property="changePassCodeView" destination="wNw-9x-l3y" id="aNg-kj-CA3"/>
                         <outlet property="changePasscodeLabel" destination="AbL-ew-Qz7" id="qLV-7E-3zc"/>
@@ -428,11 +503,15 @@
                         <outlet property="crashReportSwitch" destination="629-dg-gyi" id="Mvs-fw-hT4"/>
                         <outlet property="emailLabel" destination="Rkq-EJ-VPa" id="bSD-h1-S3j"/>
                         <outlet property="faceIdVerticalSpacing" destination="JHA-Sf-Y0d" id="vHg-rG-MEw"/>
+                        <outlet property="feedBackButton" destination="5cN-1Z-L4K" id="Pqp-U8-180"/>
+                        <outlet property="logoutButton" destination="LCl-JE-4Rl" id="TQl-Ok-sus"/>
+                        <outlet property="openRecordsButton" destination="nyY-eH-eFk" id="daO-m3-iUe"/>
                         <outlet property="profileNameLabel" destination="Ncj-5F-IHr" id="eaq-jQ-EM2"/>
+                        <outlet property="sendCrashReportView" destination="UaK-7a-IlP" id="DqP-s9-vZU"/>
+                        <outlet property="startFromScannerView" destination="6AQ-Ho-bqt" id="I9v-yb-vfs"/>
                         <outlet property="startScannerSwitch" destination="mxb-o1-SKo" id="ia7-09-DbA"/>
                         <outlet property="turnOffPascodeView" destination="AHo-7Q-nI7" id="Yd2-fv-FH3"/>
                         <outlet property="useFaceIdView" destination="pLQ-IY-Xhm" id="oNj-HJ-xd8"/>
-                        <outlet property="useSensorIdIcon" destination="M9T-2N-Gxi" id="FR5-3f-JWL"/>
                         <outlet property="useSensorIdLabel" destination="scn-SY-tGf" id="ofj-nq-Seo"/>
                         <outlet property="userFaceIdSwitch" destination="aF3-gf-gHS" id="o6r-6U-mBu"/>
                     </connections>
@@ -441,10 +520,10 @@
             </objects>
             <point key="canvasLocation" x="-87.200000000000003" y="249.62518740629687"/>
         </scene>
-        <!--record-->
+        <!--records-->
         <scene sceneID="HrR-Dl-RMc">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="record" id="cz6-ov-H3w" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="records" id="cz6-ov-H3w" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7m-0C-3oN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="494" y="220"/>
@@ -464,8 +543,8 @@
                     <view key="view" contentMode="scaleToFill" id="oLi-nK-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hlk-kn-Zdy"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOa-MT-28g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,7 +572,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWI-74-hrW" customClass="ISHPullUpHandleView">
-                                                <rect key="frame" x="160" y="6" width="36" height="11"/>
+                                                <rect key="frame" x="158" y="6" width="36" height="11"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -530,14 +609,14 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="7Hq-mz-WRT">
-                                                <rect key="frame" x="98" y="19" width="160" height="160"/>
+                                                <rect key="frame" x="96" y="19" width="160" height="160"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let someone scan your personal QR code to send your currency, property or vouchers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-qZ-33f">
-                                        <rect key="frame" x="8" y="311" width="339" height="48"/>
+                                        <rect key="frame" x="6" y="311" width="339" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -559,8 +638,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2ec-cB-2ka"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="14"/>
@@ -582,14 +661,38 @@
             <point key="canvasLocation" x="-87" y="970"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="629-dg-gyi">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="LCl-JE-4Rl">
+            <size key="intrinsicContentSize" width="53" height="26"/>
+        </designable>
+        <designable name="aF3-gf-gHS">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="mxb-o1-SKo">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="oWI-74-hrW">
+            <size key="intrinsicContentSize" width="36" height="11"/>
+        </designable>
+        <designable name="xSt-Fk-qAe">
+            <size key="intrinsicContentSize" width="210" height="210"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow" width="23" height="43"/>
+        <image name="closeBlack" width="24" height="24"/>
         <image name="closeIcon" width="24" height="24"/>
-        <image name="faceId-1" width="26" height="26"/>
         <image name="ic_launcher_APP" width="210" height="210"/>
-        <image name="lock24Px-1" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
-        <image name="qrImage" width="62" height="62"/>
         <image name="qrImage2" width="16" height="16"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -1,7 +1,13 @@
-# res-me-ios
+# Me iOS
 iOS implementation of the [me app](https://github.com/teamforus/me)
 
 ## Getting Started
+
+# Setup 
+* install cocoapods `brew install cocoapods`
+* `cd  ../me-ios` and run `pod install`
+* then open `../me-ios/Me-iOS.xcworkspace`
+* Select Me-iOS Target and run project.
 
 ### Human Interface Guidelines
 
@@ -47,6 +53,24 @@ A good first step when putting a project under version control is to have a dece
 
 [swift-gitignore]: https://github.com/github/gitignore/blob/master/Swift.gitignore
 [objc-gitignore]: https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+
+### Usage of localization
+
+Project uses [R.swift more details here](https://github.com/mac-cain13/R.swift).
+
+#### Generate localizations key to variables
+After `Localizable.string` is generated we need to run script for **Me-iOS Target** in **Build Phase** script are in `R.Swift`.
+
+To generate `R.generated.swift` file, uncomment `"${PODS_ROOT}/R.swift/rswift" generate "$SRCROOT/me-ios/Resources/R.generated.swift"`, after better to comment back to optimize the building time.
+File will be generated to `../me-ios/Resources/`
+
+#### Why use this?
+
+It makes your code that uses resources:
+
+- Fully typed, less casting and guessing what a method will return
+- Compile time checked, no more incorrect strings that make your app crash at runtime
+- Autocompleted, never have to guess that image name again
 
 Making a new build for App store (Dev only)
 ============================================

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class StatusView: UIView {
+class StatusView: Background_DarkMode {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     required init(coder: NSCoder) {
-        super.init(coder: coder)!
+        super.init(coder: coder)
         var frameView: CGRect = self.frame
         if UIScreen.main.nativeBounds.height == 2436 {
             frameView.size.height = 33

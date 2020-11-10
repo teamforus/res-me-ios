@@ -85,14 +85,14 @@ public class AppLocker: UIViewController {
             let mode = self.mode ?? .validate
             switch mode {
             case .create:
-                messageLabel.text = "Login code".localized() // Your message for create mode
-                submessageLabel.text = "Enter a new login code".localized() // Your message for create mode // Your submessage for create mode
+                messageLabel.text = Localize.login_code() // Your message for create mode
+                submessageLabel.text = Localize.enter_a_new_login_code() // Your message for create mode // Your submessage for create mode
             case .change:
-                messageLabel.text = "Enter login code".localized() // Your submessage for change mode
+                messageLabel.text = Localize.enter_login_code() // Your submessage for change mode
             case .deactive:
-                messageLabel.text = "Turn off login code".localized() // Your submessage for deactive mode
+                messageLabel.text = Localize.turn_off_login_code() // Your submessage for deactive mode
             case .validate:
-                messageLabel.text = "Enter login code".localized() // Your submessage for validate mode
+                messageLabel.text = Localize.enter_login_code() // Your submessage for validate mode
                 isFirstCreationStep = false
             }
         }
@@ -139,8 +139,8 @@ public class AppLocker: UIViewController {
             isFirstCreationStep = false
             reservedPin = pin
             clearView()
-            messageLabel.text = "Confirm the code".localized()
-            submessageLabel.text = "Confirm the login code by entering it again.".localized()
+            messageLabel.text = Localize.confirm_the_code()
+            submessageLabel.text = Localize.confirm_the_login_code_by_entering_it_again()
         } else {
             confirmPin()
         }
@@ -186,9 +186,9 @@ public class AppLocker: UIViewController {
             view.backgroundColor = .red
             self.photoImageView.image = UIImage(named: "lockError")
             if self.isCancelButton == true {
-                submessageLabel.text = "Codes don't match. Please try again".localized()
+                submessageLabel.text = Localize.codes_dont_match_please_try_again()
             }else{
-                submessageLabel.text = "Wrong passcode, please try again".localized()
+                submessageLabel.text = Localize.wrong_passcode_please_try_again()
             }
             
         }
@@ -289,7 +289,7 @@ public extension AppLocker {
         //        }
         //    }
         if (config?.cancelIsVissible)! == false{
-            locker.cancelButton.setTitle("Log out".localized(), for: .normal)
+            locker.cancelButton.setTitle(Localize.log_out(), for: .normal)
         }
         locker.messageLabel.text = config?.title ?? ""
         locker.vc = withController

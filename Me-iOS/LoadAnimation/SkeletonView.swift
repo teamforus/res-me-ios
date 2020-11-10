@@ -43,6 +43,19 @@ class SkeletonView: UILabel {
         self.gradientLayer = gradientLayer
     }
     
+   func setSelectedColorName() {
+    if #available(iOS 11.0, *) {
+      self.textColor = UIColor(named: colorName)
+    } else {
+      // Fallback on earlier versions
+    }
+  }
+  
+  @IBInspectable var colorName :String = "Background_DarkTheme" {
+      didSet {
+          setSelectedColorName()
+      }
+  }
     
     func startAnimating(){
         let animation = CABasicAnimation(keyPath: "locations")

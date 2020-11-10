@@ -20,4 +20,6 @@ struct UserDefaultsName {
     public static let EnvironmentURL = "EnvironmentURL"
     public static let ALPHAURL = "ALPHAURL"
     public static let EnvironmentName = "EnvironmentName"
+    static let tapToSeeTransactionTipHasShownCount = "tapToSeeTransactionTipHasShownCount"
+    static let userHasCloseUpdateNotifier = "userHasCloseUpdateNotifier"
 }

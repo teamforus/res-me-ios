@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dvo-As-KDQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dvo-As-KDQ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,17 +23,17 @@
         <scene sceneID="TV9-vy-TcN">
             <objects>
                 <viewController id="Dvo-As-KDQ" customClass="MSuccessEmailViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lBx-qg-EDD">
+                    <view key="view" contentMode="scaleToFill" id="lBx-qg-EDD" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bevestig uw emailadres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zQC-jP-eMe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bevestig uw emailadres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zQC-jP-eMe" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="17" y="92" width="380" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="spy-9V-WuT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="36"/>
-                                <color key="textColor" red="0.18039215689999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shadow" translatesAutoresizingMaskIntoConstraints="NO" id="HG3-3t-EIN">
@@ -48,7 +48,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="8qP-2Y-8Mk">
                                 <rect key="frame" x="0.0" y="205" width="414" height="350"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opf-SA-edo" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opf-SA-edo" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="33" y="657" width="348" height="51"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -79,7 +79,7 @@
                                     <action selector="openMailApp:" destination="Dvo-As-KDQ" eventType="touchUpInside" id="9Et-3B-m7c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqB-sU-g6i" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqB-sU-g6i" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="33" y="729" width="348" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -110,7 +110,7 @@
                                     <action selector="showQrWithPin:" destination="Dvo-As-KDQ" eventType="touchUpInside" id="QAH-R5-Fb4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Klik op de link in de email die u heeft ontvangen op youremailaddress@forus.io om uw aanmelding af te maken" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-Ch-JFi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Klik op de link in de email die u heeft ontvangen op youremailaddress@forus.io om uw aanmelding af te maken" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-Ch-JFi" customClass="DynamicLabel" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="21" y="563" width="372" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="kKk-gB-71R"/>
@@ -119,7 +119,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-SW-KNn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-SW-KNn" customClass="BackButton_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="14" y="54" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="9iW-3c-yS1"/>
@@ -131,6 +131,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="I8I-x3-gVB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="I8I-x3-gVB" firstAttribute="bottom" secondItem="pqB-sU-g6i" secondAttribute="bottom" constant="82" id="3Sz-3T-SMG"/>
@@ -159,10 +160,15 @@
                             <constraint firstItem="I8I-x3-gVB" firstAttribute="trailing" secondItem="zQC-jP-eMe" secondAttribute="trailing" constant="17" id="yA3-Zr-5Eo"/>
                             <constraint firstItem="I8I-x3-gVB" firstAttribute="trailing" secondItem="YLd-Ch-JFi" secondAttribute="trailing" constant="21" id="yRJ-Wk-NhZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="I8I-x3-gVB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="openMailButton" destination="Opf-SA-edo" id="biI-Fx-6ar"/>
+                        <outlet property="showQRCodeButton" destination="pqB-sU-g6i" id="fXe-Me-1le"/>
                         <outlet property="textLabel" destination="YLd-Ch-JFi" id="uwg-rh-T64"/>
+                        <outlet property="titleLabel" destination="zQC-jP-eMe" id="iUJ-qn-lOA"/>
                         <segue destination="MJz-0w-Aaw" kind="presentation" identifier="goToSuccessRegister" modalPresentationStyle="fullScreen" id="qao-pc-Zzq"/>
                     </connections>
                 </viewController>
@@ -179,6 +185,14 @@
             <point key="canvasLocation" x="1943" y="208"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Opf-SA-edo">
+            <size key="intrinsicContentSize" width="107" height="30"/>
+        </designable>
+        <designable name="pqB-sU-g6i">
+            <size key="intrinsicContentSize" width="73" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="1" width="374" height="332.33334350585938"/>
         <image name="Shadow" width="238.66667175292969" height="108.33333587646484"/>

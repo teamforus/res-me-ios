@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q43-xR-EEy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q43-xR-EEy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,11 +21,11 @@
         <scene sceneID="S7W-RC-3a5">
             <objects>
                 <viewController id="bKO-Z0-PZ4" customClass="MSuccessRegisterViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pMQ-xZ-8Hn">
+                    <view key="view" contentMode="scaleToFill" id="pMQ-xZ-8Hn" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBn-Ec-KcU" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBn-Ec-KcU" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="31" y="744.5" width="354" height="54.5"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -55,7 +56,7 @@
                                     <segue destination="bon-ir-F2d" kind="show" id="kRL-ML-HZv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpe-pk-sDU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpe-pk-sDU" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="17" y="92" width="380" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="nYm-dh-GtE"/>
@@ -66,7 +67,7 @@ geslaagd!</string>
                                 <color key="textColor" red="0.18039215689999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8v-Vy-PF9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8v-Vy-PF9" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="188" width="414" height="332"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IlustrationCheckmark" translatesAutoresizingMaskIntoConstraints="NO" id="Mub-Be-z3A">
@@ -78,12 +79,16 @@ geslaagd!</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="332" id="ATt-in-ceJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mix-md-ges"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DBn-Ec-KcU" firstAttribute="leading" secondItem="Mix-md-ges" secondAttribute="leading" constant="31" id="1h4-Kv-oxZ"/>
@@ -96,7 +101,9 @@ geslaagd!</string>
                             <constraint firstItem="Mix-md-ges" firstAttribute="bottom" secondItem="DBn-Ec-KcU" secondAttribute="bottom" constant="63" id="lOE-4i-MYl"/>
                             <constraint firstItem="X8v-Vy-PF9" firstAttribute="top" secondItem="Xpe-pk-sDU" secondAttribute="bottom" constant="-1" id="tfc-Ll-gFK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Mix-md-ges"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="oYK-5L-Xfo"/>
                 </viewController>
@@ -132,8 +139,16 @@ geslaagd!</string>
             <point key="canvasLocation" x="-1859.4202898550725" y="1592.4107142857142"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DBn-Ec-KcU">
+            <size key="intrinsicContentSize" width="78" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Done@1,5x 1" width="181.5" height="181"/>
         <image name="IlustrationCheckmark" width="375" height="390.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

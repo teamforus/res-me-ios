@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import KVSpinnerView
 
 class ConfirmPaymentPopUp: UIViewController {
     @IBOutlet weak var paymentLabel: UILabel!
     @IBOutlet weak var insuficientLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
+    @IBOutlet weak var declineButton: ShadowButton!
+    @IBOutlet weak var confirmButton: ShadowButton!
     
     
     var voucher: Voucher!
@@ -27,11 +28,11 @@ class ConfirmPaymentPopUp: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupAccessibility()
         if voucher != nil {
             initView()
         }else {
-            paymentLabel.text = Localize.pleaseConfirmTheTransactionOf(amount)
+            paymentLabel.text = Localize.please_confirm_the_transaction(amount)
             self.didChangeHeightView()
         }
     }
@@ -40,7 +41,7 @@ class ConfirmPaymentPopUp: UIViewController {
         
         if voucher.product != nil {
             
-            paymentLabel.text = Localize.pleaseConfirmTheTransactionOf(voucher.product?.price ?? "0.00")
+            paymentLabel.text = Localize.please_confirm_the_transaction(voucher.product?.price ?? "0.00")
             amount = voucher.product?.price
             self.didChangeHeightView()
             organizationId = voucher.product?.organization?.id
@@ -50,12 +51,12 @@ class ConfirmPaymentPopUp: UIViewController {
             let amountVoucher = Double(voucher.amount ?? "0.00")!
             let aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
             
-            paymentLabel.text = Localize.pleaseConfirmTheTransactionOf(amount)
+            paymentLabel.text = Localize.please_confirm_the_transaction(amount)
             
             
             if Double(amount!.replacingOccurrences(of: ",", with: "."))! > amountVoucher {
                 //                if voucher.fund?.currency == "eur" {
-                insuficientLabel.text = Localize.insufficientFundsOnTheVoucherPleaseRequestExtraPaymentOf02f(aditionalAmount)
+                insuficientLabel.text = Localize.insufficient_funds_on_the_voucher_please_request_extra_payment(aditionalAmount)
                 //                }else {
                 //                insuficientLabel.text = String(format: NSLocalizedString("Insufficient funds on the voucher. Please, request extra payment of ETH%.02f", comment: ""), aditionalAmount)
                 //                }
@@ -84,7 +85,7 @@ class ConfirmPaymentPopUp: UIViewController {
                         KVSpinnerView.dismiss()
                         if statusCode == 201 {
                             
-                            self.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.paymentSucceeded(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
+                            self.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.payment_succeeded(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                 
                                 self.tabBar.selectedIndex = 0
                                 if self.isFromReservation != nil {
@@ -96,13 +97,13 @@ class ConfirmPaymentPopUp: UIViewController {
                         }else if statusCode == 401 {
                             DispatchQueue.main.async {
                                 KVSpinnerView.dismiss()
-                                self.showSimpleAlertWithSingleAction(title: Localize.expiredSession(), message: Localize.yourSessionHasExpiredYouAreBeingLoggedOut() , okAction: UIAlertAction(title: Localize.logOut(), style: .default, handler: { (action) in
+                                self.showSimpleAlertWithSingleAction(title: Localize.expired_session() , message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                                     self.logoutOptions()
                                 }))
                             }
                         }else {
                             sender.isEnabled = true
-                            self.showSimpleAlertWithSingleAction(title: Localize.warning(), message: Localize.voucherNotHaveEnoughFunds(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
+                            self.showSimpleAlertWithSingleAction(title: Localize.warning(), message: Localize.voucher_not_have_enough_funds(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                 
                                 
                             }))
@@ -115,7 +116,7 @@ class ConfirmPaymentPopUp: UIViewController {
                     DispatchQueue.main.async {
                         if statusCode == 200 {
                             KVSpinnerView.dismiss()
-                            self.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.paymentSucceeded(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
+                            self.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.payment_succeeded(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                 
                                 self.tabBar.selectedIndex = 0
                                 if self.isFromReservation != nil {
@@ -127,7 +128,7 @@ class ConfirmPaymentPopUp: UIViewController {
                         }else if statusCode == 401 {
                             DispatchQueue.main.async {
                                 KVSpinnerView.dismiss()
-                                self.showSimpleAlertWithSingleAction(title: Localize.expiredSession(), message: Localize.yourSessionHasExpiredYouAreBeingLoggedOut() , okAction: UIAlertAction(title: Localize.logOut(), style: .default, handler: { (action) in
+                                self.showSimpleAlertWithSingleAction(title: Localize.expired_session(), message: Localize.your_session_has_expired() , okAction: UIAlertAction(title: Localize.log_out(), style: .default, handler: { (action) in
                                     self.logoutOptions()
                                 }))
                             }
@@ -160,6 +161,15 @@ class ConfirmPaymentPopUp: UIViewController {
         }
     }
     
+}
+
+// MARK: - Accessibility Protocol
+
+extension ConfirmPaymentPopUp: AccessibilityProtocol {
+    func setupAccessibility() {
+        declineButton.setupAccesibility(description: Localize.decline(), accessibilityTraits: .button)
+        confirmButton.setupAccesibility(description: Localize.confirm(), accessibilityTraits: .button)
+    }
 }
 
 extension ConfirmPaymentPopUp {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KVSpinnerView
 
 enum QRTypeScann: String {
     case authToken = "auth_token"
@@ -32,7 +31,6 @@ class MQRViewController: HSScanViewController {
         
         self.delegate = self
         self.scanCodeTypes  = [.qr]
-        
         qrViewModel.vc = self
         qrViewModel.vcAlert = self
         
@@ -42,7 +40,6 @@ class MQRViewController: HSScanViewController {
                 if statusCode != 503 {
                     
                     self?.scanWorker.start()
-                    
                 }else {
                     
                     self?.showErrorServer()
@@ -100,7 +97,7 @@ class MQRViewController: HSScanViewController {
                     KVSpinnerView.dismiss()
                     if statusCode != 401 {
                         
-                        self?.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.aRecordHasBeenValidated(),
+                        self?.showSimpleAlertWithSingleAction(title: Localize.success(), message: Localize.a_record_has_been_validated(),
                                                               okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                                                 self?.scanWorker.start()
                                                               }))
@@ -120,7 +117,9 @@ class MQRViewController: HSScanViewController {
                 if statusCode != 503 {
                     KVSpinnerView.dismiss()
                     if statusCode != 403 {
-                            self?.voucher = voucher
+                        self?.voucher = voucher
+                        
+                        if voucher.fund?.type != FundType.subsidies.rawValue {
                             
                             if voucher.allowed_organizations?.count != 0 && voucher.allowed_organizations?.count  != nil {
                                 
@@ -134,7 +133,7 @@ class MQRViewController: HSScanViewController {
                                 }else{
                                     
                                     self?.showSimpleAlertWithSingleAction(title: Localize.error_exclamation(),
-                                                                          message: Localize.thisProductVoucherIsUsed(),
+                                                                          message: Localize.this_product_voucher_is_used(),
                                                                           okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                                                             self?.scanWorker.start()
                                                                           }))
@@ -143,14 +142,17 @@ class MQRViewController: HSScanViewController {
                             }else {
                                 
                                 self?.showSimpleAlertWithSingleAction(title: Localize.error_exclamation(),
-                                                                      message: Localize.sorryYouDoNotMeetTheCriteriaForThisVoucher(),
+                                                                      message: Localize.sorry_you_do_not_meet_the_criteria_for_this_voucher(),
                                                                       okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                                                         self?.scanWorker.start()
                                                                       }))
                             }
+                        }else {
+                            self?.openSubsidies()
+                        }
                     }else {
                         
-                        self?.showSimpleAlertWithSingleAction(title: Localize.error_exclamation(), message: Localize.youCanTScanThisVoucherYouAreNotAcceptedAsAProviderForTheFundThatHandsOutTheseVouchers(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
+                        self?.showSimpleAlertWithSingleAction(title: Localize.error_exclamation(), message: Localize.you_cant_scan_this_voucher_you_are_not_accepted_as_provider_for_fund(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                             self?.scanWorker.start()
                         }))
                     }
@@ -180,15 +182,15 @@ class MQRViewController: HSScanViewController {
                         self.performSegue(withIdentifier: R.segue.mqrViewController.goToVoucherPayment, sender: nil)
                     }
                 }else {
-                
+                    
                     self.showSimpleAlertWithSingleAction(title: Localize.error_exclamation(),
-                                                     message: Localize.theVoucherIsEmptyNoTransactionsCanBeDone(),
+                                                         message: Localize.the_voucher_is_empty(),
                                                      okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (action) in
                                                                                    self.scanWorker.start()
                                                                                  }))
-                }
             }
         }
+    }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -199,6 +201,7 @@ class MQRViewController: HSScanViewController {
         }
         if scanWorker != nil {
             scanWorker.start()
+            setupAccessibility()
         }
     }
     
@@ -233,13 +236,13 @@ extension MQRViewController: HSScanViewControllerDelegate{
                         if qr.type == QRTypeScann.authToken.rawValue {
                             self.scanWorker.stop()
                             self.showSimpleAlertWithAction(title: "Login QR",
-                                                           message: Localize.youSureYouWanTToLoginThisDevice(),
-                                                           okAction: UIAlertAction(title: Localize.yeS(), style: .default, handler: { (action) in
+                                                           message: Localize.you_sure_you_want_to_login_device(),
+                                                           okAction: UIAlertAction(title: Localize.yes(), style: .default, handler: { (action) in
                                                             KVSpinnerView.show()
                                                             self.qrViewModel.initAuthorizeToken(token: qr.value)
                                                             
                                                            }),
-                                                           cancelAction: UIAlertAction(title: Localize.nO(), style: .cancel, handler: { (action) in
+                                                           cancelAction: UIAlertAction(title: Localize.no(), style: .cancel, handler: { (action) in
                                                             
                                                             self.scanWorker.start()
                                                            }))
@@ -266,7 +269,15 @@ extension MQRViewController: HSScanViewControllerDelegate{
                     }
                 } catch {
                     KVSpinnerView.dismiss()
-                    showSimpleToast(message: "Unknown QR-code!")
+                    self.scanWorker.start()
+                    if let qrValue = Int(scanResult.scanResultString!), String(qrValue).count == 12  {
+                        let qrStringValue = String(qrValue)
+                        self.scanWorker.stop()
+                        KVSpinnerView.show()
+                        self.qrViewModel.initVoucherAddress(address: qrStringValue)
+                    }else {
+                        showSimpleToast(message: "Unknown QR-code!")
+                    }
                 }
             }
         }else {
@@ -280,6 +291,10 @@ extension MQRViewController: HSScanViewControllerDelegate{
 }
 
 extension MQRViewController: OrganizationValidatorViewControllerDelegate {
+    func selectOrganizationVoucher(organization: AllowedOrganization, vc: UIViewController) {
+        
+    }
+    
     
     func close() {
         self.scanWorker.start()
@@ -293,5 +308,24 @@ extension MQRViewController: OrganizationValidatorViewControllerDelegate {
                                        }),
                                        cancelAction: UIAlertAction(title: Localize.cancel(), style: .cancel, handler: { (action) in
                                        }))
+    }
+}
+
+extension MQRViewController {
+    func openSubsidies() {
+        let actionsVC = MActionsViewController()
+        actionsVC.modalPresentationStyle = .fullScreen
+        actionsVC.voucher = voucher
+        self.present(actionsVC, animated: true)
+    }
+}
+
+// MARK: - Accessibility Protocol
+
+extension MQRViewController: AccessibilityProtocol {
+    func setupAccessibility() {
+        self.scanWorker.isAccessibilityElement = true
+        self.scanWorker.accessibilityLabel = "Scan any me qr code"
+        self.scanWorker.accessibilityTraits = .none
     }
 }

@@ -41,5 +41,11 @@ extension UIView {
         //Apply layer as a mask
         self.layer.mask = maskLayer
     }
+    
+    func setupAccesibility(description: String, accessibilityTraits: UIAccessibilityTraits){
+        self.isAccessibilityElement = true
+        self.accessibilityLabel = description
+        self.accessibilityTraits = accessibilityTraits
+    }
 }
 

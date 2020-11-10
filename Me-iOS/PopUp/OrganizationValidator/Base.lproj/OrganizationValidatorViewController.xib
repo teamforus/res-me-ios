@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,10 +16,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrganizationValidatorViewController" customModule="Me_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="blurView" destination="HPi-hJ-GyG" id="6pt-zn-iKG"/>
                 <outlet property="bodyView" destination="cb8-L8-xcv" id="GOI-zQ-80n"/>
                 <outlet property="bottomConstraintView" destination="Esx-Ng-fpE" id="5RJ-ON-ZG6"/>
+                <outlet property="closeButton" destination="1AX-mi-xd9" id="lWc-s1-tN7"/>
                 <outlet property="heightConstraint" destination="4eM-wv-hmo" id="pGZ-GB-IT7"/>
                 <outlet property="tableView" destination="axj-cO-ddS" id="V45-xT-QAR"/>
+                <outlet property="titleLabel" destination="axg-vL-5dN" id="wgF-Ay-WUi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,19 +37,23 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-L8-xcv" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="361" width="375" height="318"/>
+                    <rect key="frame" x="0.0" y="949" width="375" height="318"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a validator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axg-vL-5dN">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a validator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axg-vL-5dN" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                             <rect key="frame" x="66" y="26" width="242" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Light_Dark_Mode"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="78" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axj-cO-ddS">
                             <rect key="frame" x="0.0" y="73" width="375" height="237"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="nGk-dF-WNL"/>
                                 <outlet property="delegate" destination="-1" id="VXH-wS-KA1"/>
@@ -60,7 +68,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="318" id="4eM-wv-hmo"/>
                     </constraints>
@@ -68,20 +76,27 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="14"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="DarkGray_DarkTheme"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="cb8-L8-xcv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4yn-sr-bPc"/>
-                <constraint firstAttribute="bottom" secondItem="cb8-L8-xcv" secondAttribute="bottom" constant="-12" id="Esx-Ng-fpE"/>
+                <constraint firstAttribute="bottom" secondItem="cb8-L8-xcv" secondAttribute="bottom" constant="-600" id="Esx-Ng-fpE"/>
                 <constraint firstItem="cb8-L8-xcv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="n95-Pf-GiO"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="DarkGray_DarkTheme"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="132" y="79.610194902548727"/>
         </view>
     </objects>
     <resources>
         <image name="closeIcon" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

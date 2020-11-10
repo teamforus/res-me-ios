@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KVSpinnerView
 
 class MLoginQRAndCodeViewController: UIViewController {
     @IBOutlet var labels: [UILabel]!

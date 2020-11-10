@@ -11,7 +11,6 @@ protocol MChooseTypeTableViewCellDelegate: class {
 }
 
 import UIKit
-import UICheckbox_Swift
 
 class MChooseTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var typeButton: ShadowButton!

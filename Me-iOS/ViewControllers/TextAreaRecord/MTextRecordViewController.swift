@@ -8,7 +8,6 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import KVSpinnerView
 
 class MTextRecordViewController: UIViewController {
     @IBOutlet weak var textUITextView: UITextView!
@@ -36,7 +35,7 @@ class MTextRecordViewController: UIViewController {
                 KVSpinnerView.dismiss()
                 if statusCode == 401 {
                     
-                    self?.showSimpleAlert(title: "Warning", message: "Something goes wrong please try again!")
+                    self?.showSimpleAlert(title: Localize.warning(), message: "Something goes wrong please try again!")
                     
                 }else {
                     
@@ -77,7 +76,7 @@ class MTextRecordViewController: UIViewController {
                 textRecordViewModel.initCreateRecord(type: recordType.key ?? "", value: textUITextView.text)
                 
             }else {
-                showSimpleAlert(title: "Warning", message: "Please fill textarea.")
+                showSimpleAlert(title: Localize.warning(), message: "Please fill textarea.")
             }
             
         }else {

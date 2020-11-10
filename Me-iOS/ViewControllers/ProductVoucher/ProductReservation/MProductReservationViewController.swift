@@ -13,6 +13,7 @@ class MProductReservationViewController: UIViewController {
     lazy var qrViewModel: QRViewModel = {
         return QRViewModel()
     }()
+    @IBOutlet weak var completeAnAmountButton: ShadowButton!
     
     var voucherTokens: [Transaction]! = []
     var voucher: Voucher!
@@ -23,6 +24,7 @@ class MProductReservationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAccessibility()
         qrViewModel.vcAlert = self
         goToVoucherButton.isHidden = voucher.amount == "0.00"
         
@@ -85,5 +87,13 @@ extension MProductReservationViewController: UITableViewDelegate, UITableViewDat
         
         self.qrViewModel.initVoucherAddress(address: voucherTokens[indexPath.row].address ?? "")
         
+    }
+}
+
+// MARK: - Accessibility Protocol
+
+extension MProductReservationViewController: AccessibilityProtocol {
+    func setupAccessibility() {
+        completeAnAmountButton.setupAccesibility(description: Localize.complete_amount(), accessibilityTraits: .button)
     }
 }

@@ -1,6 +1,0 @@
-framework module ISHPullUp {
-  umbrella header "ISHPullUp-umbrella.h"
-
-  export *
-  module * { export * }
-}

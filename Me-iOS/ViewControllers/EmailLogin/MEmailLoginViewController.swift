@@ -9,7 +9,6 @@
 import UIKit
 import SkyFloatingLabelTextField
 import IQKeyboardManagerSwift
-import KVSpinnerView
 
 class MEmailLoginViewController: UIViewController {
     @IBOutlet weak var emailField: SkyFloatingLabelTextField!
@@ -27,7 +26,10 @@ class MEmailLoginViewController: UIViewController {
     }
     
     func setupCompletion() {
-        emailLoginViewModel.complete = { [weak self] (statusCode) in
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        
+        emailLoginViewModel.complete = { [weak self] (message, statusCode) in
             
             DispatchQueue.main.async {
                 

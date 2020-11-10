@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DE0-y8-cjP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DE0-y8-cjP">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,31 +25,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1C-Hn-7j5">
-                                <rect key="frame" x="98" y="32" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T19-xN-aIO" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Background_Voucher_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1C-Hn-7j5">
+                                <rect key="frame" x="98" y="32" width="205" height="20"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgj-eP-LBB">
-                                <rect key="frame" x="26" y="30" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-9M-BC2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-9M-BC2" customClass="BackButton_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="21" y="27" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="5Cn-nw-2hV"/>
+                                    <constraint firstAttribute="height" constant="30" id="cQv-2y-Rx6"/>
+                                </constraints>
                                 <connections>
                                     <action selector="dismiss:" destination="DE0-y8-cjP" eventType="touchUpInside" id="hJn-14-uCw"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-5y-DST">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-5y-DST" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="73" width="375" height="63"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onderstaande aanbiedingen zijn door de klant gereserveerd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tz-MG-HUF">
-                                        <rect key="frame" x="14" y="8" width="347" height="47"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onderstaande aanbiedingen zijn door de klant gereserveerd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tz-MG-HUF" customClass="DynamicLabel" customModule="Me_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="8" width="347" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -59,8 +64,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="joX-ja-sed"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-Fy-ecA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-Fy-ecA" customClass="TableView_Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="151" width="375" height="436"/>
                                 <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -112,9 +120,9 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="iconVoucher" destination="jQ4-FZ-DXr" id="KhI-jX-Rg8"/>
                                             <outlet property="priceVoucher" destination="wfv-DJ-Ztw" id="bNH-JT-e40"/>
@@ -127,7 +135,7 @@
                                     <outlet property="delegate" destination="DE0-y8-cjP" id="Rq5-0G-CqA"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzM-Me-hi0" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzM-Me-hi0" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="15" y="607" width="345" height="40"/>
                                 <color key="backgroundColor" red="0.26662361621856689" green="0.42916452884674072" blue="0.99131852388381958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -147,22 +155,32 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jjn-yc-EIQ"/>
                         <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="p2L-9M-BC2" firstAttribute="top" secondItem="Jjn-yc-EIQ" secondAttribute="top" constant="27" id="1aa-lr-ArW"/>
                             <constraint firstItem="ulm-Fy-ecA" firstAttribute="top" secondItem="D4r-5y-DST" secondAttribute="bottom" constant="15" id="39V-sz-eJ9"/>
                             <constraint firstItem="uzM-Me-hi0" firstAttribute="top" secondItem="ulm-Fy-ecA" secondAttribute="bottom" constant="20" id="7qr-HY-MIj"/>
+                            <constraint firstItem="T19-xN-aIO" firstAttribute="bottom" secondItem="lQh-Wi-2Yq" secondAttribute="bottom" id="Hh1-wj-79a"/>
+                            <constraint firstItem="p2L-9M-BC2" firstAttribute="leading" secondItem="Jjn-yc-EIQ" secondAttribute="leading" constant="21" id="Pe0-PA-BRX"/>
                             <constraint firstItem="D4r-5y-DST" firstAttribute="trailing" secondItem="Jjn-yc-EIQ" secondAttribute="trailing" id="R5c-wq-HeH"/>
                             <constraint firstItem="D4r-5y-DST" firstAttribute="leading" secondItem="Jjn-yc-EIQ" secondAttribute="leading" id="UVl-HL-gMh"/>
                             <constraint firstItem="ulm-Fy-ecA" firstAttribute="leading" secondItem="Jjn-yc-EIQ" secondAttribute="leading" id="UZY-5z-prh"/>
                             <constraint firstItem="Jjn-yc-EIQ" firstAttribute="bottom" secondItem="uzM-Me-hi0" secondAttribute="bottom" constant="20" id="XBw-WF-4Q3"/>
+                            <constraint firstItem="j1C-Hn-7j5" firstAttribute="centerX" secondItem="Jjn-yc-EIQ" secondAttribute="centerX" constant="13" id="ZOb-Zh-OPF"/>
                             <constraint firstItem="uzM-Me-hi0" firstAttribute="leading" secondItem="Jjn-yc-EIQ" secondAttribute="leading" constant="15" id="Zn4-W7-fto"/>
-                            <constraint firstItem="D4r-5y-DST" firstAttribute="top" secondItem="Jjn-yc-EIQ" secondAttribute="top" constant="53" id="bx1-oB-ell"/>
+                            <constraint firstItem="D4r-5y-DST" firstAttribute="top" secondItem="Jjn-yc-EIQ" secondAttribute="top" constant="73" id="bx1-oB-ell"/>
+                            <constraint firstItem="T19-xN-aIO" firstAttribute="trailing" secondItem="lQh-Wi-2Yq" secondAttribute="trailing" id="dmb-f0-b8N"/>
+                            <constraint firstItem="T19-xN-aIO" firstAttribute="top" secondItem="lQh-Wi-2Yq" secondAttribute="top" id="fcm-86-6Xo"/>
                             <constraint firstItem="Jjn-yc-EIQ" firstAttribute="trailing" secondItem="uzM-Me-hi0" secondAttribute="trailing" constant="15" id="kMP-qP-wri"/>
+                            <constraint firstItem="j1C-Hn-7j5" firstAttribute="leading" secondItem="p2L-9M-BC2" secondAttribute="trailing" constant="25" id="kQA-cr-0fi"/>
+                            <constraint firstItem="j1C-Hn-7j5" firstAttribute="top" secondItem="Jjn-yc-EIQ" secondAttribute="top" constant="32" id="pxt-jC-uAT"/>
                             <constraint firstItem="ulm-Fy-ecA" firstAttribute="trailing" secondItem="Jjn-yc-EIQ" secondAttribute="trailing" id="wRT-q5-wJc"/>
+                            <constraint firstItem="T19-xN-aIO" firstAttribute="leading" secondItem="lQh-Wi-2Yq" secondAttribute="leading" id="y68-X5-3bv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jjn-yc-EIQ"/>
                     </view>
                     <connections>
+                        <outlet property="completeAnAmountButton" destination="uzM-Me-hi0" id="QLF-ht-P4D"/>
                         <outlet property="goToVoucherButton" destination="uzM-Me-hi0" id="ijR-3Q-gIn"/>
                         <outlet property="tableView" destination="ulm-Fy-ecA" id="Bw0-xw-w7O"/>
                         <segue destination="Thw-SZ-3ni" kind="presentation" identifier="goToPaymentFromSelected" modalPresentationStyle="fullScreen" id="n7a-Va-rEj"/>
@@ -181,12 +199,22 @@
             <point key="canvasLocation" x="638" y="70"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="5XVoucherSurface" width="345" height="120"/>
-        <image name="Resting" width="210" height="210"/>
-        <image name="back" width="24" height="24"/>
-    </resources>
+    <designables>
+        <designable name="jQ4-FZ-DXr">
+            <size key="intrinsicContentSize" width="210" height="210"/>
+        </designable>
+        <designable name="uzM-Me-hi0">
+            <size key="intrinsicContentSize" width="186" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="n7a-Va-rEj"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="5XVoucherSurface" width="345" height="120"/>
+        <image name="Resting" width="210" height="210"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
