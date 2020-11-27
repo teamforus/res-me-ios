@@ -12,14 +12,13 @@ import StoreKit
 class AppVersionUpdateNotifier {
       static let KEY_APP_VERSION = "key_app_version"
       static let shared = AppVersionUpdateNotifier()
-    var userHasCloseUpdateNotifier: Bool = false
     var viewIsShoun: Bool = false
     var vc: UIViewController!
     var bottonLayoutConstraint: NSLayoutConstraint!
     
-    private let bodyView: UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .white
+    private let bodyView: Background_DarkMode = {
+        let view = Background_DarkMode(frame: .zero)
+        view.colorName = "DarkGray_DarkTheme"
         view.roundCorners(corners: [.layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner], radius: 12)
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.layer.shadowOpacity = 0.2
@@ -48,16 +47,15 @@ class AppVersionUpdateNotifier {
     
     private var closeButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.setTitle("CLOSE", for: .normal)
+        button.setTitle(Localize.close().uppercased(), for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1), for: .normal)
         return button
     }()
     
-    private lazy var messageLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+    private lazy var messageLabel: UILabel_DarkMode = {
+        let label = UILabel_DarkMode(frame: .zero)
         label.font = UIFont(name: "GoogleSans-Regular", size: 15)
-        label.text = "New update is available, update your application!"
-        label.textColor = .black
+        label.text = Localize.update_is_available()
         label.numberOfLines = 0
         return label
     }()
@@ -174,7 +172,7 @@ extension AppVersionUpdateNotifier {
 extension AppVersionUpdateNotifier {
     func closeBodyView() {
         viewIsShoun = false
-        self.userHasCloseUpdateNotifier = true
+        Preference.userHasCloseUpdateNotifier = true
         self.bodyView.removeAnimate()
     }
 }

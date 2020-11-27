@@ -41,6 +41,8 @@ class MPaymentViewController: UIViewController {
         }else {
             titleLabel.text = Localize.test_transaction()
             allowedOriganizationLabel.text = Localize.test_organization()
+            organizationLabel.isHidden = true
+            priceUILabel.isHidden = true
         }
         
     }

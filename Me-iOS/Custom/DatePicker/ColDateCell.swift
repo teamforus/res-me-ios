@@ -117,11 +117,10 @@ class ColDayCell: ColCell {
 }
 
 class CollOKCell: UICollectionViewCell {
-    let okLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+    let okLabel: UILabel_DarkMode = {
+        let label = UILabel_DarkMode(frame: .zero)
         label.text = Localize.ok()
         label.font = UIFont(name: "GoogleSans-Medium", size: 20)
-        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

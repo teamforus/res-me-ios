@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,9 @@
     <customFonts key="customFonts">
         <array key="GoogleSans-Bold.ttf">
             <string>GoogleSans-Bold</string>
+        </array>
+        <array key="GoogleSans-Medium.ttf">
+            <string>GoogleSans-Medium</string>
         </array>
         <array key="GoogleSans-Regular.ttf">
             <string>GoogleSans-Regular</string>
@@ -45,7 +48,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-nf-Lc6" customClass="CustomCornerUIView" customModule="Me_iOS" customModuleProvider="target">
-                    <rect key="frame" x="10" y="667" width="355" height="439"/>
+                    <rect key="frame" x="10" y="667" width="355" height="525"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-4n-7vK" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="60" width="355" height="198"/>
@@ -108,45 +111,47 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="xNk-cG-YEN">
-                            <rect key="frame" x="10" y="277" width="335" height="123.5"/>
+                            <rect key="frame" x="10" y="277" width="335" height="91.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNq-c6-nFg">
-                                    <rect key="frame" x="147" y="0.0" width="41.5" height="22"/>
-                                    <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-E5-z7W">
-                                    <rect key="frame" x="149.5" y="28" width="36.5" height="19.5"/>
-                                    <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hier is je persoonlijke QR-Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BGK-yG-2Q2">
-                                    <rect key="frame" x="18" y="53.5" width="299.5" height="25.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNq-c6-nFg">
+                                    <rect key="frame" x="141.5" y="0.0" width="52" height="25.5"/>
                                     <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hier is je persoonlijke QR-Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BGK-yG-2Q2">
+                                    <rect key="frame" x="65.5" y="31.5" width="204" height="18"/>
+                                    <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="RIG-Qf-C8f">
-                                    <rect key="frame" x="9" y="85" width="317.5" height="38.5"/>
-                                    <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                    <rect key="frame" x="2.5" y="55.5" width="330.5" height="36"/>
+                                    <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-E5-z7W">
+                            <rect key="frame" x="162" y="450" width="31.5" height="17"/>
+                            <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
+                            <color key="textColor" red="0.47069782020000001" green="0.48195511099999999" blue="0.50588649510000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="highlightedColor" red="0.47069782020000001" green="0.48195511099999999" blue="0.50588649510000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="u3y-E5-z7W" firstAttribute="centerX" secondItem="2JC-nf-Lc6" secondAttribute="centerX" id="1qX-xn-NbD"/>
                         <constraint firstItem="xNk-cG-YEN" firstAttribute="top" secondItem="UgP-4n-7vK" secondAttribute="bottom" constant="19" id="6jp-8l-UzN"/>
                         <constraint firstItem="bTK-4w-hix" firstAttribute="top" secondItem="2JC-nf-Lc6" secondAttribute="top" id="Bo8-dJ-Jrj"/>
-                        <constraint firstAttribute="height" constant="439" id="FOn-yv-jjG"/>
+                        <constraint firstAttribute="height" constant="525" id="FOn-yv-jjG"/>
                         <constraint firstAttribute="trailing" secondItem="xNk-cG-YEN" secondAttribute="trailing" constant="10" id="WYt-jq-6e7"/>
                         <constraint firstItem="xNk-cG-YEN" firstAttribute="leading" secondItem="2JC-nf-Lc6" secondAttribute="leading" constant="10" id="f0S-Ag-chj"/>
                         <constraint firstItem="UgP-4n-7vK" firstAttribute="top" secondItem="bTK-4w-hix" secondAttribute="bottom" constant="1" id="gbl-SK-f3x"/>
                         <constraint firstItem="UgP-4n-7vK" firstAttribute="leading" secondItem="2JC-nf-Lc6" secondAttribute="leading" id="mdl-Id-fwX"/>
                         <constraint firstItem="bTK-4w-hix" firstAttribute="leading" secondItem="2JC-nf-Lc6" secondAttribute="leading" id="oEl-3I-LOa"/>
+                        <constraint firstAttribute="bottom" secondItem="u3y-E5-z7W" secondAttribute="bottom" constant="58" id="vfN-BC-UR9"/>
                         <constraint firstAttribute="trailing" secondItem="UgP-4n-7vK" secondAttribute="trailing" id="xQq-zg-dMf"/>
                         <constraint firstAttribute="trailing" secondItem="bTK-4w-hix" secondAttribute="trailing" id="zSU-cG-EKq"/>
                     </constraints>
@@ -170,7 +175,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="2JC-nf-Lc6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="439" id="3kd-ZW-QgW"/>
+                <constraint firstItem="2JC-nf-Lc6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="525" id="3kd-ZW-QgW"/>
                 <constraint firstItem="2JC-nf-Lc6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="VcH-FS-cHN"/>
                 <constraint firstItem="2JC-nf-Lc6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-10" id="rFB-kv-KUM"/>
             </constraints>

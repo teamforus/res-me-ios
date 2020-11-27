@@ -140,7 +140,7 @@
 "let_shopkeeper_scan_it_to_make_validtion_to_your_record" = "Let the shopkeeper scan it to make a validtion to your record %@.";
 "your_session_has_expired" = "Your session has expired. You are being logged out.";
 "expired_session" = "Expired session";
-"click_on_link_you_received_continue" = "Click on the link you received on %@ to continue";
+"click_on_link_you_received_continue" = "An e-mail has been sent to %@. Click the link in the email to sign up.";
 "ok" = "OK";
 "validation_approved" = "Validation approved.";
 "complete_amount" = "COMPLETE AN AMOUNT";
@@ -176,3 +176,7 @@
 "personal_account" = "Personal account";
 "tap_here_you_want_to_see_list_transaction" = "Tap here if you want to see your list of transactions";
 "choose_from_date" = "Choose from date";
+"update_is_available" = "New update is available, update your application!";
+"close" = "Close";
+"record_detail" = "Record detail";
+"this_is_qr_records" = "This is your Record’s QR";

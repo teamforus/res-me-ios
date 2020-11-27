@@ -1,4 +1,4 @@
-# res-me-ios
+# Me iOS
 iOS implementation of the [me app](https://github.com/teamforus/me)
 
 ## Getting Started

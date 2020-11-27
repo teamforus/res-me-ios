@@ -31,4 +31,13 @@ class Preference {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsName.tapToSeeTransactionTipHasShownCount)
         }
     }
+    
+    public static var userHasCloseUpdateNotifier: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: UserDefaultsName.userHasCloseUpdateNotifier)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsName.userHasCloseUpdateNotifier)
+        }
+    }
 }

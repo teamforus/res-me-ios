@@ -15,7 +15,7 @@
 "TMm-Mn-V3X.text" = "This record has no validations yet";
 
 /* Class = "UIButton"; normalTitle = "LAAT QR-CODE ZIEN"; ObjectID = "XXm-PG-izE"; */
-"XXm-PG-izE.normalTitle" = "Show QR-Code";
+"XXm-PG-izE.normalTitle" = "SHOW QR-CODE";
 
 /* Class = "UILabel"; text = "QR-CODE"; ObjectID = "aVI-f3-Q7E"; */
 "aVI-f3-Q7E.text" = "QR-CODE";

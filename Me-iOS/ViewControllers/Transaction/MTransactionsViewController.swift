@@ -39,12 +39,13 @@ class MTransactionsViewController: UIViewController {
         return label
     }()
     
-    private let dateButton: UIButton = {
-        let button = UIButton()
+    private let dateButton: ShadowButton = {
+        let button = ShadowButton()
         button.addTarget(self, action: #selector(openDatePicker), for: .touchUpInside)
-        button.setTitleColor(.black, for: .normal)
         button.corner = 9
-        button.backgroundColor = #colorLiteral(red: 0.9685427547, green: 0.9686817527, blue: 0.9685124755, alpha: 1)
+        button.colorName = "VoucherButton"
+        button.colorNameTitle = "Blue_DarkTheme"
+        button.titleLabel?.font = R.font.googleSansRegular(size: 14)
         return button
     }()
     
@@ -128,7 +129,7 @@ extension MTransactionsViewController {
     }
     
     func addSubviews() {
-        let views = [headerView, dateButton ,tableView, bottomView, totalPriceView]
+        let views = [headerView ,tableView, bottomView, totalPriceView]
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
@@ -138,7 +139,7 @@ extension MTransactionsViewController {
     }
     
     func addHeaderViewSubviews() {
-        let views = [backButton, titleLabel]
+        let views = [backButton, titleLabel, dateButton]
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.headerView.addSubview(view)
@@ -169,19 +170,19 @@ extension MTransactionsViewController {
             headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            headerView.heightAnchor.constraint(equalToConstant: 154),
+            headerView.heightAnchor.constraint(equalToConstant: 210),
         ])
         
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
         
         NSLayoutConstraint.activate([
-            dateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dateButton.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
-            dateButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5),
+            dateButton.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            dateButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
             dateButton.heightAnchor.constraint(equalToConstant: 44),
             dateButton.widthAnchor.constraint(equalToConstant: 200)
         ])

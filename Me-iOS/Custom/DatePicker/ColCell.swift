@@ -36,7 +36,11 @@ class ColCell: UICollectionViewCell {
         col.showsHorizontalScrollIndicator = false
         col.contentInset = UIEdgeInsets(top: 0, left: (self.frame.width / 3) , bottom: 0, right: (self.frame.width / 3) )
         col.translatesAutoresizingMaskIntoConstraints = false
-        col.backgroundColor = .white
+        if #available(iOS 11.0, *) {
+            col.backgroundColor = UIColor(named: "DarkGray_DarkTheme")
+        } else {
+            col.backgroundColor = .white
+        }
         return col
     }()
     
@@ -158,9 +162,8 @@ class MCollectionViewLayout: UICollectionViewFlowLayout {
 
 class Cell : UICollectionViewCell {
     
-    lazy var Week : UILabel = {
-        let label = UILabel()
-        label.textColor = .black
+    lazy var Week : UILabel_DarkMode = {
+        let label = UILabel_DarkMode()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.1
@@ -168,9 +171,8 @@ class Cell : UICollectionViewCell {
         return label
     }()
     
-    lazy var Label : UILabel = {
-        let label = UILabel()
-        label.textColor = .black
+    lazy var Label : UILabel_DarkMode = {
+        let label = UILabel_DarkMode()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.1

@@ -140,7 +140,7 @@
 "let_shopkeeper_scan_it_to_make_validtion_to_your_record" = "Laat deze QR-code scannen om uw eigenschap %@ te valideren.";
 "your_session_has_expired" = "Deze sessie is verlopen. Je wordt nu uitgelogd.";
 "expired_session" = "Verlopen sessie";
-"click_on_link_you_received_continue" = "Klik op de link in de email die u heeft ontvangen op %@ om uw aanmelding af te maken";
+"click_on_link_you_received_continue" = "Er is een e-mail verstuurd naar %@. Klik op de link in de e-mail om u aan te melden.";
 "ok" = "OK";
 "validation_approved" = "Validatie goedgekeurd.";
 "complete_amount" = "VUL ZELF EEN BEDRAG IN";
@@ -175,3 +175,7 @@
 "tap_here_you_want_to_see_list_transaction" = "Druk hier als je de lijst met transacties wilt openen";
 "choose_from_date" = "Zoeken op datum";
 "change_passcode" = "Wijzig inlogcode";
+"update_is_available" = "Er is een update beschikbaar.";
+"close" = "Sluiten";
+"record_detail" = "Eigenschap detail";
+"this_is_qr_records" = "This is your Record’s QR";

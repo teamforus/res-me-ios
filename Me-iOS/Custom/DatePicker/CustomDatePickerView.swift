@@ -78,7 +78,11 @@ class CustomDatePickerView: UIView {
         col.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         col.delegate = self
         col.dataSource = self
-        col.backgroundColor = .white
+        if #available(iOS 11.0, *) {
+            col.backgroundColor = UIColor(named: "DarkGray_DarkTheme")
+        } else {
+            col.backgroundColor = .white
+        }
         col.translatesAutoresizingMaskIntoConstraints = false
         return col
     }()

@@ -33,7 +33,7 @@
 "c89-oH-FyY.text" = "Rijwielhandel Kuis";
 
 /* Class = "UILabel"; text = "Activated"; ObjectID = "cc7-yH-a8B"; */
-"cc7-yH-a8B.text" = "Aangemaakt";
+"cc7-yH-a8B.text" = "AANGEMAAKT";
 
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "kQA-2y-C8q"; */
 "kQA-2y-C8q.normalTitle" = "Voucher Info";
@@ -48,7 +48,7 @@
 "sGx-Rg-q1L.text" = "QR-CODE";
 
 /* Class = "UILabel"; text = "Voucher"; ObjectID = "vIm-8e-AeU"; */
-"vIm-8e-AeU.text" = "Voucher";
+"vIm-8e-AeU.text" = "Tegoed";
 
 /* Class = "UILabel"; text = "NOT 2 DAGEN GELDIG VALID"; ObjectID = "w5t-6W-ueq"; */
 "w5t-6W-ueq.text" = "NOT 2 DAGEN GELDIG VALID";

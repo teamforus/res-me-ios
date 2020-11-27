@@ -22,9 +22,10 @@ class MVouchersViewController: UIViewController {
     @IBOutlet weak var segmentController: HBSegmentedControl!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var transactionButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel_DarkMode!
     
-  @IBOutlet weak var titleLabel: UILabel_DarkMode!
-  var voucherType: VoucherType!
+    private var timer: Timer?
+    var voucherType: VoucherType!
     lazy var voucherViewModel: VouchersViewModel = {
         return VouchersViewModel()
     }()
@@ -36,7 +37,9 @@ class MVouchersViewController: UIViewController {
         if !Preference.tapToSeeTransactionTipHasShown {
             Preference.tapToSeeTransactionTipHasShown = true
             transactionButton?.toolTip(message: Localize.tap_here_you_want_to_see_list_transaction(), style: .dark, location: .bottom, offset: CGPoint(x: -50, y: 0))
+            timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(dismissToolTip), userInfo: nil, repeats: true)
         }
+        
         registerForPreviewing(with: self, sourceView: tableView)
         
         if #available(iOS 10.0, *) {
@@ -55,8 +58,6 @@ class MVouchersViewController: UIViewController {
         segmentController.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
         segmentController.borderColor = .clear
         segmentView.layer.cornerRadius = 8.0
-        
-      
         
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         
@@ -138,6 +139,10 @@ class MVouchersViewController: UIViewController {
             break
         default: break
         }
+    }
+    
+    @objc func dismissToolTip() {
+        transactionButton.removeToolTip(with: Localize.tap_here_you_want_to_see_list_transaction())
     }
     
     @IBAction func openTransaction(_ sender: UIButton) {
@@ -312,6 +317,6 @@ extension MVouchersViewController: AccessibilityProtocol {
         if let vouchers = segmentController.accessibilityElement(at: 1) as? UIView {
             vouchers.setupAccesibility(description: "Choose to show all vouchers", accessibilityTraits: .causesPageTurn)
         }
-      titleLabel.setupAccesibility(description: Localize.vouchers(), accessibilityTraits: .header)
+        titleLabel.setupAccesibility(description: Localize.vouchers(), accessibilityTraits: .header)
     }
 }

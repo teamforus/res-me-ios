@@ -13,6 +13,7 @@ class MRecordDetailViewController: UIViewController {
     @IBOutlet weak var recordTypeLabel: UILabel!
     @IBOutlet weak var recordValue: UILabel!
     @IBOutlet weak var borderView: CustomCornerUIView!
+    @IBOutlet weak var heightTableViewConstraint: NSLayoutConstraint!
     
     var recordId: String!
     var timer : Timer! = Timer()
@@ -32,9 +33,31 @@ class MRecordDetailViewController: UIViewController {
         setupTimer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            
+        }
+        
+        let backButton = UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(back(_:)))
+        if #available(iOS 11.0, *) {
+            backButton.tintColor = UIColor(named: "Black_Light_DarkTheme")
+        } else { }
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.title = Localize.record_detail()
+    }
+    
     deinit {
         self.timer.invalidate()
         self.timer = nil
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupTimer() {
@@ -80,7 +103,7 @@ class MRecordDetailViewController: UIViewController {
                     self?.tableView.isHidden = true
                     
                 }else {
-                    
+                    self?.heightTableViewConstraint.constant = CGFloat(self?.recordDetailViewModel.numberOfCells ?? 0) * 116
                     self?.tableView.isHidden = false
                     
                 }

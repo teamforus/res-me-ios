@@ -25,7 +25,7 @@ class MEmailLoginViewController: UIViewController {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         
-        emailLoginViewModel.complete = { [weak self] (statusCode) in
+        emailLoginViewModel.complete = { [weak self] (message, statusCode) in
             
             DispatchQueue.main.async {
                 

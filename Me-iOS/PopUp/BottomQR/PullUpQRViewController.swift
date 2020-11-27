@@ -88,9 +88,9 @@ class PullUpQRViewController: UIViewController {
             
             break
         case .Record?:
-            self.voucherNameLabel.isHidden = true
+            self.descriptionLabel.isHidden = true
             self.dateExpireLabel.isHidden = true
-            self.titleDescriptionLabel.text = Localize.this_is_your_vouchers_qr_code()
+            self.voucherNameLabel.text = "This is your Record’s QR"
             if let name = self.record.name {
                 self.descriptionLabel.text = Localize.let_shopkeeper_scan_it_to_make_validtion_to_your_record(name)
             }
@@ -160,7 +160,7 @@ class PullUpQRViewController: UIViewController {
     }
     
     func closeQRAction(){
-        self.bottomConstraint.constant = 439
+        self.bottomConstraint.constant = 525
         
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()

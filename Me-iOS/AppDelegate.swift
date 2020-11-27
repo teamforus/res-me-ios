@@ -132,6 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        Preference.userHasCloseUpdateNotifier = false
         self.saveContext()
     }
     
@@ -370,7 +371,7 @@ extension AppDelegate {
     }
     
     @objc func checkForUpdate() {
-        if !AppVersionUpdateNotifier.shared.userHasCloseUpdateNotifier{
+        if !Preference.userHasCloseUpdateNotifier{
             appnotifier.isUpdateAvailable()
         }
     }

@@ -27,7 +27,7 @@ class LoginService: LoginServiceProtocol{
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("me_app-ios", forHTTPHeaderField: "Client-Type")
         
-        let parameters = ["email" : indentity.email ?? ""] as [String : Any]
+        let parameters = ["email" : indentity.email ?? "", "source": "app-me_app"] as [String : Any]
         
         request.httpBody = ApiService.getPostString(params: parameters).data(using: .utf8)
         

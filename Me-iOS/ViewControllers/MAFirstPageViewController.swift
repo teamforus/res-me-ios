@@ -65,9 +65,47 @@ class MAFirstPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                emailField.textColor = .white
+                emailField.selectedLineColor = .white
+            } else {
+                emailField.textColor = .black
+                emailField.selectedLineColor = .black
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(logIn), name: NotificationName.LoginQR, object: nil)
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                emailField.textColor = .white
+                emailField.selectedLineColor = .white
+            } else {
+                emailField.textColor = .black
+                emailField.selectedLineColor = .black
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        }
+
+        override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+            if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                emailField.textColor = .white
+                emailField.selectedLineColor = .white
+            } else {
+                emailField.textColor = .black
+                emailField.selectedLineColor = .black
+            }
+            }else {
+                // Fallback on earlier versions
+            }
+        }
     
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -183,7 +221,7 @@ class MAFirstPageViewController: UIViewController {
             }
         }
         
-        emailLoginViewModel.complete = { [weak self] (statusCode) in
+        emailLoginViewModel.complete = { [weak self] (message, statusCode) in
             
             DispatchQueue.main.async {
                 
