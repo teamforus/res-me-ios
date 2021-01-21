@@ -49,12 +49,20 @@ class MProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         setupSecurity()
     }
+  
+  
 }
 
 // MARK: - IBActions
 
 extension MProfileViewController {
     
+  @IBAction func privacyAndSecurity(_ sender: Any) {
+    let vc = MPrivacyViewController()
+    let navVC = UINavigationController(rootViewController: vc)
+    self.present(navVC, animated: true)
+    }
+  
     @IBAction func switchStartFromScanner(_ sender: UISwitch) {
         if sender.isOn {
             UserDefaults.standard.setValue(true, forKey: UserDefaultsName.StartFromScanner)
@@ -115,6 +123,8 @@ extension MProfileViewController {
         
         didChooseAppLocker(title: Localize.turn_off_login_code(), subTitle: Localize.enter_your_login_code(), cancelButtonIsVissible: true, mode: .deactive)
     }
+  
+  
 }
 
 // MARK: - SetupView

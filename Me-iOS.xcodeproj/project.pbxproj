@@ -15,6 +15,9 @@
 		0437CED924BDFC9F00FA7C24 /* BackButton_DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437CED824BDFC9F00FA7C24 /* BackButton_DarkMode.swift */; };
 		045E5A3425A7518600E338F7 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E5A3325A7518600E338F7 /* Sponsor.swift */; };
 		0483DBC124BF3F250074BBA9 /* UILabel_DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483DBC024BF3F250074BBA9 /* UILabel_DarkMode.swift */; };
+		04AC153625B8984C00E241AD /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC153525B8984C00E241AD /* TextTableViewCell.swift */; };
+		04AC153B25B8985300E241AD /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC153A25B8985300E241AD /* ButtonTableViewCell.swift */; };
+		04B03F9225B87E2A00B8BC4F /* MPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B03F9125B87E2A00B8BC4F /* MPrivacyViewController.swift */; };
 		21BC9E5E15D09EB33DC67D18 /* Pods_Me_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3A145130ABDFB2E6FA90DA /* Pods_Me_iOSTests.framework */; };
 		3073C31D42060DC36B5A5CF0 /* Pods_Me_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F0B90D6C19CBE208831044 /* Pods_Me_iOSUITests.framework */; };
 		3EA270A8D4692C1FB4DDDD4D /* Pods_Me_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5A2CBF3A5DDA911CDEBF20 /* Pods_Me_iOSTests.framework */; };
@@ -262,6 +265,9 @@
 		0437CED824BDFC9F00FA7C24 /* BackButton_DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton_DarkMode.swift; sourceTree = "<group>"; };
 		045E5A3325A7518600E338F7 /* Sponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsor.swift; sourceTree = "<group>"; };
 		0483DBC024BF3F250074BBA9 /* UILabel_DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel_DarkMode.swift; sourceTree = "<group>"; };
+		04AC153525B8984C00E241AD /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		04AC153A25B8985300E241AD /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		04B03F9125B87E2A00B8BC4F /* MPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPrivacyViewController.swift; sourceTree = "<group>"; };
 		0BA3C002535BEC0C09894BC7 /* Pods-Me-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1F4F14FBEF270B54FA6F330B /* Pods-Me-iOS.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOS.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOS/Pods-Me-iOS.alpha.xcconfig"; sourceTree = "<group>"; };
 		27C5698FBEA4D2ECE5592544 /* Pods-Me-iOSTests.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSTests.alpha.xcconfig"; path = "Target Support Files/Pods-Me-iOSTests/Pods-Me-iOSTests.alpha.xcconfig"; sourceTree = "<group>"; };
@@ -587,6 +593,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04AC153F25B8AA8900E241AD /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				04B03F9125B87E2A00B8BC4F /* MPrivacyViewController.swift */,
+				04AC153525B8984C00E241AD /* TextTableViewCell.swift */,
+				04AC153A25B8985300E241AD /* ButtonTableViewCell.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
 		265D97ECA3A164A5F7EEAF60 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,7 +1162,6 @@
 				65100B04229D76C9007892D1 /* RecordValidators */,
 				65F1BB20229EBF6F007D2C8A /* ChooseTypeRecord */,
 				65F1BB2F229EDD90007D2C8A /* TextAreaRecord */,
-				650FF63322AD2E14004C3A85 /* About */,
 				FFC38D4524FA929C001C0DA2 /* Transaction */,
 			);
 			path = ViewControllers;
@@ -1299,6 +1314,8 @@
 		65A8B7412282ED5300B7DF05 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				04AC153F25B8AA8900E241AD /* Privacy */,
+				650FF63322AD2E14004C3A85 /* About */,
 				65A8B73D2282ED1D00B7DF05 /* MProfileViewController.swift */,
 				658B488122ABF79100B6236C /* Profile.storyboard */,
 				654ACBAB22A94D550052C9C2 /* ProfileViewModel.swift */,
@@ -1967,6 +1984,7 @@
 				5B10CCAC240D021C00199C28 /* BottomQrWithPinViewController.swift in Sources */,
 				FFB76E0E24E94ABB00CFB195 /* UICheckbox.swift in Sources */,
 				FF9C60EE253DD4CD006F6979 /* SubsidiePay.swift in Sources */,
+				04AC153625B8984C00E241AD /* TextTableViewCell.swift in Sources */,
 				654ACBAC22A94D550052C9C2 /* ProfileViewModel.swift in Sources */,
 				654F97AA229BF671009C9FFA /* MRecordDetailViewController.swift in Sources */,
 				65A8B7192282E52D00B7DF05 /* MProductVoucherViewController.swift in Sources */,
@@ -2004,7 +2022,9 @@
 				65100AFD229D65A9007892D1 /* Extension+Array.swift in Sources */,
 				65139C61228029EF003E0CDE /* Formater.swift in Sources */,
 				5B5871AE240571AF004C3AF7 /* BodyId.swift in Sources */,
+				04AC153B25B8985300E241AD /* ButtonTableViewCell.swift in Sources */,
 				65911B46228D7DBC00EA30D6 /* VoucherTableViewCell.swift in Sources */,
+				04B03F9225B87E2A00B8BC4F /* MPrivacyViewController.swift in Sources */,
 				FFFF988025AA3F06009538FE /* Extension+UIDevice.swift in Sources */,
 				65139C54228029C0003E0CDE /* UI.swift in Sources */,
 				6511CB182362FCFC00863E85 /* PullUpQRViewController.swift in Sources */,
