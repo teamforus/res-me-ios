@@ -38,10 +38,10 @@
                                                 <rect key="frame" x="0.0" y="-15" width="375" height="179"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6YL-vS-yZM">
-                                                        <rect key="frame" x="95" y="102" width="180" height="54"/>
+                                                        <rect key="frame" x="95" y="102" width="180" height="49"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uw Profiel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ncj-5F-IHr" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="34.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="31.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="180" id="aXr-PV-Eyy"/>
                                                                 </constraints>
@@ -50,7 +50,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@mail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-EJ-VPa" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="34.5" width="180" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="31.5" width="180" height="17.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="180" id="nx2-12-LKm"/>
                                                                 </constraints>
@@ -108,7 +108,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFd-zA-OpX" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="118.5" y="40" width="138" height="22"/>
+                                                        <rect key="frame" x="120.5" y="40" width="134.5" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.99936085939999997" green="0.1497559547" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -702,7 +702,7 @@
             <size key="intrinsicContentSize" width="49" height="31"/>
         </designable>
         <designable name="LCl-JE-4Rl">
-            <size key="intrinsicContentSize" width="55" height="28"/>
+            <size key="intrinsicContentSize" width="53" height="26"/>
         </designable>
         <designable name="aF3-gf-gHS">
             <size key="intrinsicContentSize" width="49" height="31"/>

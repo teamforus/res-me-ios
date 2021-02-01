@@ -104,15 +104,40 @@ class MTransactionsViewController: UIViewController {
         return mdate
     }()
     
+  lazy var datePickerNew : UIDatePicker = {
+      let mdate = UIDatePicker()
+      mdate.translatesAutoresizingMaskIntoConstraints = false
+      if #available(iOS 14.0, *) {
+        mdate.backgroundColor = .clear
+        mdate.preferredDatePickerStyle = .compact
+        mdate.datePickerMode = .date
+        mdate.addTarget(self, action: #selector(getDate(from:)), for: .valueChanged)
+        } else {
+        // Fallback on earlier versions
+      }
+     return mdate
+  }()
    
+  var gestorRecognizer = UIGestureRecognizer()
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         addSubviews()
         setupConstraints()
         setupView()
         setupTableView()
         fetchTransaction()
         fetchComplete()
+      datePickerNew.subviews.forEach { (view) in
+        view.subviews.forEach { (view) in
+          view.subviews.forEach { (view) in
+            view.removeFromSuperview()
+          }
+        }
+      }
+     
     }
     
 }
@@ -129,13 +154,20 @@ extension MTransactionsViewController {
     }
     
     func addSubviews() {
-        let views = [headerView ,tableView, bottomView, totalPriceView]
+        let views = [headerView ,tableView, bottomView, totalPriceView ]
+     
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
         }
         addHeaderViewSubviews()
         addBottomViewSubviews()
+      if #available(iOS 14.0, *) {
+        view.addSubview(datePickerNew)
+        } else {
+         
+      }
+     
     }
     
     func addHeaderViewSubviews() {
@@ -186,6 +218,15 @@ extension MTransactionsViewController {
             dateButton.heightAnchor.constraint(equalToConstant: 44),
             dateButton.widthAnchor.constraint(equalToConstant: 200)
         ])
+      
+      
+//      NSLayoutConstraint.activate([
+//        datePickerNew.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+//        datePickerNew.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+//        datePickerNew.heightAnchor.constraint(equalToConstant: 44),
+//        datePickerNew.widthAnchor.constraint(equalToConstant: 200)
+//      ])
+      
         
 //        NSLayoutConstraint.activate([
 //            totalPriceView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 18),
@@ -308,7 +349,7 @@ extension MTransactionsViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension MTransactionsViewController: MDatePickerViewDelegate {
     func mdatePickerView(selectDate: Date) {
-        dateButton.setTitle("From date: " + selectDate.dateFormaterFromDateShort(), for: .normal)
+      dateButton.setTitle("From date: " + selectDate.dateFormaterFromDateShort(), for: .normal)
         transactionViewModel.sortTransactionByDate(form: selectDate)
     }
 }
@@ -336,19 +377,38 @@ extension MTransactionsViewController {
     }
     
      @objc func openDatePicker() {
-        
-        view.addSubview(datePicker)
-        setupDatePickerConstraints()
-        datePicker.showAnimate()
-        
-    }
+        if #available(iOS 14.0, *) {
+        datePickerNew.showAnimate()
+        setupDatePickerNewConstraints()
+        } else {
+          view.addSubview(datePicker)
+          setupDatePickerConstraints()
+          datePicker.showAnimate()
+      }
+   }
     
     func setupDatePickerConstraints() {
         NSLayoutConstraint.activate([
-            datePicker.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-            datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            datePicker.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            datePicker.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
+          datePicker.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
+          datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+          datePicker.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+          datePicker.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
         ])
     }
+  
+  func setupDatePickerNewConstraints() {
+    NSLayoutConstraint.activate([
+    datePickerNew.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+    datePickerNew.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+    datePickerNew.heightAnchor.constraint(equalToConstant: 44),
+    datePickerNew.widthAnchor.constraint(equalToConstant: 200)
+    ])
+  }
+  
+  
+  @objc func getDate(from datePiker:UIDatePicker) {
+    dateButton.setTitle("From date: " + datePiker.date.dateFormaterFromDateShort(), for: .normal)
+    transactionViewModel.sortTransactionByDate(form: datePiker.date)
+    self.dismiss(UIButton())
+  }
 }

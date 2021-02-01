@@ -113,7 +113,7 @@ class ShadowButton: UIButton {
     if #available(iOS 11.0, *) {
       self.setTitleColor(UIColor(named: colorNameTitle), for: .normal)
     } else {
-      // Fallback on earlier versions
+      self.setTitleColor(#colorLiteral(red: 0.307592541, green: 0.4586808085, blue: 0.9869144559, alpha: 1), for: .normal)
     }
   }
   
