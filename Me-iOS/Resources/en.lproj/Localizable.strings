@@ -187,3 +187,4 @@
 "what_customer_pays" = "What customer pays";
 "free" = "Free";
 "discount" = "Discount";
+"no_active_product" = "No active product for this fund";

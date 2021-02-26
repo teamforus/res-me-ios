@@ -104,6 +104,15 @@ class MActionsViewController: UIViewController {
         label.font = UIFont(name: "GoogleSans-Medium", size: 18)
         return label
     }()
+    
+    private let emptyLabel: UILabel_DarkMode = {
+        let label = UILabel_DarkMode(frame: .zero)
+        label.font = UIFont(name: "GoogleSans-Medium", size: 18)
+        label.text = Localize.no_active_product()
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
   
   private let organizationIamge: UIImageView = {
       let imageView = UIImageView(frame: .zero)
@@ -173,6 +182,8 @@ class MActionsViewController: UIViewController {
         viewModel.complete = { [weak self] (subsidies) in
             DispatchQueue.main.async {
                 if subsidies.count == 0 {
+                    self?.chooseActionLabel.isHidden = true
+                    self?.emptyLabel.isHidden = false
                     self?.showSimpleAlertWithSingleAction(title: Localize.warning(), message: Localize.no_balance_for_actions(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (_) in
                          self?.dismiss(animated: true)
                     }))
@@ -222,7 +233,7 @@ extension MActionsViewController: UITableViewDelegate, UITableViewDataSource {
 extension MActionsViewController {
     // MARK: - Add Subviews
     private func addSubviews() {
-        let views = [bodyView, headerView, chooseActionLabel, organizationView, tableView]
+        let views = [bodyView, headerView, chooseActionLabel, organizationView, tableView, emptyLabel]
         views.forEach { (view) in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
@@ -292,6 +303,13 @@ extension MActionsViewController {
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            emptyLabel.topAnchor.constraint(equalTo: chooseActionLabel.bottomAnchor, constant: 10),
+            emptyLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            emptyLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            emptyLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
         addHeaderdConstraints()
