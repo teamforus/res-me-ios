@@ -100,12 +100,10 @@ class MRecordsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let _ = R.segue.mRecordsViewController.goToRecordDetail(segue: segue) {
+        if R.segue.mRecordsViewController.goToRecordDetail(segue: segue) != nil  {
             let record = recordViewModel.selectedRecord
-            let generalVC = didSetPullUP(storyboard: R.storyboard.recordDetail(), segue: segue)
-            (generalVC.contentViewController as! MRecordDetailViewController).recordId =  String(record?.id ?? 0)
-            (generalVC.bottomViewController as! CommonBottomViewController).qrType = .Record
-            (generalVC.bottomViewController as! CommonBottomViewController).idRecord = record?.id ?? 0
+            let recordDetailVC = segue.destination as? MRecordDetailViewController
+            recordDetailVC?.recordId = String(record?.id ?? 0)
         }
     }
 }

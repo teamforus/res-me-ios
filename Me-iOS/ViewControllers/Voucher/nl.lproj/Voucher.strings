@@ -33,7 +33,7 @@
 "c89-oH-FyY.text" = "Rijwielhandel Kuis";
 
 /* Class = "UILabel"; text = "Activated"; ObjectID = "cc7-yH-a8B"; */
-"cc7-yH-a8B.text" = "Aangemaakt";
+"cc7-yH-a8B.text" = "AANGEMAAKT";
 
 /* Class = "UIButton"; normalTitle = "Bekijk aanbod"; ObjectID = "kQA-2y-C8q"; */
 "kQA-2y-C8q.normalTitle" = "Bekijk aanbod";
@@ -58,4 +58,3 @@
 
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "yc3-wb-YF5"; */
 "yc3-wb-YF5.title" = "Item 2";
-/attachments/771306591957811200/773483863783505940/Screenshot_2020-11-04_at_10.47.57.png

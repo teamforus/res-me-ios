@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,14 +32,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fill1Copy" translatesAutoresizingMaskIntoConstraints="NO" id="NiA-kM-LZe">
-                                                <rect key="frame" x="157" y="184.66666666666666" width="100" height="84.999999999999972"/>
+                                                <rect key="frame" x="157" y="183.33333333333334" width="100" height="85.000000000000028"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="5Yt-Il-TuS"/>
                                                     <constraint firstAttribute="height" constant="85" id="MWD-ni-Kqo"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welkom bij Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-hr-0CS" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="295.66666666666669" width="374" height="46"/>
+                                                <rect key="frame" x="20" y="294.33333333333331" width="374" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="boX-7H-4nd"/>
                                                 </constraints>
@@ -48,7 +48,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZO-XA-PbT" customClass="ShadowButton" customModule="Me_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="460.66666666666669" width="348" height="51"/>
+                                                <rect key="frame" x="33" y="459.33333333333331" width="348" height="51"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="JU2-3f-4ff"/>
@@ -110,13 +110,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inloggen vanaf een ander apparaat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoI-oj-U12" customClass="DynamicLabel" customModule="Me_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="59" y="567.66666666666663" width="293" height="15.333333333333371"/>
+                                                <rect key="frame" x="59" y="566.33333333333337" width="293" height="16.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Uw email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwF-T9-4XR" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="33" y="374.66666666666669" width="348" height="62"/>
+                                                <rect key="frame" x="33" y="373.33333333333331" width="348" height="62"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="62" id="2Xx-bo-8ez"/>
                                                 </constraints>
@@ -148,7 +148,7 @@
                                                 </connections>
                                             </textField>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="jsG-Jq-whr">
-                                                <rect key="frame" x="367" y="404.66666666666669" width="14" height="14"/>
+                                                <rect key="frame" x="367" y="403.33333333333331" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="h08-KN-IsE"/>
                                                     <constraint firstAttribute="height" constant="14" id="x8p-WV-C2C"/>
@@ -321,13 +321,13 @@
     </scenes>
     <designables>
         <designable name="0ZO-XA-PbT">
-            <size key="intrinsicContentSize" width="86" height="29"/>
+            <size key="intrinsicContentSize" width="89" height="30"/>
         </designable>
         <designable name="EPp-cx-awG">
-            <size key="intrinsicContentSize" width="74" height="29"/>
+            <size key="intrinsicContentSize" width="73" height="30"/>
         </designable>
         <designable name="YwF-T9-4XR">
-            <size key="intrinsicContentSize" width="348" height="37.658671874999996"/>
+            <size key="intrinsicContentSize" width="348" height="39.049671875000001"/>
         </designable>
     </designables>
     <resources>

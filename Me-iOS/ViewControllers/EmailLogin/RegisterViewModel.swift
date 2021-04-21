@@ -12,22 +12,16 @@ import Foundation
 class RegisterViewModel{
     
     var registerService: LoginServiceProtocol!
+    var complete: ((Register, Int)->())!
     
     init(registerService: LoginServiceProtocol = LoginService()) {
         self.registerService = registerService
     }
     
-    var complete: ((Register, Int)->())!
-    
-    func initRegister(identity: Identity){
-        
+   func initRegister(identity: Identity){
         registerService.register(indentity: identity, complete: { (response, statusCode) in
-            
-            self.complete(response, statusCode)
-            
+        self.complete(response, statusCode)
         }) { (error) in
-            
-        }
+      }
     }
-    
 }

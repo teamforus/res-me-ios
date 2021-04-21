@@ -41,7 +41,6 @@ class CommonBottomViewModel{
     func initFetchRecordToken(idRecords: Int){
         
         let parameters = ["record_id" : idRecords]
-        
         self.commonService.postWithParameters(request: "identity/record-validations", parameters: parameters, complete: { (response: RecordValidation, statusCode) in
             if statusCode == 401 {
                 DispatchQueue.main.async {

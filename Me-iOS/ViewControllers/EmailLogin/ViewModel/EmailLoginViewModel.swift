@@ -9,24 +9,24 @@
 import Foundation
 
 class EmailLoginViewModel {
+  
+  var commonService: CommonServiceProtocol!
+  
+  init(commonService: CommonServiceProtocol = CommonService()) {
+    self.commonService = commonService
+  }
+  
+  var complete: ((String,Int)->())?
+  
+  func initLoginByEmail(email: String) {
     
-    var commonService: CommonServiceProtocol!
+    let parameters = ["primary_email" : email, "source": "app-me_app"]
     
-    init(commonService: CommonServiceProtocol = CommonService()) {
-        self.commonService = commonService
+    commonService.postWithParametersWithoutToken(request: "identity/proxy/email", parameters: parameters, complete: { (response: AuthorizationQRToken, statusCode) in
+      self.complete?(response.message ?? "" ,statusCode)
+    }) { (error) in
+      
     }
     
-    var complete: ((String,Int)->())?
-    
-    func initLoginByEmail(email: String) {
-        
-        let parameters = ["primary_email" : email, "source": "app-me_app"]
-        
-        commonService.postWithParametersWithoutToken(request: "identity/proxy/email", parameters: parameters, complete: { (response: AuthorizationQRToken, statusCode) in
-            self.complete?(response.message ?? "" ,statusCode)
-        }) { (error) in
-            
-        }
-        
-    }
+  }
 }

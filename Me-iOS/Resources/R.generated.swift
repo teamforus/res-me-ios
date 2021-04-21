@@ -225,13 +225,13 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `MRecordsViewController`, and contains static references to 1 segues.
     struct mRecordsViewController {
       /// Segue identifier `goToRecordDetail`.
-      static let goToRecordDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MRecordsViewController, CommonPullUpViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRecordDetail")
+      static let goToRecordDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MRecordsViewController, MRecordDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRecordDetail")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToRecordDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func goToRecordDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MRecordsViewController, CommonPullUpViewController>? {
+      static func goToRecordDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MRecordsViewController, MRecordDetailViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mRecordsViewController.goToRecordDetail, segue: segue)
       }
       #endif
@@ -259,15 +259,15 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `MVouchersViewController`, and contains static references to 2 segues.
     struct mVouchersViewController {
       /// Segue identifier `goToProduct`.
-      static let goToProduct: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVouchersViewController, CommonPullUpViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProduct")
+      static let goToProduct: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVouchersViewController, MProductVoucherViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProduct")
       /// Segue identifier `goToVoucher`.
-      static let goToVoucher: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVouchersViewController, CommonPullUpViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToVoucher")
+      static let goToVoucher: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVouchersViewController, MVoucherViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToVoucher")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToProduct`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func goToProduct(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVouchersViewController, CommonPullUpViewController>? {
+      static func goToProduct(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVouchersViewController, MProductVoucherViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mVouchersViewController.goToProduct, segue: segue)
       }
       #endif
@@ -276,7 +276,7 @@ struct R: Rswift.Validatable {
       /// Optionally returns a typed version of segue `goToVoucher`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func goToVoucher(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVouchersViewController, CommonPullUpViewController>? {
+      static func goToVoucher(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVouchersViewController, MVoucherViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mVouchersViewController.goToVoucher, segue: segue)
       }
       #endif
@@ -870,28 +870,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct productVoucher {
-      /// Accessibility identifier `topViewHandle`.
-      static let topViewHandle: String = "topViewHandle"
-
-      fileprivate init() {}
-    }
-
     struct profile {
-      /// Accessibility identifier `topViewHandle`.
-      static let topViewHandle: String = "topViewHandle"
-
-      fileprivate init() {}
-    }
-
-    struct recordDetail {
-      /// Accessibility identifier `topViewHandle`.
-      static let topViewHandle: String = "topViewHandle"
-
-      fileprivate init() {}
-    }
-
-    struct voucher {
       /// Accessibility identifier `topViewHandle`.
       static let topViewHandle: String = "topViewHandle"
 
@@ -2877,7 +2856,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 181 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 169 localization keys.
     struct localizable {
       /// en translation: %@ Don't Available
       ///
@@ -3347,6 +3326,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let record = Rswift.StringResource(key: "record", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Record detail
+      ///
+      /// Locales: en, nl
+      static let record_detail = Rswift.StringResource(key: "record_detail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Records
       ///
       /// Locales: en, nl
@@ -3471,6 +3454,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let this_is_your = Rswift.StringResource(key: "this_is_your", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: This is your Record’s QR
+      ///
+      /// Locales: en, nl
+      static let this_is_qr_records = Rswift.StringResource(key: "this_is_qr_records", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: This is your Voucher’s QR-code.
       ///
       /// Locales: en, nl
@@ -5375,6 +5362,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("record", bundle: bundle, comment: "")
       }
 
+      /// en translation: Record detail
+      ///
+      /// Locales: en, nl
+      static func record_detail(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("record_detail", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "record_detail"
+        }
+
+        return NSLocalizedString("record_detail", bundle: bundle, comment: "")
+      }
+
       /// en translation: Records
       ///
       /// Locales: en, nl
@@ -5840,6 +5842,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("this_is_your", bundle: bundle, comment: "")
+      }
+
+      /// en translation: This is your Record’s QR
+      ///
+      /// Locales: en, nl
+      static func this_is_qr_records(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("this_is_qr_records", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "this_is_qr_records"
+        }
+
+        return NSLocalizedString("this_is_qr_records", bundle: bundle, comment: "")
       }
 
       /// en translation: This is your Voucher’s QR-code.
@@ -7377,7 +7394,7 @@ struct R: Rswift.Validatable {
       /// en translation: Product Voucher
       ///
       /// Locales: en, nl
-      static let zHTdEhDText = Rswift.StringResource(key: "5zH-Td-ehD.text", tableName: "ProductVoucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      static let nU4KvC8DText = Rswift.StringResource(key: "nU4-kv-C8D.text", tableName: "ProductVoucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Provider
       ///
       /// Locales: en, nl
@@ -7553,16 +7570,16 @@ struct R: Rswift.Validatable {
       /// en translation: Product Voucher
       ///
       /// Locales: en, nl
-      static func zHTdEhDText(preferredLanguages: [String]? = nil) -> String {
+      static func nU4KvC8DText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("5zH-Td-ehD.text", tableName: "ProductVoucher", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("nU4-kv-C8D.text", tableName: "ProductVoucher", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "ProductVoucher", preferredLanguages: preferredLanguages) else {
-          return "5zH-Td-ehD.text"
+          return "nU4-kv-C8D.text"
         }
 
-        return NSLocalizedString("5zH-Td-ehD.text", tableName: "ProductVoucher", bundle: bundle, comment: "")
+        return NSLocalizedString("nU4-kv-C8D.text", tableName: "ProductVoucher", bundle: bundle, comment: "")
       }
 
       /// en translation: Provider
@@ -8081,7 +8098,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nl
       static let nZaJqIY1Text = Rswift.StringResource(key: "nZa-Jq-IY1.text", tableName: "RecordDetail", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
-      /// en translation: Show QR-Code
+      /// en translation: SHOW QR-CODE
       ///
       /// Locales: en, nl
       static let xXmPGIzENormalTitle = Rswift.StringResource(key: "XXm-PG-izE.normalTitle", tableName: "RecordDetail", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
@@ -8207,7 +8224,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("nZa-Jq-IY1.text", tableName: "RecordDetail", bundle: bundle, comment: "")
       }
 
-      /// en translation: Show QR-Code
+      /// en translation: SHOW QR-CODE
       ///
       /// Locales: en, nl
       static func xXmPGIzENormalTitle(preferredLanguages: [String]? = nil) -> String {
@@ -8794,88 +8811,88 @@ struct R: Rswift.Validatable {
     struct voucher {
       /// en translation: -2,76
       ///
-      /// Locales: en
-      static let xmp1yDWXText = Rswift.StringResource(key: "Xmp-1y-dWX.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let xmp1yDWXText = Rswift.StringResource(key: "Xmp-1y-dWX.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: 19 Mei, 14:08
       ///
-      /// Locales: en
-      static let qGCRdVKiText = Rswift.StringResource(key: "qGC-Rd-vKi.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let qGCRdVKiText = Rswift.StringResource(key: "qGC-Rd-vKi.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: 19 Mei, 14:08
       ///
-      /// Locales: en
-      static let upHBBosText = Rswift.StringResource(key: "0Up-HB-Bos.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      /// en translation: Activated
+      /// Locales: en, nl
+      static let upHBBosText = Rswift.StringResource(key: "0Up-HB-Bos.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: ACTIVATED
       ///
-      /// Locales: en
-      static let cc7YHA8BText = Rswift.StringResource(key: "cc7-yH-a8B.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let cc7YHA8BText = Rswift.StringResource(key: "cc7-yH-a8B.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: E-mail to me
       ///
-      /// Locales: en
-      static let mWIN4PEONormalTitle = Rswift.StringResource(key: "mWI-n4-pEO.normalTitle", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let mWIN4PEONormalTitle = Rswift.StringResource(key: "mWI-n4-pEO.normalTitle", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Er zijn nog geen transacties
       ///
-      /// Locales: en
-      static let jnDO4FnText = Rswift.StringResource(key: "8jn-dO-4Fn.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let jnDO4FnText = Rswift.StringResource(key: "8jn-dO-4Fn.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: History
       ///
-      /// Locales: en
-      static let s5YUiYruText = Rswift.StringResource(key: "S5Y-Ui-yru.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let s5YUiYruText = Rswift.StringResource(key: "S5Y-Ui-yru.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Item 2
       ///
-      /// Locales: en
-      static let yc3WbYF5Title = Rswift.StringResource(key: "yc3-wb-YF5.title", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let yc3WbYF5Title = Rswift.StringResource(key: "yc3-wb-YF5.title", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Kindpakket
       ///
-      /// Locales: en
-      static let sdwCxCzaText = Rswift.StringResource(key: "Sdw-Cx-cza.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let sdwCxCzaText = Rswift.StringResource(key: "Sdw-Cx-cza.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Label
       ///
-      /// Locales: en
-      static let ladBGS6NText = Rswift.StringResource(key: "Lad-bG-s6N.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let ladBGS6NText = Rswift.StringResource(key: "Lad-bG-s6N.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Label
       ///
-      /// Locales: en
-      static let oJuTDyText = Rswift.StringResource(key: "05o-Ju-tDy.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let oJuTDyText = Rswift.StringResource(key: "05o-Ju-tDy.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Let the shopkeeper scan it to make a payment from your voucher.
       ///
-      /// Locales: en
-      static let p7eXQMR9Text = Rswift.StringResource(key: "P7e-xQ-MR9.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let p7eXQMR9Text = Rswift.StringResource(key: "P7e-xQ-MR9.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: NOT 2 DAGEN GELDIG VALID
       ///
-      /// Locales: en
-      static let w5t6WUeqText = Rswift.StringResource(key: "w5t-6W-ueq.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let w5t6WUeqText = Rswift.StringResource(key: "w5t-6W-ueq.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: QR-CODE
       ///
-      /// Locales: en
-      static let sGxRgQ1LText = Rswift.StringResource(key: "sGx-Rg-q1L.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let sGxRgQ1LText = Rswift.StringResource(key: "sGx-Rg-q1L.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Rijwielhandel Kuis
       ///
-      /// Locales: en
-      static let c89OHFyYText = Rswift.StringResource(key: "c89-oH-FyY.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let c89OHFyYText = Rswift.StringResource(key: "c89-oH-FyY.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: This is your Voucher’s QR-code.
       ///
-      /// Locales: en
-      static let xIxDD8s5Text = Rswift.StringResource(key: "xIx-dD-8s5.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let xIxDD8s5Text = Rswift.StringResource(key: "xIx-dD-8s5.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Transaction
       ///
-      /// Locales: en
-      static let pbV1UZtCText = Rswift.StringResource(key: "PbV-1U-ztC.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      /// en translation: View offers
-      ///
-      /// Locales: en
-      static let kQA2yC8qNormalTitle = Rswift.StringResource(key: "kQA-2y-C8q.normalTitle", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let pbV1UZtCText = Rswift.StringResource(key: "PbV-1U-ztC.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: Voucher
       ///
-      /// Locales: en
-      static let vIm8eAeUText = Rswift.StringResource(key: "vIm-8e-AeU.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let vIm8eAeUText = Rswift.StringResource(key: "vIm-8e-AeU.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
+      /// en translation: Voucher Info
+      ///
+      /// Locales: en, nl
+      static let kQA2yC8qNormalTitle = Rswift.StringResource(key: "kQA-2y-C8q.normalTitle", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
       /// en translation: € 122,50
       ///
-      /// Locales: en
-      static let ziozslcbText = Rswift.StringResource(key: "ZIO-zS-LCB.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, nl
+      static let ziozslcbText = Rswift.StringResource(key: "ZIO-zS-LCB.text", tableName: "Voucher", bundle: R.hostingBundle, locales: ["en", "nl"], comment: nil)
 
       /// en translation: -2,76
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func xmp1yDWXText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Xmp-1y-dWX.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8890,7 +8907,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: 19 Mei, 14:08
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func qGCRdVKiText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("qGC-Rd-vKi.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8905,7 +8922,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: 19 Mei, 14:08
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func upHBBosText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("0Up-HB-Bos.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8918,9 +8935,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("0Up-HB-Bos.text", tableName: "Voucher", bundle: bundle, comment: "")
       }
 
-      /// en translation: Activated
+      /// en translation: ACTIVATED
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func cc7YHA8BText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("cc7-yH-a8B.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8935,7 +8952,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: E-mail to me
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func mWIN4PEONormalTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("mWI-n4-pEO.normalTitle", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8950,7 +8967,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Er zijn nog geen transacties
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func jnDO4FnText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("8jn-dO-4Fn.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8965,7 +8982,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: History
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func s5YUiYruText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("S5Y-Ui-yru.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8980,7 +8997,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Item 2
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func yc3WbYF5Title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("yc3-wb-YF5.title", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -8995,7 +9012,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Kindpakket
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func sdwCxCzaText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Sdw-Cx-cza.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9010,7 +9027,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Label
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func ladBGS6NText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Lad-bG-s6N.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9025,7 +9042,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Label
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func oJuTDyText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("05o-Ju-tDy.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9040,7 +9057,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Let the shopkeeper scan it to make a payment from your voucher.
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func p7eXQMR9Text(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("P7e-xQ-MR9.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9055,7 +9072,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: NOT 2 DAGEN GELDIG VALID
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func w5t6WUeqText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("w5t-6W-ueq.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9070,7 +9087,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: QR-CODE
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func sGxRgQ1LText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("sGx-Rg-q1L.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9085,7 +9102,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Rijwielhandel Kuis
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func c89OHFyYText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("c89-oH-FyY.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9100,7 +9117,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: This is your Voucher’s QR-code.
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func xIxDD8s5Text(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("xIx-dD-8s5.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9115,7 +9132,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Transaction
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func pbV1UZtCText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("PbV-1U-ztC.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9130,8 +9147,8 @@ struct R: Rswift.Validatable {
 
       /// en translation: View offers
       ///
-      /// Locales: en
-      static func kQA2yC8qNormalTitle(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: en, nl
+      static func vIm8eAeUText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("kQA-2y-C8q.normalTitle", tableName: "Voucher", bundle: hostingBundle, comment: "")
         }
@@ -9145,8 +9162,8 @@ struct R: Rswift.Validatable {
 
       /// en translation: Voucher
       ///
-      /// Locales: en
-      static func vIm8eAeUText(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: en, nl
+      static func kQA2yC8qNormalTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("vIm-8e-AeU.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
         }
@@ -9160,7 +9177,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: € 122,50
       ///
-      /// Locales: en
+      /// Locales: en, nl
       static func ziozslcbText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("ZIO-zS-LCB.text", tableName: "Voucher", bundle: hostingBundle, comment: "")
@@ -9746,40 +9763,25 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct productVoucher: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = CommonPullUpViewController
+      typealias InitialController = MProductVoucherViewController
 
-      let bottom = StoryboardViewControllerResource<CommonBottomViewController>(identifier: "bottom")
       let bundle = R.hostingBundle
       let content = StoryboardViewControllerResource<MProductVoucherViewController>(identifier: "content")
-      let general = StoryboardViewControllerResource<CommonPullUpViewController>(identifier: "general")
       let name = "ProductVoucher"
-
-      func bottom(_: Void = ()) -> CommonBottomViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bottom)
-      }
 
       func content(_: Void = ()) -> MProductVoucherViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: content)
-      }
-
-      func general(_: Void = ()) -> CommonPullUpViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: general)
       }
 
       static func validate() throws {
         if UIKit.UIImage(named: "5XVoucherSurface", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named '5XVoucherSurface' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "circular", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circular' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "closeIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeIcon' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "email1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email1' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrCode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrCode' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrImage2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrImage2' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrV", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrV' is used in storyboard 'ProductVoucher', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.productVoucher().bottom() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bottom' could not be loaded from storyboard 'ProductVoucher' as 'CommonBottomViewController'.") }
         if _R.storyboard.productVoucher().content() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'content' could not be loaded from storyboard 'ProductVoucher' as 'MProductVoucherViewController'.") }
-        if _R.storyboard.productVoucher().general() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'general' could not be loaded from storyboard 'ProductVoucher' as 'CommonPullUpViewController'.") }
       }
 
       fileprivate init() {}
@@ -9828,38 +9830,22 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct recordDetail: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = CommonPullUpViewController
+      typealias InitialController = MRecordDetailViewController
 
-      let bottom = StoryboardViewControllerResource<CommonBottomViewController>(identifier: "bottom")
       let bundle = R.hostingBundle
       let content = StoryboardViewControllerResource<MRecordDetailViewController>(identifier: "content")
-      let general = StoryboardViewControllerResource<CommonPullUpViewController>(identifier: "general")
       let name = "RecordDetail"
-
-      func bottom(_: Void = ()) -> CommonBottomViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bottom)
-      }
 
       func content(_: Void = ()) -> MRecordDetailViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: content)
       }
 
-      func general(_: Void = ()) -> CommonPullUpViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: general)
-      }
-
       static func validate() throws {
-        if UIKit.UIImage(named: "back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "closeIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeIcon' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "delete24Px", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete24Px' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_launcher_APP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_launcher_APP' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrCode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrCode' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrImage2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrImage2' is used in storyboard 'RecordDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.recordDetail().bottom() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bottom' could not be loaded from storyboard 'RecordDetail' as 'CommonBottomViewController'.") }
         if _R.storyboard.recordDetail().content() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'content' could not be loaded from storyboard 'RecordDetail' as 'MRecordDetailViewController'.") }
-        if _R.storyboard.recordDetail().general() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'general' could not be loaded from storyboard 'RecordDetail' as 'CommonPullUpViewController'.") }
       }
 
       fileprivate init() {}
@@ -9952,40 +9938,25 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct voucher: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = CommonPullUpViewController
+      typealias InitialController = MVoucherViewController
 
-      let bottom = StoryboardViewControllerResource<CommonBottomViewController>(identifier: "bottom")
       let bundle = R.hostingBundle
       let content = StoryboardViewControllerResource<MVoucherViewController>(identifier: "content")
-      let general = StoryboardViewControllerResource<CommonPullUpViewController>(identifier: "general")
       let name = "Voucher"
-
-      func bottom(_: Void = ()) -> CommonBottomViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bottom)
-      }
 
       func content(_: Void = ()) -> MVoucherViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: content)
-      }
-
-      func general(_: Void = ()) -> CommonPullUpViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: general)
       }
 
       static func validate() throws {
         if UIKit.UIImage(named: "5XVoucherSurface", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named '5XVoucherSurface' is used in storyboard 'Voucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Resting", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Resting' is used in storyboard 'Voucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back' is used in storyboard 'Voucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "closeIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeIcon' is used in storyboard 'Voucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "email1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email1' is used in storyboard 'Voucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrCode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrCode' is used in storyboard 'Voucher', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "qrImage2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrImage2' is used in storyboard 'Voucher', but couldn't be loaded.") }
         if UIKit.UIImage(named: "qrV", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrV' is used in storyboard 'Voucher', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.voucher().bottom() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bottom' could not be loaded from storyboard 'Voucher' as 'CommonBottomViewController'.") }
         if _R.storyboard.voucher().content() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'content' could not be loaded from storyboard 'Voucher' as 'MVoucherViewController'.") }
-        if _R.storyboard.voucher().general() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'general' could not be loaded from storyboard 'Voucher' as 'CommonPullUpViewController'.") }
       }
 
       fileprivate init() {}

@@ -13,15 +13,14 @@ import ISHPullUp
 @IBDesignable
 class CommonPullUpViewController: ISHPullUpViewController {
     
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            if self.contentViewController != nil && self.bottomViewController != nil {
-                print("nil")
-            }else {
-                commonInit()
+  required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+       if self.contentViewController != nil && self.bottomViewController != nil {
+        print("nil")
+      }else {
+            commonInit()
             }
-    
-        }
+       }
     
     
     

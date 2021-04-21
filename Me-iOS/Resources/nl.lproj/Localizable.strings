@@ -177,6 +177,8 @@
 "change_passcode" = "Wijzig inlogcode";
 "update_is_available" = "Er is een update beschikbaar.";
 "close" = "Sluiten";
+"record_detail" = "Eigenschap detail";
+"this_is_qr_records" = "This is your Record’s QR";
 "price_agreement" = "Prijsafspraak";
 "more_information_price_agreement" = "Meer informatie over prijsafspraak";
 "paid_by_customer" = "De klant dient het volgende bedrag te betalen";

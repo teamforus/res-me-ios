@@ -24,10 +24,8 @@ class LoginQrAndCodeViewModel{
     
     
     func initFetchPinCode(){
-        
         self.commonService.post(request: "identity/proxy/code") { ( response: PinCode, statusCode) in
             self.complete!(response.auth_code ?? 0, response.access_token ?? "", statusCode)
-            
         }
     }
     

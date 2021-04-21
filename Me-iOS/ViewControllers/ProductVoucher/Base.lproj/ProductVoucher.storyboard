@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHb-Mw-jlE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i5g-No-1l1">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GoogleSans-Bold.ttf">
-            <string>GoogleSans-Bold</string>
-        </array>
         <array key="GoogleSans-Medium.ttf">
             <string>GoogleSans-Medium</string>
         </array>
@@ -22,7 +20,7 @@
         <!--Item 2-->
         <scene sceneID="lfX-Ve-V1c">
             <objects>
-                <viewController storyboardIdentifier="content" id="i5g-No-1l1" customClass="MProductVoucherViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="content" hidesBottomBarWhenPushed="YES" id="i5g-No-1l1" customClass="MProductVoucherViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9R-wt-e9A" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,13 +92,6 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="WhiteBackground_DarkTheme"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Voucher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zH-Td-ehD" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="85" y="56" width="205" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="5XVoucherSurface" translatesAutoresizingMaskIntoConstraints="NO" id="4y0-Pr-vAO">
                                                         <rect key="frame" x="15" y="103" width="345" height="120"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -151,15 +142,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
                                                             <action selector="opendQR:" destination="i5g-No-1l1" eventType="touchUpInside" id="OQb-jc-uux"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gp-kQ-8Y9" customClass="BackButton_DarkMode" customModule="Me_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="2" y="45" width="44" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="back"/>
-                                                        <connections>
-                                                            <action selector="back:" destination="i5g-No-1l1" eventType="touchUpInside" id="ed0-I9-PJi"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -335,13 +317,41 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="lUs-DV-Tuu" firstAttribute="width" secondItem="yv2-8p-7GK" secondAttribute="width" id="BG7-74-tpy"/>
-                                    <constraint firstItem="lUs-DV-Tuu" firstAttribute="height" secondItem="yv2-8p-7GK" secondAttribute="height" priority="200" id="Dbo-Wb-eOp"/>
+                                    <constraint firstItem="lUs-DV-Tuu" firstAttribute="height" secondItem="yv2-8p-7GK" secondAttribute="height" priority="200" constant="-10" id="Dbo-Wb-eOp"/>
                                     <constraint firstItem="lUs-DV-Tuu" firstAttribute="top" secondItem="yv2-8p-7GK" secondAttribute="top" id="Oeq-oA-yF3"/>
                                     <constraint firstAttribute="trailing" secondItem="lUs-DV-Tuu" secondAttribute="trailing" id="cQZ-Pf-qnL"/>
-                                    <constraint firstAttribute="bottom" secondItem="lUs-DV-Tuu" secondAttribute="bottom" id="fOf-gn-xpP"/>
+                                    <constraint firstAttribute="bottom" secondItem="lUs-DV-Tuu" secondAttribute="bottom" constant="10" id="fOf-gn-xpP"/>
                                     <constraint firstItem="lUs-DV-Tuu" firstAttribute="leading" secondItem="yv2-8p-7GK" secondAttribute="leading" id="tGP-qy-5cQ"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-s0-yC3" customClass="Background_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voucher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU4-kv-C8D" customClass="UILabel_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="52" width="245" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bs4-wy-tfl" customClass="BackButton_DarkMode" customModule="Me_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="40" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="back:" destination="i5g-No-1l1" eventType="touchUpInside" id="T08-uX-I1C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="TQ6-qj-Bij"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Background_Voucher_DarkTheme"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISv-VT-zMg" customClass="StatusView" customModule="Me_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -356,8 +366,11 @@
                         <constraints>
                             <constraint firstItem="yv2-8p-7GK" firstAttribute="trailing" secondItem="DAl-TY-fo6" secondAttribute="trailing" id="7bj-a0-4DF"/>
                             <constraint firstItem="yv2-8p-7GK" firstAttribute="top" secondItem="e9R-wt-e9A" secondAttribute="top" id="9r0-u5-mia"/>
+                            <constraint firstItem="X3K-s0-yC3" firstAttribute="trailing" secondItem="DAl-TY-fo6" secondAttribute="trailing" id="Gvd-sd-CpZ"/>
                             <constraint firstItem="yv2-8p-7GK" firstAttribute="leading" secondItem="DAl-TY-fo6" secondAttribute="leading" id="I7z-YT-J5d"/>
                             <constraint firstItem="yv2-8p-7GK" firstAttribute="bottom" secondItem="DAl-TY-fo6" secondAttribute="bottom" id="fB0-vd-zWx"/>
+                            <constraint firstItem="X3K-s0-yC3" firstAttribute="leading" secondItem="DAl-TY-fo6" secondAttribute="leading" id="sLN-xY-xFc"/>
+                            <constraint firstItem="X3K-s0-yC3" firstAttribute="top" secondItem="e9R-wt-e9A" secondAttribute="top" id="x9D-jN-vT5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="Background_Voucher_DarkTheme"/>
@@ -392,153 +405,10 @@
             </objects>
             <point key="canvasLocation" x="-509.60000000000002" y="1676.7616191904049"/>
         </scene>
-        <!--Common Pull Up View Controller-->
-        <scene sceneID="7nu-yb-y1Y">
-            <objects>
-                <viewController storyboardIdentifier="general" hidesBottomBarWhenPushed="YES" id="GHb-Mw-jlE" customClass="CommonPullUpViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zWb-5T-tM7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3RZ-i1-4Rc"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ISF-39-j76" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1361" y="1663"/>
-        </scene>
-        <!--Common Bottom View Controller-->
-        <scene sceneID="3nV-0y-HWi">
-            <objects>
-                <viewController storyboardIdentifier="bottom" id="ZIc-Eo-hCv" customClass="CommonBottomViewController" customModule="Me_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iJV-mw-ejj"/>
-                        <viewControllerLayoutGuide type="bottom" id="ISz-C0-ITy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kCj-1K-SCT" customClass="ISHPullUpRoundedVisualEffectView">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                        <subviews>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6h-uX-vTl" userLabel="rootView">
-                                <rect key="frame" x="0.0" y="0.0" width="355" height="527"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYz-Da-HF9" userLabel="Topview">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view hidden="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-Wh-K0b" customClass="ISHPullUpHandleView">
-                                                <rect key="frame" x="159" y="6" width="36" height="11"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                        <color key="value" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hau-z9-cZb" userLabel="Button Info">
-                                                <rect key="frame" x="311" y="20" width="24" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="closeIcon"/>
-                                                <connections>
-                                                    <action selector="close:" destination="ZIc-Eo-hCv" eventType="touchUpInside" id="VPE-3M-Y1d"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrImage2" translatesAutoresizingMaskIntoConstraints="NO" id="saz-vY-h6M">
-                                                <rect key="frame" x="30" y="20" width="20" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR-CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAL-Q0-2UQ">
-                                                <rect key="frame" x="58" y="23" width="59" height="16"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="12"/>
-                                                <color key="textColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="topViewHandle"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-7Y-yAy">
-                                        <rect key="frame" x="6" y="365" width="338" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3qZ-E7-SRd">
-                                        <rect key="frame" x="0.0" y="60" width="355" height="198"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="D85-9x-JTa">
-                                                <rect key="frame" x="97" y="19" width="160" height="160"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier is je persoonlijke QR-Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tYQ-aj-zEk">
-                                        <rect key="frame" x="7" y="330" width="339" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="20"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUc-Cq-oJn">
-                                        <rect key="frame" x="8" y="266" width="339" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGI-TP-rgs">
-                                        <rect key="frame" x="8" y="299" width="339" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlM-qw-zwr" userLabel="Overpull">
-                                <rect key="frame" x="0.0" y="458.5" width="375" height="41.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="sgI-HX-NSo"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="14"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="355" height="480"/>
-                    <connections>
-                        <outlet property="expiredLabel" destination="nGI-TP-rgs" id="Eoo-kj-8TC"/>
-                        <outlet property="handleView" destination="Yeg-Wh-K0b" id="Jfh-7l-5g5"/>
-                        <outlet property="qrCodeImageView" destination="D85-9x-JTa" id="omA-tq-7O6"/>
-                        <outlet property="rootView" destination="i6h-uX-vTl" id="TOh-eO-qv6"/>
-                        <outlet property="titleQrLabel" destination="MUc-Cq-oJn" id="E5t-lB-RaF"/>
-                        <outlet property="topView" destination="xYz-Da-HF9" id="SHF-cB-lPD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P3y-KK-i7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-510" y="2384"/>
-        </scene>
     </scenes>
     <designables>
         <designable name="CX4-Bk-Lqq">
             <size key="intrinsicContentSize" width="52" height="16.5"/>
-        </designable>
-        <designable name="Yeg-Wh-K0b">
-            <size key="intrinsicContentSize" width="36" height="11"/>
         </designable>
         <designable name="bdu-eB-oGB">
             <size key="intrinsicContentSize" width="90" height="29"/>
@@ -551,10 +421,10 @@
         <image name="5XVoucherSurface" width="345" height="120"/>
         <image name="back" width="24" height="24"/>
         <image name="circular" width="40" height="40"/>
-        <image name="closeIcon" width="24" height="24"/>
         <image name="email1" width="24" height="24"/>
-        <image name="qrCode" width="178" height="178"/>
-        <image name="qrImage2" width="16" height="16"/>
         <image name="qrV" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

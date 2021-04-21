@@ -178,6 +178,8 @@
 "choose_from_date" = "Choose from date";
 "update_is_available" = "New update is available, update your application!";
 "close" = "Close";
+"record_detail" = "Record detail";
+"this_is_qr_records" = "This is your Record’s QR";
 "price_agreement" = "Price agreement";
 "more_information_price_agreement" = "More information about price agreement";
 "paid_by_customer" = "The customer needs to pay folowing amount";
