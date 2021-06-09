@@ -38,14 +38,6 @@ class ActionViewModel {
         }
     }
     
-    var numberOfCells: Int {
-        return cellViewModels.count
-    }
-    
-    func getCellViewModel( at indexPath: IndexPath ) -> Subsidie {
-        return cellViewModels[indexPath.row]
-    }
-    
     func createCellViewModel( subsidie: Subsidie ) -> Subsidie {
         
         return subsidie

@@ -230,7 +230,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="PMk-nO-j9W" id="jZd-fh-RBC"/>
                                     <outlet property="delegate" destination="PMk-nO-j9W" id="Vcc-bS-9R7"/>
                                 </connections>
                             </tableView>
@@ -484,7 +483,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="co2-L5-wDG" id="2kP-5t-8fx"/>
                                     <outlet property="delegate" destination="co2-L5-wDG" id="qZS-eX-DiY"/>
                                 </connections>
                             </tableView>

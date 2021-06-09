@@ -15,6 +15,7 @@ class MProductReservationViewController: UIViewController {
     }()
     @IBOutlet weak var completeAnAmountButton: ShadowButton!
     
+    var dataSource: ProductReservationDataSource!
     var voucherTokens: [Transaction]! = []
     var voucher: Voucher!
     var vc: MQRViewController!
@@ -27,7 +28,8 @@ class MProductReservationViewController: UIViewController {
         setupAccessibility()
         qrViewModel.vcAlert = self
         goToVoucherButton.isHidden = voucher.amount == "0.00"
-        
+        self.dataSource = ProductReservationDataSource(voucherTokens: voucherTokens)
+        tableView.dataSource = self.dataSource
         qrViewModel.getVoucher = { [weak self] (voucher, statusCode) in
             DispatchQueue.main.async {
                 self?.selectedProduct = voucher
@@ -39,8 +41,6 @@ class MProductReservationViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPaymentFromSelected" {
             if let paymentVC = segue.destination as? MPaymentViewController {
@@ -60,33 +60,12 @@ class MProductReservationViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
-extension MProductReservationViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return voucherTokens.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductReservationTableViewCell
-        let voucherToken = voucherTokens[indexPath.row]
-        
-        cell.productReservation = voucherToken
-        
-        return cell
-    }
+extension MProductReservationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.qrViewModel.initVoucherAddress(address: voucherTokens[indexPath.row].address ?? "")
-        
     }
 }
 

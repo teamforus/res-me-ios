@@ -15,7 +15,7 @@ class MActionsViewController: UIViewController {
         return ActionViewModel()
     }()
     var organization: AllowedOrganization?
-    
+    var dataSource: ActionsDataSource!
     
     // MARK: - Properties
     let bodyView: Background_DarkMode = {
@@ -132,7 +132,7 @@ class MActionsViewController: UIViewController {
     
     private func setupTableView() {
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         tableView.register(ActionTableViewCell.self, forCellReuseIdentifier: ActionTableViewCell.identifier)
     }
@@ -167,49 +167,32 @@ class MActionsViewController: UIViewController {
         voucherImageView.layer.shouldRasterize = false
     }
     
-    private func fetchActions() {
+     func fetchActions() {
         viewModel.fetchSubsidies(voucherAddress: voucher?.address ?? "")
         
         viewModel.complete = { [weak self] (subsidies) in
+            guard let self = self else {
+                return
+            }
             DispatchQueue.main.async {
                 if subsidies.count == 0 {
-                    self?.showSimpleAlertWithSingleAction(title: Localize.warning(), message: Localize.no_balance_for_actions(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (_) in
-                         self?.dismiss(animated: true)
+                    self.showSimpleAlertWithSingleAction(title: Localize.warning(), message: Localize.no_balance_for_actions(), okAction: UIAlertAction(title: Localize.ok(), style: .default, handler: { (_) in
+                         self.dismiss(animated: true)
                     }))
                 }
-                self?.tableView.reloadData()
+                self.dataSource = ActionsDataSource(subsidies: subsidies, viewModel: self.viewModel, parentVC: self)
+                self.setupTableView()
+                self.tableView.reloadData()
             }
         }
     }
 }
 
-extension MActionsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MActionsViewController: UITableViewDelegate {
     // MARK: - UITableViewDelegate
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfCells
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ActionTableViewCell.identifier, for: indexPath) as? ActionTableViewCell else {
-            return UITableViewCell()
-        }
-        let subsidie = viewModel.getCellViewModel(at: indexPath)
-        cell.setupActions(subsidie: subsidie)
-        
-        if viewModel.numberOfCells - 1 == indexPath.row {
-            if viewModel.lastPage != viewModel.currentPage {
-                self.fetchActions()
-            }
-        }
-        return cell
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let subsidie = viewModel.getCellViewModel(at: indexPath)
+        let subsidie = dataSource.subsidies[indexPath.row]
         openSubsidiePayment(subsidie: subsidie, organization: organization)
     }
     
@@ -408,7 +391,7 @@ extension MActionsViewController {
         self.view.addSubview(popOverVC.view)
     }
     
-    private func openSubsidiePayment(subsidie: Subsidie, organization: AllowedOrganization?) {
+     func openSubsidiePayment(subsidie: Subsidie, organization: AllowedOrganization?) {
         let paymentVC = MPaymentActionViewController()
         paymentVC.subsidie = subsidie
         paymentVC.fund = voucher?.fund

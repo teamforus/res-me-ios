@@ -15,6 +15,7 @@ class MRecordsViewController: UIViewController {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var titileLabel: UILabel_DarkMode!
   
+    var dataSource: RecordsDataSource!
     
     lazy var recordViewModel: RecordsViewModel = {
         return RecordsViewModel()
@@ -45,7 +46,8 @@ class MRecordsViewController: UIViewController {
         recordViewModel.complete = { [weak self] (records) in
             
             DispatchQueue.main.async {
-                
+                self?.dataSource = RecordsDataSource(records: records)
+                self?.tableView.dataSource = self?.dataSource
                 self?.tableView.reloadData()
                 KVSpinnerView.dismiss()
                 self?.refreshControl.endRefreshing()
@@ -101,8 +103,8 @@ class MRecordsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let recordVC = segue.destination as? MRecordDetailViewController {
-            let record = recordViewModel.selectedRecord
-            recordVC.recordId = String(record?.id ?? 0)
+            let record = self.dataSource.records[tableView.indexPathForSelectedRow?.row ?? 0]
+            recordVC.recordId = String(record.id ?? 0)
         }
     }
 }
@@ -120,34 +122,7 @@ extension MRecordsViewController: BWWalkthroughViewControllerDelegate{
     }
 }
 
-extension MRecordsViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recordViewModel.numberOfCells
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecordsTableViewCell
-        
-        cell.record = recordViewModel.getCellViewModel(at: indexPath)
-        
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-        self.recordViewModel.userPressed(at: indexPath)
-        if recordViewModel.isAllowSegue {
-            return indexPath
-        }else {
-            return nil
-        }
-    }
+extension MRecordsViewController {
   func setupAccessibility() {
     titileLabel.setupAccesibility(description: Localize.personal(), accessibilityTraits: .header)
     }

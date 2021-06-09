@@ -23,11 +23,11 @@ class MVouchersViewController: UIViewController {
     @IBOutlet weak var transactionButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel_DarkMode!
-    var voucherType: VoucherType!
+    var voucherType: VoucherType! = .vouchers
     lazy var voucherViewModel: VouchersViewModel = {
         return VouchersViewModel()
     }()
-    
+    var dataSource: VouchersDataSource!
     var wallet: Office!
     
     override func viewDidLoad() {
@@ -41,7 +41,6 @@ class MVouchersViewController: UIViewController {
             Preference.tapToSeeTransactionTipHasShown = true
             transactionButton?.toolTip(message: Localize.tap_here_you_want_to_see_list_transaction(), style: .dark, location: .bottom, offset: CGPoint(x: -50, y: 0))
         }
-        voucherType = .vouchers
         
         setupSegmentControll()
         voucherViewModel.completeIdentity = { [unowned self] (response) in
@@ -62,6 +61,8 @@ class MVouchersViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 self?.voucherViewModel.sendPushToken(token: UserDefaults.standard.string(forKey: "TOKENPUSH") ?? "")
+                self?.dataSource = VouchersDataSource(vouchers: vouchers, wallet: nil)
+                self?.tableView.dataSource = self?.dataSource
                 self?.tableView.reloadData()
                 if vouchers.count == 0 {
                     
@@ -78,14 +79,11 @@ class MVouchersViewController: UIViewController {
     
     private func setupTableView() {
         registerForPreviewing(with: self, sourceView: tableView)
-        
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
             tableView.addSubview(refreshControl)
         }
-        
-        
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         
     }
@@ -138,7 +136,7 @@ class MVouchersViewController: UIViewController {
             break
         case VoucherType.vouchers.rawValue:
             voucherType = .vouchers
-            if voucherViewModel.numberOfCells == 0 {
+            if self.dataSource.vouchers.count == 0 {
                 self.tableView.isHidden = true
             }else {
                 self.tableView.isHidden = false
@@ -163,80 +161,35 @@ class MVouchersViewController: UIViewController {
         
          if segue.identifier == "goToVoucher" {
             if let voucherVC = segue.destination as? MVoucherViewController {
-                voucherVC.address = self.voucherViewModel.selectedVoucher?.address ?? ""
+                voucherVC.address = self.dataSource.vouchers[tableView.indexPathForSelectedRow?.row ?? 0].address
             }
         }
     }
 }
 
-extension MVouchersViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch voucherType {
-        case .valute?:
-            return 1
-        case .vouchers?:
-            return voucherViewModel.numberOfCells
-        default:
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch voucherType {
-        case .valute?:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "valuteCell", for: indexPath) as! ValuteTableViewCell
-            cell.wallet = self.wallet.wallet
-            cell.sendButton.addTarget(self, action: #selector(send(_:)), for: .touchUpInside)
-            return cell
-        case .vouchers?:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VoucherTableViewCell
-            let voucher = voucherViewModel.getCellViewModel(at: indexPath)
-            cell.setupVoucher(voucher: voucher)
-            
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
+extension MVouchersViewController: UITableViewDelegate{
     
     @objc func send(_ sender: UIButton) {
         self.showPopUPWithAnimation(vc: SendEtherViewController(nibName: "SendEtherViewController", bundle: nil))
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let voucher = self.dataSource.vouchers[indexPath.row]
         
         switch voucherType {
         case .vouchers?:
-            
-            self.voucherViewModel.userPressed(at: indexPath)
-            let voucher = voucherViewModel.getCellViewModel(at: indexPath)
-            if voucherViewModel.isAllowSegue {
-                if voucherViewModel.selectedVoucher?.product != nil {
-                    let vc = ProductVoucherViewController()
-                    vc.address = voucher.address ?? ""
-                    vc.hidesBottomBarWhenPushed = true
-                    self.show(vc, sender: nil)
-                    
-                }else {
-                    self.performSegue(withIdentifier: "goToVoucher", sender: nil)
-                }
-                return indexPath
+            if voucher.product != nil {
+                let vc = ProductVoucherViewController()
+                vc.address = voucher.address ?? ""
+                vc.hidesBottomBarWhenPushed = true
+                self.show(vc, sender: nil)
             }else {
-                return nil
+                self.performSegue(withIdentifier: "goToVoucher", sender: nil)
             }
-            
         default:
-            return nil
-            
+            break
         }
     }
-    
 }
 
 extension MVouchersViewController: UIViewControllerPreviewingDelegate{
@@ -255,7 +208,7 @@ extension MVouchersViewController: UIViewControllerPreviewingDelegate{
             guard let indexPath = tableView.indexPathForRow(at: location) else {
                 return nil
             }
-            self.voucherViewModel.userPressed(at: indexPath)
+            let voucher = self.dataSource.vouchers[indexPath.row]
             var detailViewController = UIViewController()
             if voucherViewModel.selectedVoucher?.product != nil {
                 let productVC = ProductVoucherViewController()
@@ -264,7 +217,7 @@ extension MVouchersViewController: UIViewControllerPreviewingDelegate{
             }else {
                 let storyboard = R.storyboard.voucher()
                 if let voucherVC = storyboard.instantiateViewController(withIdentifier: "voucher") as? MVoucherViewController {
-                    voucherVC.address = voucherViewModel.selectedVoucher?.address ?? ""
+                    voucherVC.address = voucher.address ?? ""
                     detailViewController = voucherVC
                 }
             }

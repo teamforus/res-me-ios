@@ -11,15 +11,7 @@ import UIKit
 class RecordsViewModel{
     
     var commonService: CommonServiceProtocol!
-    var selectedRecord: Record?
-    var isAllowSegue: Bool = false
     var vc: UIViewController!
-    
-    private var cellViewModels: [Record] = [Record]() {
-        didSet {
-            complete?(cellViewModels)
-        }
-    }
     
     var complete: (([Record])->())?
     
@@ -48,45 +40,12 @@ class RecordsViewModel{
                     KVSpinnerView.dismiss()
                 }
                 
-                self.processFetchedLunche(records: response)
+                self.complete?(response)
             }
-            
-            
-            
         }) { (error) in
-            
+            DispatchQueue.main.async {
+                KVSpinnerView.dismiss()
+            }
         }
-    }
-    
-    var numberOfCells: Int {
-        return cellViewModels.count
-    }
-    
-    func getCellViewModel( at indexPath: IndexPath ) -> Record {
-        return cellViewModels[indexPath.row]
-    }
-    
-    func createCellViewModel( record: Record ) -> Record {
-        
-        return record
-    }
-    
-    private func processFetchedLunche( records: [Record] ) {
-        var vms = [Record]()
-        for record in records {
-            
-            vms.append( createCellViewModel(record: record) )
-        }
-        self.cellViewModels = vms
-    }
-}
-
-
-extension RecordsViewModel {
-    
-    func userPressed( at indexPath: IndexPath) {
-        let record = self.cellViewModels[indexPath.row]
-        self.isAllowSegue = true
-        self.selectedRecord = record
     }
 }

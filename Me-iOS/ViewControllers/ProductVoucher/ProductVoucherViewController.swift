@@ -24,6 +24,7 @@ class ProductVoucherViewController: UIViewController {
     
     var voucher: Voucher!
     var address: String!
+    var dataSource: ProductVoucherDataSource!
     lazy var productViewModel: ProductVoucherViewModel = {
         return ProductVoucherViewModel()
     }()
@@ -61,7 +62,6 @@ class ProductVoucherViewController: UIViewController {
     }
     
     private func setupUI() {
-        setUpTableView()
         setUpActions()
         getApiRequest()
         if #available(iOS 11.0, *) {
@@ -71,9 +71,14 @@ class ProductVoucherViewController: UIViewController {
     
     func getApiRequest(){
         productViewModel.complete = { [weak self] (voucher) in
+            guard let self = self else {
+                return
+            }
             DispatchQueue.main.async {
-                self?.voucher = voucher
-                self?.tableView.reloadData()
+                self.voucher = voucher
+                self.dataSource = ProductVoucherDataSource(voucher: voucher, parentViewController: self)
+                self.setUpTableView()
+                self.tableView.reloadData()
             }
         }
         
@@ -87,7 +92,7 @@ class ProductVoucherViewController: UIViewController {
     
     private func setUpTableView() {
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.register(MProductVoucherTableViewCell.self, forCellReuseIdentifier: MProductVoucherTableViewCell.identifier)
         tableView.register(MTelephoneTableViewCell.self, forCellReuseIdentifier: MTelephoneTableViewCell.identifier)
         tableView.register(MBranchesTableViewCell.self, forCellReuseIdentifier: MBranchesTableViewCell.identifier)
@@ -98,78 +103,18 @@ class ProductVoucherViewController: UIViewController {
     }
 }
 
-extension ProductVoucherViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProductVoucherViewController: UITableViewDelegate {
     // MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MainTableViewSection.allCases.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sections = MainTableViewSection.allCases[indexPath.row]
         switch sections {
         case .voucher:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MProductVoucherTableViewCell.identifier, for: indexPath) as? MProductVoucherTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.setupVoucher(voucher: voucher)
-            return cell
-        case .infoVoucher:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MInfoVoucherTableViewCell.identifier, for: indexPath) as? MInfoVoucherTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.emailCompletion = { [weak self] () in
-                self?.sendVoucherToMail()
-            }
-            
-            cell.infoCompletion = { [weak self] () in
-                self?.showVoucherInfo()
-            }
-            return cell
-        case .mapDetail:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MMapDetailsTableViewCell.identifier, for: indexPath) as? MMapDetailsTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.parentViewController = self
-            cell.setupVoucher(voucher: voucher)
-            return cell
-            
-        case .adress:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MAdressTableViewCell.identifier, for: indexPath) as? MAdressTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.setupVoucher(voucher: voucher)
-            return cell
-            
+            self.dataSource.didOpenQR()
         case .telephone:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MTelephoneTableViewCell.identifier, for: indexPath) as? MTelephoneTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.setupVoucher(voucher: voucher)
-            return cell
-            
-        case .email:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MAdressTableViewCell.identifier, for: indexPath) as? MAdressTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cell.sendEmailCompletion = { [weak self] () in
-                self?.sendEmailToProvider()
-            }
-            
-            cell.copyCompletion = { [weak self] () in
-                self?.copyEmailToClipBoard()
-            }
-            
-            cell.setupEmail(voucher: voucher)
-            return cell
-            
-        case .branches:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MBranchesTableViewCell.identifier, for: indexPath) as? MBranchesTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.setup(voucher: voucher)
-            cell.parentViewController = self
-            return cell
+            dataSource.callPhone()
+        case .email, .infoVoucher,  .mapDetail, .adress, .branches: break
             
         }
     }
@@ -193,19 +138,6 @@ extension ProductVoucherViewController: UITableViewDelegate, UITableViewDataSour
         case .branches:
             return 168
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sections = MainTableViewSection.allCases[indexPath.row]
-        switch sections {
-        case .voucher:
-            self.didOpenQR()
-        case .telephone:
-            callPhone()
-        case .email, .infoVoucher,  .mapDetail, .adress, .branches: break
-            
-        }
-        
     }
     
 }
@@ -259,49 +191,7 @@ extension ProductVoucherViewController{
         }
     }
     
-    private func didOpenQR() {
-        let popOverVC = PullUpQRViewController(nib: R.nib.pullUpQRViewController)
-        popOverVC.voucher = voucher
-        popOverVC.qrType = .Voucher
-        showPopUPWithAnimation(vc: popOverVC)
-    }
-    
-    private func showVoucherInfo() {
-        if voucher.fund?.url_webshop != nil {
-            if let url = URL(string: "\(voucher.fund?.url_webshop ?? "")product/\(voucher.product?.id ?? 0)") {
-                let safariVC = SFSafariViewController(url: url)
-                self.present(safariVC, animated: true, completion: nil)
-            }
-        }else {
-            if let url = URL(string: "https://kerstpakket.forus.io") {
-                let safariVC = SFSafariViewController(url: url)
-                self.present(safariVC, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    private func sendVoucherToMail() {
-        productViewModel.completeSendEmail = { [weak self] (statusCode) in
-            DispatchQueue.main.async {
-                self?.showPopUPWithAnimation(vc: SuccessSendingViewController(nib: R.nib.successSendingViewController))
-            }
-        }
-        showSimpleAlertWithAction(title: Localize.email_to_me(),
-                                  message: Localize.send_an_email_to_the_provider(),
-                                  okAction: UIAlertAction(title: Localize.confirm(), style: .default, handler: { (action) in
-                                    self.productViewModel.sendEmail(address: self.voucher.address ?? "")
-                                  }),
-                                  cancelAction: UIAlertAction(title: Localize.cancel(), style: .cancel, handler: nil))
-    }
-    
-    private func callPhone() {
-        if let phone = voucher.offices?.first?.phone {
-            guard let number = URL(string: "tel://" + (phone)) else { return }
-            UIApplication.shared.open(number)
-        }
-    }
-    
-    private func sendEmailToProvider() {
+    func sendEmailToProvider() {
         showSimpleAlertWithAction(title: Localize.send_an_email_to_the_provider(),
                                   message: Localize.confirm_to_go_your_email_app_to_send_message_to_provider(),
                                   okAction: UIAlertAction(title: Localize.confirm(), style: .default, handler: { (action) in
@@ -319,11 +209,6 @@ extension ProductVoucherViewController{
                                     
                                   }),
                                   cancelAction: UIAlertAction(title: Localize.cancel(), style: .cancel, handler: nil))
-    }
-    
-    private func copyEmailToClipBoard() {
-        UIPasteboard.general.string = self.voucher.offices?.first?.organization?.email
-        self.showSimpleToast(message: Localize.copied_to_clipboard())
     }
 }
 

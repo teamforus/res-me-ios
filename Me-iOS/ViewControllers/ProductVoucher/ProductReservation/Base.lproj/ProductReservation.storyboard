@@ -33,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1C-Hn-7j5">
-                                <rect key="frame" x="98" y="32" width="205" height="20"/>
+                                <rect key="frame" x="98" y="32" width="205" height="22"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -131,7 +131,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="DE0-y8-cjP" id="CFE-Os-e9S"/>
                                     <outlet property="delegate" destination="DE0-y8-cjP" id="Rq5-0G-CqA"/>
                                 </connections>
                             </tableView>
@@ -204,7 +203,7 @@
             <size key="intrinsicContentSize" width="210" height="210"/>
         </designable>
         <designable name="uzM-Me-hi0">
-            <size key="intrinsicContentSize" width="186" height="30"/>
+            <size key="intrinsicContentSize" width="185" height="32"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

@@ -173,6 +173,7 @@
 		779F1336FE399D3CDDB6AE5E /* Pods_Me_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970CD27E06CAF26581789FF9 /* Pods_Me_iOSUITests.framework */; };
 		EBA8A6DE91260768B5722478 /* Pods_Me_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8797D7DA4E65B3CDD1B8B11 /* Pods_Me_iOS.framework */; };
 		FF037FB52637326100B078DC /* DarkMode_ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF037FB42637326100B078DC /* DarkMode_ActionButton.swift */; };
+		FF07B0FB2663C2570030548A /* ProductVoucherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07B0FA2663C2570030548A /* ProductVoucherDataSource.swift */; };
 		FF0DACBE246AD0A80034E3E4 /* OrganizationValidatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3B141A243722EE003FDDD9 /* OrganizationValidatorViewController.xib */; };
 		FF1CF092263AEED700C8C317 /* MMapDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CF08A263AEED700C8C317 /* MMapDetailsTableViewCell.swift */; };
 		FF1CF093263AEED700C8C317 /* BrancheCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CF08C263AEED700C8C317 /* BrancheCollectionViewCell.swift */; };
@@ -198,6 +199,10 @@
 		FF6403FA251216B200CD9802 /* TransactionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6403F9251216B200CD9802 /* TransactionListTableViewCell.swift */; };
 		FF66316E2625C6400021507D /* EmailLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66316D2625C6400021507D /* EmailLoginViewModel.swift */; };
 		FF6631732625C6480021507D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6631722625C6480021507D /* RegisterViewModel.swift */; };
+		FF7F2D39265B7B9E0045E25F /* VouchersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F2D38265B7B9E0045E25F /* VouchersDataSource.swift */; };
+		FF7F2D3B265B87350045E25F /* RecordsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F2D3A265B87350045E25F /* RecordsDataSource.swift */; };
+		FF7F2D3D265CFC370045E25F /* ActionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F2D3C265CFC370045E25F /* ActionsDataSource.swift */; };
+		FF7F2D3F265D04F00045E25F /* ProductReservationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F2D3E265D04F00045E25F /* ProductReservationDataSource.swift */; };
 		FF8D90E4251BBBA70035B8D7 /* ToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D90E3251BBBA70035B8D7 /* ToolTip.swift */; };
 		FF8D90E9251BBC8A0035B8D7 /* ToolTip+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D90E8251BBC8A0035B8D7 /* ToolTip+Extension.swift */; };
 		FF8D90EE251BBCD70035B8D7 /* ToolTipTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D90ED251BBCD70035B8D7 /* ToolTipTracker.swift */; };
@@ -488,6 +493,7 @@
 		F2B12B043656848EE23CDF37 /* Pods_Me_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E9ECB144534F67E9BA608D /* Pods-Me-iOSUITests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me-iOSUITests.demo.xcconfig"; path = "Target Support Files/Pods-Me-iOSUITests/Pods-Me-iOSUITests.demo.xcconfig"; sourceTree = "<group>"; };
 		FF037FB42637326100B078DC /* DarkMode_ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode_ActionButton.swift; sourceTree = "<group>"; };
+		FF07B0FA2663C2570030548A /* ProductVoucherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVoucherDataSource.swift; sourceTree = "<group>"; };
 		FF1CF08A263AEED700C8C317 /* MMapDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMapDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FF1CF08C263AEED700C8C317 /* BrancheCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrancheCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF1CF08D263AEED700C8C317 /* MBranchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBranchesTableViewCell.swift; sourceTree = "<group>"; };
@@ -512,6 +518,10 @@
 		FF6403F9251216B200CD9802 /* TransactionListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTableViewCell.swift; sourceTree = "<group>"; };
 		FF66316D2625C6400021507D /* EmailLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewModel.swift; sourceTree = "<group>"; };
 		FF6631722625C6480021507D /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FF7F2D38265B7B9E0045E25F /* VouchersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VouchersDataSource.swift; sourceTree = "<group>"; };
+		FF7F2D3A265B87350045E25F /* RecordsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDataSource.swift; sourceTree = "<group>"; };
+		FF7F2D3C265CFC370045E25F /* ActionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsDataSource.swift; sourceTree = "<group>"; };
+		FF7F2D3E265D04F00045E25F /* ProductReservationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReservationDataSource.swift; sourceTree = "<group>"; };
 		FF8D90E3251BBBA70035B8D7 /* ToolTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTip.swift; sourceTree = "<group>"; };
 		FF8D90E8251BBC8A0035B8D7 /* ToolTip+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolTip+Extension.swift"; sourceTree = "<group>"; };
 		FF8D90ED251BBCD70035B8D7 /* ToolTipTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTipTracker.swift; sourceTree = "<group>"; };
@@ -852,6 +862,7 @@
 			isa = PBXGroup;
 			children = (
 				6546256A230E891B007B812E /* MProductReservationViewController.swift */,
+				FF7F2D3E265D04F00045E25F /* ProductReservationDataSource.swift */,
 				6546257B230F1AB1007B812E /* ProductReservation.storyboard */,
 				6546256F230E8DE9007B812E /* ProductReservationTableViewCell.swift */,
 			);
@@ -1141,6 +1152,7 @@
 				65A8B70C2282E19400B7DF05 /* MVouchersViewController.swift */,
 				65911B45228D7DBC00EA30D6 /* VoucherTableViewCell.swift */,
 				655D64722315948900EABD57 /* ValuteTableViewCell.swift */,
+				FF7F2D38265B7B9E0045E25F /* VouchersDataSource.swift */,
 				65A8B7372282EBF900B7DF05 /* ViewModel */,
 			);
 			path = Vouchers;
@@ -1162,6 +1174,7 @@
 			isa = PBXGroup;
 			children = (
 				65A8B7102282E1A900B7DF05 /* MRecordsViewController.swift */,
+				FF7F2D3A265B87350045E25F /* RecordsDataSource.swift */,
 				654F97A4229BEA43009C9FFA /* Cell */,
 				65A8B7352282EBF100B7DF05 /* ViewModel */,
 			);
@@ -1183,6 +1196,7 @@
 			isa = PBXGroup;
 			children = (
 				04DD43C225CAB7DC00038A1D /* ProductVoucherViewController.swift */,
+				FF07B0FA2663C2570030548A /* ProductVoucherDataSource.swift */,
 				FF1CF089263AEED700C8C317 /* ProductVoucherCell */,
 				65A8B7342282EBE900B7DF05 /* ViewModel */,
 			);
@@ -1556,6 +1570,7 @@
 			children = (
 				FF9C60DF253DD4AE006F6979 /* ViewModel */,
 				FF9C60E1253DD4AE006F6979 /* MActionsViewController.swift */,
+				FF7F2D3C265CFC370045E25F /* ActionsDataSource.swift */,
 				FF9C60E2253DD4AE006F6979 /* ActionTableViewCell.swift */,
 			);
 			path = Actions;
@@ -1959,6 +1974,7 @@
 				654ACBAC22A94D550052C9C2 /* ProfileViewModel.swift in Sources */,
 				654F97AA229BF671009C9FFA /* MRecordDetailViewController.swift in Sources */,
 				0408C85D24BF2A4E009B8A2E /* Background_DarkMode.swift in Sources */,
+				FF7F2D39265B7B9E0045E25F /* VouchersDataSource.swift in Sources */,
 				65D11B8022A6ADF400756BE0 /* ConfirmPaymentPopUp.swift in Sources */,
 				FF8D90EE251BBCD70035B8D7 /* ToolTipTracker.swift in Sources */,
 				FF9C60ED253DD4CD006F6979 /* RecordValidation.swift in Sources */,
@@ -1967,10 +1983,13 @@
 				65139C7922803349003E0CDE /* CurrentSession.swift in Sources */,
 				FF8D90F3251BBD320035B8D7 /* WeakRef.swift in Sources */,
 				65139C63228029EF003E0CDE /* CustomCornerUIView.swift in Sources */,
+				FF7F2D3F265D04F00045E25F /* ProductReservationDataSource.swift in Sources */,
+				FF7F2D3D265CFC370045E25F /* ActionsDataSource.swift in Sources */,
 				65B4DE4622A17F8600AFC878 /* Extension+Data.swift in Sources */,
 				6546256B230E891B007B812E /* MProductReservationViewController.swift in Sources */,
 				FF9B7157248503F100BBCAA3 /* MMainTabBarController.swift in Sources */,
 				65911B50228D8F2900EA30D6 /* ProductCategory.swift in Sources */,
+				FF07B0FB2663C2570030548A /* ProductVoucherDataSource.swift in Sources */,
 				65CF407B228C0B8F0006F5DE /* Register.swift in Sources */,
 				651B5C4822E881B500967148 /* ExchangeToken.swift in Sources */,
 				655D64792315A04300EABD57 /* MAFirstPageViewController.swift in Sources */,
@@ -1998,6 +2017,7 @@
 				FF9C60F6253DD869006F6979 /* MPaymentActionViewController.swift in Sources */,
 				65B3784D22C241F50095A2EF /* Reachability.swift in Sources */,
 				654F979F229BE71F009C9FFA /* Record.swift in Sources */,
+				FF7F2D3B265B87350045E25F /* RecordsDataSource.swift in Sources */,
 				654F97AE229C03D0009C9FFA /* RecordDetailViewModel.swift in Sources */,
 				FF8D90E4251BBBA70035B8D7 /* ToolTip.swift in Sources */,
 				FFBDBCA82631ACC9006F7871 /* LoginQrAndCodeViewModel.swift in Sources */,
@@ -2092,7 +2112,6 @@
 				657DBA512289973C00C67500 /* NotificationName.swift in Sources */,
 				FF1CF097263AEED700C8C317 /* MProductVoucherTableViewCell.swift in Sources */,
 				FF1CF09A263AF86E00C8C317 /* CustomPointAnnotation.swift in Sources */,
-				65A8B7432282EDDD00B7DF05 /* MEmailLoginViewController.swift in Sources */,
 				FF9C60FC253DD87D006F6979 /* ConfirmPayAction.swift in Sources */,
 				65CF407D228C0BBD0006F5DE /* Errors.swift in Sources */,
 				6568461722942E2900097E83 /* Extension+UITabBarController.swift in Sources */,
